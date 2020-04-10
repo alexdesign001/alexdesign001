@@ -16,21 +16,6 @@ header-img: assets/img/hero.jpg
     <h3>{{ page.description }}</h3>
 </div>
 
-
-<main class="tags-content">
-
-    <ul class="tags-list">
-        <li>
-        {% if site.recommend-tags and site.tags.size>0 %}
-            {% for tag in site.tags %}
-            <a href="#{{ tag[0] }}" class="tag">{{ tag[0]}}</a>
-            {% endfor %}
-        {% endif %}
-        </li>
-     
-    </ul>
-</main>
-
 <main class="g-container home-content">
     <div class="article-list">
         {% for post in paginator.posts %}
