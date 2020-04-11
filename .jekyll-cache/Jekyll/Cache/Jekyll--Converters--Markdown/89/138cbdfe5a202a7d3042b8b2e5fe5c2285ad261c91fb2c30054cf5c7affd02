@@ -1,4 +1,4 @@
-I"�w<blockquote>
+I"x<blockquote>
   <p>iOS 13已经发布，结合WWDC 2019的官方视频与苹果官方资料，为大家带来最全面细致的iOS 13交互设计指南及规范解析。</p>
 </blockquote>
 
@@ -21,7 +21,7 @@
 
 <p>人们可以将深色模式设置为系统的默认外观模式，也可以让设备在光照条件较弱的环境中自动切换至深色模式。</p>
 
-<p><img src="https://img.zcool.cn/community/01ba3d5d0a11cca801205e4b6ce084.jpg" alt="" /></p>
+<p><img src="https://developer.apple.com/design/human-interface-guidelines/images/iPhoneX_DeviceFrame_2x.png" alt="" /></p>
 
 <h4 id="使用黑暗模式的原因">使用黑暗模式的原因</h4>
 <ul>
