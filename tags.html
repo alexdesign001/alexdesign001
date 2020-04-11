@@ -6,7 +6,7 @@ layout: default
 {% include header.html %}
 
 <div class="g-banner tags-banner {{ site.postPatterns | prepend: 'post-pattern-' }} {{ site.theme-color | prepend: 'bgcolor-' }}" data-theme="{{ site.theme-color }}">
-    <h2>TAGS</h2>
+    <h2>文章</h2>
 </div>
 
 <main class="tags-content">
@@ -30,5 +30,13 @@ layout: default
         {% endfor%}
     </ul>
 </main>
+
+<div class="tabBar">
+    <div class="tabBar_icon">
+        <li><a href="index.html"><span class="iconfont tabicon iconfavico"></span></a></li>
+        <li><a href="tags.html"><span class="iconfont tabicon active iconnote"></span></a></li>
+       <li><a href="#"><span class="iconfont tabicon iconuser"></span></a></li>
+    </div>
+</div>
     
 {% include footer.html %}
