@@ -5,8 +5,8 @@
     <description>Alex Hu，90后，UI设计师，热爱技术&amp;设计。很高兴能在这里与你分享我对设计和生活的思考。</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 11 Apr 2020 21:22:03 +0800</pubDate>
-    <lastBuildDate>Sat, 11 Apr 2020 21:22:03 +0800</lastBuildDate>
+    <pubDate>Sat, 11 Apr 2020 21:24:56 +0800</pubDate>
+    <lastBuildDate>Sat, 11 Apr 2020 21:24:56 +0800</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -414,15 +414,15 @@
 
 &lt;p&gt;在iOS12版本中，音量的调节图标是在屏幕中间显示一个巨大的铃铛，铃铛下面会有音量大小的进度条，严重干扰用户视线。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/17279224-faa3a8ad1c651d95.gif?imageMogr2/auto-orient/strip&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/17279224-faa3a8ad1c651d95.gif?imageMogr2/auto-orient/strip&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;iOS13的音量控制图标也进行了全新的设计，音量大小的图标被设计在了屏幕左侧。在音量调节过程中，喇叭图标也非常直观的显示了音量大小的变化。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/17279224-1ca622f81b8eed6e.gif?imageMogr2/auto-orient/strip&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/17279224-1ca622f81b8eed6e.gif?imageMogr2/auto-orient/strip&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;另外，左侧的音量可以支持滑动调整，类似底部控制器弹窗的音量调节。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/17279224-7cabd41a5a61dfac.gif?imageMogr2/auto-orient/strip&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/17279224-7cabd41a5a61dfac.gif?imageMogr2/auto-orient/strip&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;十七三指菜单&quot;&gt;十七、三指菜单&lt;/h3&gt;
 &lt;p&gt;在iOS 13中，只要用3个手指点击屏幕，就可以呼出一个全新的菜单。用来完成：撤销、剪切、复制、粘贴、重做这五个操作。&lt;/p&gt;

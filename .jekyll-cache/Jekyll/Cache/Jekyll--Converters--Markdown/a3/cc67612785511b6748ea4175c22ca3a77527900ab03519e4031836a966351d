@@ -1,4 +1,4 @@
-I"@�<blockquote>
+I"1�<blockquote>
   <p>iOS 13已经发布，结合WWDC 2019的官方视频与苹果官方资料，为大家带来最全面细致的iOS 13交互设计指南及规范解析。</p>
 </blockquote>
 
@@ -401,15 +401,15 @@
 
 <p>在iOS12版本中，音量的调节图标是在屏幕中间显示一个巨大的铃铛，铃铛下面会有音量大小的进度条，严重干扰用户视线。</p>
 
-<p><img src="https://upload-images.jianshu.io/upload_images/17279224-faa3a8ad1c651d95.gif?imageMogr2/auto-orient/strip" alt="image" /></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17279224-faa3a8ad1c651d95.gif?imageMogr2/auto-orient/strip" alt="" /></p>
 
 <p>iOS13的音量控制图标也进行了全新的设计，音量大小的图标被设计在了屏幕左侧。在音量调节过程中，喇叭图标也非常直观的显示了音量大小的变化。</p>
 
-<p><img src="https://upload-images.jianshu.io/upload_images/17279224-1ca622f81b8eed6e.gif?imageMogr2/auto-orient/strip" alt="image" /></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17279224-1ca622f81b8eed6e.gif?imageMogr2/auto-orient/strip" alt="" /></p>
 
 <p>另外，左侧的音量可以支持滑动调整，类似底部控制器弹窗的音量调节。</p>
 
-<p><img src="https://upload-images.jianshu.io/upload_images/17279224-7cabd41a5a61dfac.gif?imageMogr2/auto-orient/strip" alt="image" /></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17279224-7cabd41a5a61dfac.gif?imageMogr2/auto-orient/strip" alt="" /></p>
 
 <h3 id="十七三指菜单">十七、三指菜单</h3>
 <p>在iOS 13中，只要用3个手指点击屏幕，就可以呼出一个全新的菜单。用来完成：撤销、剪切、复制、粘贴、重做这五个操作。</p>
