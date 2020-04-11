@@ -1380,7 +1380,7 @@ a {
 
 	.home-banner h2 {
 		padding-top: 60px;
-		font-size: 28px;
+		font-size: 22px;
 		line-height: 48px
 	}
 
@@ -1524,6 +1524,7 @@ a {
   padding-left: 40px;
   padding-right: 40px;
   z-index: -1;
+  height: 40px;
 }
 
 .tabicon:hover, .tabicon.active{
