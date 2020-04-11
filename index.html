@@ -2,7 +2,7 @@
 layout: default
 home-title: Creativity Never Sleeps
 description: 创意永无止境
-header-img: assets/img/hero.jpg
+header-img: assets/img/shutterstock_294728591.jpg
 ---
 
 {% include header.html %}
@@ -10,7 +10,7 @@ header-img: assets/img/hero.jpg
 <div
     class="g-banner home-banner {{ site.theme-color | prepend: 'banner-theme-' }}"
     data-theme="{{ site.theme-color }}"
-    style="{% if page.header-img %}background: url({{ page.header-img | relative_url }}) no-repeat center center; background-size: cover;{% endif %}"
+    style="{% if page.header-img %}background: url({{ page.header-img | relative_url }}) no-repeat center center; background-size: cover;{% endif %};"
 >
     <h2>{{ page.home-title }}</h2>
     <h3>{{ page.description }}</h3>
