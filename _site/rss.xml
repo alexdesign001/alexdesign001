@@ -5,8 +5,8 @@
     <description>Alex Hu，90后，UI设计师，热爱技术&amp;设计。很高兴能在这里与你分享我对设计和生活的思考。</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 11 Apr 2020 20:43:51 +0800</pubDate>
-    <lastBuildDate>Sat, 11 Apr 2020 20:43:51 +0800</lastBuildDate>
+    <pubDate>Sat, 11 Apr 2020 21:06:09 +0800</pubDate>
+    <lastBuildDate>Sat, 11 Apr 2020 21:06:09 +0800</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -136,13 +136,9 @@
 
 &lt;h3 id=&quot;三基本层与浮出层base--elevated&quot;&gt;三、基本层与浮出层（Base &amp;amp; Elevated）&lt;/h3&gt;
 
-&lt;p&gt;很多时候我们都会用到这样的设计形式，比如在背景上方叠加一层具有阴影的模块。这样页面就具有了3维的层次感。比如下图这样：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/17279224-3ceef3718db48bcb.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;很多时候我们都会用到这样的设计形式，比如在背景上方叠加一层具有阴影的模块。这样页面就具有了3维的层次感。&lt;/p&gt;
 
 &lt;p&gt;但是在深色模式下，这种具有阴影的设计就失效了。所以，在深色模式下，我们就退而求其次，直接使用比背景稍微浅一点的颜色作为浮层，而不用考虑阴影了。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/17279224-741c9246052b965d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;可以从下图这个简单的操作来理解基本层和浮出层。常规情况下，打开通讯录，那么这个界面使用了纯黑色背景，但是当我们从电话应用中打开这个联系模块时，此时它的背景色就成为了稍浅一点的颜色。&lt;/p&gt;
 
@@ -168,23 +164,19 @@
 
 &lt;p&gt;每种厚度的材质，苹果设计师都为我们提供了不同的配色方案。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/17279224-dba2a2ea837b5e0d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/17279224-dba2a2ea837b5e0d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;对于设计师来说，我们不需要完全严格遵循这些色值，只需要保证在不同厚度下的透明度能达到基本的对比度要求即可，比如右边的两个设计方案，可读性就非常差。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/17279224-7741b436a5ec4fdc.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/17279224-7741b436a5ec4fdc.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;五控制条与导航栏control--bars&quot;&gt;五、控制条与导航栏（Control &amp;amp; Bars）&lt;/h3&gt;
 
 &lt;p&gt;对于这些基础的组件，苹果建议我们使用系统内置的设计，因为他们都使用了语义化的颜色，能更好的适配白色模式和深色模式。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/17279224-334a90e42b8c7455.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/17279224-84178d7376324e19.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;而对于Bar来说，大的Title文字则得到了普及，得益于手机屏幕的纵向长度提升，大的Title字体会让页面内容更加醒目，更加优雅。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/17279224-aa00b0d2d903d1b4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/17279224-4e13d74c6bcbd12f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/17279224-5adb39d46a51a110.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;六图标&quot;&gt;六、图标&lt;/h3&gt;
 
