@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APP命名规范 - Alex Design - Creativity Never Sleeps</title>
+    <meta name="author"  content="Alex Hu">
+    <meta name="description" content="APP命名规范">
+    <meta name="keywords"  content="移动端">
+    <!-- Open Graph -->
+    <meta property="og:title" content="APP命名规范 - Alex Design - Creativity Never Sleeps">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/2020/04/02/APP%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83.html">
+    <meta property="og:description" content="Alex Hu，90后，UI设计师，热爱技术&设计。很高兴能在这里与你分享我对设计和生活的思考。">
+    <meta property="og:site_name" content="Alex Design - Creativity Never Sleeps">
+    <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1748563_z2xad1yakte.css">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/share.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+	
+	<!--
+Author: Ray-Eldath
+refer to:
+ - http://docs.mathjax.org/en/latest/options/index.html
+-->
+
+	<script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [ ["$", "$"] ],
+			displayMath: [ ["$$", "$$"] ],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+	
+    <!--
+Author: Ray-Eldath
+-->
+<style>
+    .markdown-body .anchor{
+        float: left;
+        margin-top: -8px;
+        margin-left: -20px;
+        padding-right: 4px;
+        line-height: 1;
+        opacity: 0;
+    }
+    
+    .markdown-body .anchor .anchor-icon{
+        font-size: 15px
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        let nodes = document.querySelector(".markdown-body").querySelectorAll("h1,h2,h3")
+        for(let node of nodes) {
+            var anchor = document.createElement("a")
+            var anchorIcon = document.createElement("i")
+            anchorIcon.setAttribute("class", "fa fa-anchor fa-lg anchor-icon")
+            anchorIcon.setAttribute("aria-hidden", true)
+            anchor.setAttribute("class", "anchor")
+            anchor.setAttribute("href", "#" + node.getAttribute("id"))
+            
+            anchor.onmouseover = function() {
+                this.style.opacity = "0.4"
+            }
+            
+            anchor.onmouseout = function() {
+                this.style.opacity = "0"
+            }
+            
+            anchor.appendChild(anchorIcon)
+            node.appendChild(anchor)
+        }
+    })
+</script>
+</head>
+
+
+<body>
+  <!--[if lt IE 10]>
+<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+<![endif]-->
+  <input id="nm-switch" type="hidden" value="true"> <header class="g-header">
+    <div class="g-logo">
+      <a href="/"></a>
+    </div>
+    <i id="menu-toggle" class="iconfont icon-menu"></i>
+    <nav class="g-nav">
+        <ul>
+            
+            <li><a href="/">首页</a></li>
+            
+            <li><a href="/tags.html">文章</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+
+  <header
+    class="g-banner post-header post-pattern-circuitBoard bgcolor-default "
+    data-theme="default"
+  >
+
+    <div class="post-wrapper">
+      <div class="post-tags">
+        
+          
+            <a href="/tags.html#%E7%A7%BB%E5%8A%A8%E7%AB%AF" class="post-tag">移动端</a>
+          
+        
+      </div>
+      <h1>APP命名规范</h1>
+      <div class="post-meta">
+        <span class="post-meta-item"><i class="iconfont icon-author"></i>Alex Hu</span>
+        <time class="post-meta-item" datetime="20-04-02"><i class="iconfont icon-date"></i>02 Apr 2020</time>
+      </div>
+    </div>
+    
+    <div class="filter"></div>
+      <div class="post-cover" style="background: url('https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3557303291,2971228945&fm=26&gp=0.jpg') center no-repeat; background-size: cover;"></div>
+    
+  </header>
+
+  <div class="post-content visible">
+    
+
+    <article class="markdown-body">
+      <blockquote>
+  <p>有的公司命名规则可能有所不同，因此为了确保命名的正确性，建议设计师先去和合作的开发工程师沟通确认！</p>
+</blockquote>
+
+<h3 id="概述">概述</h3>
+<p>有规范的命名可以极大的节省程序开发的时间成本，减少很多不必要的沟通与重复切图的概率，程序员完全可以直接使用的我们切片而不更改切片的名称，后期我们更换切图，只要切片名称不变，开发看都不用看直接替换就可以了。</p>
+
+<p>有的公司命名规则可能有所不同，因此为了确保命名的正确性，建议设计师先去和合作的开发工程师沟通确认！</p>
+
+<h3 id="所有命名全部为小写英文字母">所有命名全部为小写英文字母</h3>
+
+<p>在程序员的代码里只有小写的英文字母，如果你给出的命名全是中文的，那么他们是一定会更改的，所以命名全部用小写的英文字母是最基本的规则。</p>
+
+<h3 id="命名格式">命名格式</h3>
+
+<p><strong>切片命名的通用规范是，界面功能状.png</strong>
+（例如:一个首页的处于正常状态的确定按钮是home＿btn＿noro2x.png）</p>
+
+<p>众所周知，一个大型项目会分很多模块，每个模块由不同的设计师来独立完成，还有人会专门管理公共的组件如 tabbar、 navbar等等，这种情况下就会分为两种切图，一种是通用类型的切图，还有一种就是各个模块特有的切图。</p>
+
+<p><strong>通用切片命名格式:组件＿类别＿功能＿状态＠2x.png</strong></p>
+
+<p>举例: tabbar＿icon＿home default2x.png（对应中文:标签栏＿图标主页默认＠2xpng）</p>
+
+<p><strong>模块特有切图命名规则:模块类别功能状态＠2x.png</strong></p>
+
+<p>举例:mail＿iconsearchdefault＠2x.png（应的中文为:邮件图标＿搜索＿默认＠2xpng）</p>
+
+<p>当然这两个例子都是比较基本的情况，有很多时候可能一个单词并不能清楚的描述功能，比如有两个名字相同的搜索图标，大小不一，那这种情况你就可以这样命名:mail＿iconsearch＿big＿ default＠2x.png，我们的原则就是清晰的表达出切片的具体内容并且没有重复的名称，希望大家能够活学活用。（注意，命名中不能含有空格！）</p>
+
+<p><img src="https://i.loli.net/2020/03/15/VrOfh48IaYjpn1C.jpg" alt="Alt" /></p>
+
+<h4 id="常用英文单词">常用英文单词</h4>
+<p>如果所有命名都写为全称，名字就会特别长，所以我们可以将一些常用的英文单词进行缩写，减少工作成本与开发代码资源。至于怎么缩写，只要整个团队能够达成共识并且输出一份缩写清单，任何缩写规则都是可以的。常用的几大原则</p>
+
+<ul>
+  <li>较短的单词可通过去掉“元音”形成缩写</li>
+  <li>较长的单词可取单词的头部几个字母形成缩写</li>
+  <li>还有一些约定俗成的英文单词缩写</li>
+</ul>
+
+<h5 id="界面命名">界面命名</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th>中文</th>
+      <th>英文</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>整个主程序</td>
+      <td>App</td>
+    </tr>
+    <tr>
+      <td>搜索结果</td>
+      <td>Search results</td>
+    </tr>
+    <tr>
+      <td>活动</td>
+      <td>Activity</td>
+    </tr>
+    <tr>
+      <td>信息</td>
+      <td>Message</td>
+    </tr>
+    <tr>
+      <td>首页</td>
+      <td>Home</td>
+    </tr>
+    <tr>
+      <td>应用详情</td>
+      <td>App detail</td>
+    </tr>
+    <tr>
+      <td>探索</td>
+      <td>Explore</td>
+    </tr>
+    <tr>
+      <td>音乐</td>
+      <td>Music</td>
+    </tr>
+    <tr>
+      <td>软件</td>
+      <td>Software</td>
+    </tr>
+    <tr>
+      <td>日历</td>
+      <td>Calendar</td>
+    </tr>
+    <tr>
+      <td>联系人</td>
+      <td>Contacts</td>
+    </tr>
+    <tr>
+      <td>新闻</td>
+      <td>News</td>
+    </tr>
+    <tr>
+      <td>游戏</td>
+      <td>Game</td>
+    </tr>
+    <tr>
+      <td>相机</td>
+      <td>Camera</td>
+    </tr>
+    <tr>
+      <td>控制中心</td>
+      <td>Control center</td>
+    </tr>
+    <tr>
+      <td>笔记</td>
+      <td>Note</td>
+    </tr>
+    <tr>
+      <td>管理</td>
+      <td>Management</td>
+    </tr>
+    <tr>
+      <td>照片</td>
+      <td>Photo</td>
+    </tr>
+    <tr>
+      <td>健康</td>
+      <td>Health</td>
+    </tr>
+    <tr>
+      <td>天气</td>
+      <td>Weather</td>
+    </tr>
+    <tr>
+      <td>发现</td>
+      <td>Find</td>
+    </tr>
+    <tr>
+      <td>视频</td>
+      <td>Video</td>
+    </tr>
+    <tr>
+      <td>邮件</td>
+      <td>Mail</td>
+    </tr>
+    <tr>
+      <td>手表</td>
+      <td>watch</td>
+    </tr>
+    <tr>
+      <td>个人中心</td>
+      <td>Personal center</td>
+    </tr>
+    <tr>
+      <td>设置</td>
+      <td>Setting</td>
+    </tr>
+    <tr>
+      <td>地图</td>
+      <td>Map</td>
+    </tr>
+    <tr>
+      <td>锁屏</td>
+      <td>Lock screen</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="系统控件库">系统控件库</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>中文</th>
+      <th>英文</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>状态栏</td>
+      <td>Status bar</td>
+    </tr>
+    <tr>
+      <td>搜索栏</td>
+      <td>Search bar</td>
+    </tr>
+    <tr>
+      <td>提醒视图</td>
+      <td>Alert view</td>
+    </tr>
+    <tr>
+      <td>弹出视图</td>
+      <td>Popover</td>
+    </tr>
+    <tr>
+      <td>导航栏</td>
+      <td>Navigatonbar</td>
+    </tr>
+    <tr>
+      <td>表格视图</td>
+      <td>Table view</td>
+    </tr>
+    <tr>
+      <td>编辑菜单</td>
+      <td>Edit menu</td>
+    </tr>
+    <tr>
+      <td>开关</td>
+      <td>Switch</td>
+    </tr>
+    <tr>
+      <td>标签栏</td>
+      <td>Tab bar</td>
+    </tr>
+    <tr>
+      <td>分段控制</td>
+      <td>Segmented Control</td>
+    </tr>
+    <tr>
+      <td>选择器</td>
+      <td>Picker</td>
+    </tr>
+    <tr>
+      <td>弹出</td>
+      <td>Pop up</td>
+    </tr>
+    <tr>
+      <td>工具栏</td>
+      <td>Tool bar</td>
+    </tr>
+    <tr>
+      <td>活动视图</td>
+      <td>Activity view</td>
+    </tr>
+    <tr>
+      <td>滑动器</td>
+      <td>Slider</td>
+    </tr>
+    <tr>
+      <td>扫描</td>
+      <td>Scanning</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="功能命名">功能命名</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>中文</th>
+      <th>英文</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>确定</td>
+      <td>OK</td>
+    </tr>
+    <tr>
+      <td>添加</td>
+      <td>Add</td>
+    </tr>
+    <tr>
+      <td>卸载</td>
+      <td>Uninstall</td>
+    </tr>
+    <tr>
+      <td>选择</td>
+      <td>Select</td>
+    </tr>
+    <tr>
+      <td>默认</td>
+      <td>Default</td>
+    </tr>
+    <tr>
+      <td>查看</td>
+      <td>Check</td>
+    </tr>
+    <tr>
+      <td>搜索</td>
+      <td>Search</td>
+    </tr>
+    <tr>
+      <td>更多</td>
+      <td>More</td>
+    </tr>
+    <tr>
+      <td>取消</td>
+      <td>Cancel</td>
+    </tr>
+    <tr>
+      <td>删除</td>
+      <td>Delete</td>
+    </tr>
+    <tr>
+      <td>暂停</td>
+      <td>Pause</td>
+    </tr>
+    <tr>
+      <td>刷新</td>
+      <td>Refresh</td>
+    </tr>
+    <tr>
+      <td>关闭</td>
+      <td>Close</td>
+    </tr>
+    <tr>
+      <td>下载</td>
+      <td>Download</td>
+    </tr>
+    <tr>
+      <td>继续</td>
+      <td>Continue</td>
+    </tr>
+    <tr>
+      <td>发送</td>
+      <td>Send</td>
+    </tr>
+    <tr>
+      <td>最小化</td>
+      <td>Min</td>
+    </tr>
+    <tr>
+      <td>等待</td>
+      <td>Waiting</td>
+    </tr>
+    <tr>
+      <td>导入</td>
+      <td>Import</td>
+    </tr>
+    <tr>
+      <td>前进</td>
+      <td>Forward</td>
+    </tr>
+    <tr>
+      <td>最大化</td>
+      <td>Max</td>
+    </tr>
+    <tr>
+      <td>加载</td>
+      <td>Loading</td>
+    </tr>
+    <tr>
+      <td>导出</td>
+      <td>Export</td>
+    </tr>
+    <tr>
+      <td>重新开始</td>
+      <td>Restart</td>
+    </tr>
+    <tr>
+      <td>菜单</td>
+      <td>Menu</td>
+    </tr>
+    <tr>
+      <td>安装</td>
+      <td>Install</td>
+    </tr>
+    <tr>
+      <td>后退</td>
+      <td>Back</td>
+    </tr>
+    <tr>
+      <td>更新</td>
+      <td>Update</td>
+    </tr>
+    <tr>
+      <td>资源类型图片</td>
+      <td>Image</td>
+    </tr>
+    <tr>
+      <td>滚动条</td>
+      <td>Scroll bar</td>
+    </tr>
+    <tr>
+      <td>进度条</td>
+      <td>Progressbar</td>
+    </tr>
+    <tr>
+      <td>线条</td>
+      <td>Line</td>
+    </tr>
+    <tr>
+      <td>图标</td>
+      <td>Icon</td>
+    </tr>
+    <tr>
+      <td>标签</td>
+      <td>Tab</td>
+    </tr>
+    <tr>
+      <td>树</td>
+      <td>Tree</td>
+    </tr>
+    <tr>
+      <td>蒙版</td>
+      <td>Mask</td>
+    </tr>
+    <tr>
+      <td>文本框</td>
+      <td>Textbox</td>
+    </tr>
+    <tr>
+      <td>勾选框</td>
+      <td>Checkbox</td>
+    </tr>
+    <tr>
+      <td>音频</td>
+      <td>Audio</td>
+    </tr>
+    <tr>
+      <td>标记</td>
+      <td>sign</td>
+    </tr>
+    <tr>
+      <td>编辑框</td>
+      <td>Edit</td>
+    </tr>
+    <tr>
+      <td>下拉框</td>
+      <td>Combobox</td>
+    </tr>
+    <tr>
+      <td>按钮</td>
+      <td>Button</td>
+    </tr>
+    <tr>
+      <td>动画</td>
+      <td>Animation</td>
+    </tr>
+    <tr>
+      <td>列表</td>
+      <td>List</td>
+    </tr>
+    <tr>
+      <td>单选框</td>
+      <td>Radiobox</td>
+    </tr>
+    <tr>
+      <td>背景</td>
+      <td>Background</td>
+    </tr>
+    <tr>
+      <td>播放</td>
+      <td>Play</td>
+    </tr>
+    <tr>
+      <td>常见状态普通</td>
+      <td>Normal</td>
+    </tr>
+    <tr>
+      <td>获取焦点</td>
+      <td>Focused</td>
+    </tr>
+    <tr>
+      <td>已访问</td>
+      <td>Visited</td>
+    </tr>
+    <tr>
+      <td>默认</td>
+      <td>Default</td>
+    </tr>
+    <tr>
+      <td>按下</td>
+      <td>Pressed</td>
+    </tr>
+    <tr>
+      <td>点击</td>
+      <td>Highlight</td>
+    </tr>
+    <tr>
+      <td>禁用</td>
+      <td>Disabled</td>
+    </tr>
+    <tr>
+      <td>选中</td>
+      <td>Selected</td>
+    </tr>
+    <tr>
+      <td>悬停</td>
+      <td>Hover</td>
+    </tr>
+    <tr>
+      <td>错误</td>
+      <td>Eror</td>
+    </tr>
+    <tr>
+      <td>完成</td>
+      <td>Complete</td>
+    </tr>
+    <tr>
+      <td>空白</td>
+      <td>Blank</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="位置排序">位置排序</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>中文</th>
+      <th>英文</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>顶部</td>
+      <td>Top</td>
+    </tr>
+    <tr>
+      <td>底部</td>
+      <td>Bottom</td>
+    </tr>
+    <tr>
+      <td>第二</td>
+      <td>Second</td>
+    </tr>
+    <tr>
+      <td>页头</td>
+      <td>Header</td>
+    </tr>
+    <tr>
+      <td>中间</td>
+      <td>Middle</td>
+    </tr>
+    <tr>
+      <td>第一</td>
+      <td>First</td>
+    </tr>
+    <tr>
+      <td>最后</td>
+      <td>Last</td>
+    </tr>
+    <tr>
+      <td>页脚</td>
+      <td>Footer</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="英文缩写">英文缩写</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>英文缩写</th>
+      <th>英文</th>
+      <th>中文</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>bg</td>
+      <td>background</td>
+      <td>背景</td>
+    </tr>
+    <tr>
+      <td>logo</td>
+      <td>logo</td>
+      <td>标志</td>
+    </tr>
+    <tr>
+      <td>navbar</td>
+      <td>navbar</td>
+      <td>导航栏</td>
+    </tr>
+    <tr>
+      <td>login</td>
+      <td>login</td>
+      <td>登陆</td>
+    </tr>
+    <tr>
+      <td>tabbar</td>
+      <td>tabbar</td>
+      <td>标签栏</td>
+    </tr>
+    <tr>
+      <td>register</td>
+      <td>register</td>
+      <td>注册</td>
+    </tr>
+    <tr>
+      <td>statusbar</td>
+      <td> </td>
+      <td>状态栏</td>
+    </tr>
+    <tr>
+      <td>refresh</td>
+      <td> </td>
+      <td>刷新</td>
+    </tr>
+    <tr>
+      <td>toolbar</td>
+      <td> </td>
+      <td>工具栏</td>
+    </tr>
+    <tr>
+      <td>banner</td>
+      <td> </td>
+      <td>广告</td>
+    </tr>
+    <tr>
+      <td>searchbar</td>
+      <td> </td>
+      <td>搜索栏</td>
+    </tr>
+    <tr>
+      <td>link(链接)</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>btn</td>
+      <td>button</td>
+      <td>按钮</td>
+    </tr>
+    <tr>
+      <td>user</td>
+      <td> </td>
+      <td>用户</td>
+    </tr>
+    <tr>
+      <td>img</td>
+      <td>image</td>
+      <td>图片</td>
+    </tr>
+    <tr>
+      <td>download</td>
+      <td> </td>
+      <td>下载</td>
+    </tr>
+    <tr>
+      <td>msg</td>
+      <td>message</td>
+      <td>提示信息</td>
+    </tr>
+    <tr>
+      <td>ok</td>
+      <td> </td>
+      <td>确定</td>
+    </tr>
+    <tr>
+      <td>pop</td>
+      <td>pop up</td>
+      <td>弹出</td>
+    </tr>
+    <tr>
+      <td>cancel</td>
+      <td> </td>
+      <td>取消</td>
+    </tr>
+    <tr>
+      <td>icon</td>
+      <td> </td>
+      <td>图标</td>
+    </tr>
+    <tr>
+      <td>close</td>
+      <td> </td>
+      <td>关闭</td>
+    </tr>
+    <tr>
+      <td>back</td>
+      <td> </td>
+      <td>返回</td>
+    </tr>
+    <tr>
+      <td>min</td>
+      <td>minimize</td>
+      <td>最小化</td>
+    </tr>
+    <tr>
+      <td>edit</td>
+      <td> </td>
+      <td>编辑</td>
+    </tr>
+    <tr>
+      <td>max</td>
+      <td>maximize</td>
+      <td>最大化</td>
+    </tr>
+    <tr>
+      <td>content</td>
+      <td> </td>
+      <td>内容</td>
+    </tr>
+    <tr>
+      <td>menu</td>
+      <td> </td>
+      <td>菜单</td>
+    </tr>
+    <tr>
+      <td>note</td>
+      <td> </td>
+      <td>注释</td>
+    </tr>
+    <tr>
+      <td>add</td>
+      <td> </td>
+      <td>添加</td>
+    </tr>
+    <tr>
+      <td>title</td>
+      <td> </td>
+      <td>标题</td>
+    </tr>
+    <tr>
+      <td>delete</td>
+      <td> </td>
+      <td>删除</td>
+    </tr>
+    <tr>
+      <td>sign</td>
+      <td> </td>
+      <td>标记</td>
+    </tr>
+    <tr>
+      <td>waiting</td>
+      <td> </td>
+      <td>等待</td>
+    </tr>
+    <tr>
+      <td>view</td>
+      <td> </td>
+      <td>视图</td>
+    </tr>
+    <tr>
+      <td>loading</td>
+      <td> </td>
+      <td>加载</td>
+    </tr>
+    <tr>
+      <td>tableview</td>
+      <td> </td>
+      <td>表视图</td>
+    </tr>
+    <tr>
+      <td>install</td>
+      <td> </td>
+      <td>安装</td>
+    </tr>
+    <tr>
+      <td>activityview</td>
+      <td> </td>
+      <td>活动视图</td>
+    </tr>
+    <tr>
+      <td>uninstall</td>
+      <td> </td>
+      <td>卸载</td>
+    </tr>
+    <tr>
+      <td>alertview</td>
+      <td> </td>
+      <td>提醒视图</td>
+    </tr>
+    <tr>
+      <td>search</td>
+      <td> </td>
+      <td>搜索</td>
+    </tr>
+    <tr>
+      <td>panel</td>
+      <td> </td>
+      <td>面板</td>
+    </tr>
+    <tr>
+      <td>pause</td>
+      <td> </td>
+      <td>暂停</td>
+    </tr>
+    <tr>
+      <td>sheet</td>
+      <td> </td>
+      <td>弹出面板</td>
+    </tr>
+    <tr>
+      <td>continue</td>
+      <td> </td>
+      <td>继续</td>
+    </tr>
+    <tr>
+      <td>home</td>
+      <td> </td>
+      <td>首页</td>
+    </tr>
+    <tr>
+      <td>mask</td>
+      <td> </td>
+      <td>蒙板</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="启动界面命名规则">启动界面命名规则</h3>
+<ul>
+  <li>default＿image.png（启动图片）</li>
+  <li>default＿logo.png（启动logo)</li>
+</ul>
+
+<h3 id="引导页面命名规则">引导页面命名规则</h3>
+<ul>
+  <li>link＿btn.png(引导页按钮)</li>
+</ul>
+
+<h3 id="登陆界面命名规则">登陆界面命名规则</h3>
+<ul>
+  <li>login＿bg.png（登陆背景)</li>
+  <li>login＿logo.png（登陆logo）</li>
+  <li>login＿input.png（登陆界面输入框）</li>
+  <li>logininput＿pre.png（输入框选中状态)</li>
+  <li>login＿bt.png（登陆按钮）</li>
+  <li>login＿btn_pre.png（登陆按钮选中状态）</li>
+</ul>
+
+<h3 id="注册界面命名规则">注册界面命名规则</h3>
+<ul>
+  <li>register＿bg.png（注册背景）</li>
+  <li>register＿input.png（输入框）</li>
+  <li>register＿input＿pre.png（输入框选中状态）</li>
+  <li>register＿btn.png（注册按钮）</li>
+  <li>register＿btn＿pre.png（注册按钮选中状态）</li>
+</ul>
+
+<h3 id="导航栏按钮命名规则">导航栏按钮命名规则</h3>
+<p>nav＿(功能描述).png</p>
+
+<p>如：</p>
+
+<ul>
+  <li>nav＿menu＿default.png</li>
+  <li>nav＿menu＿pre.png</li>
+</ul>
+
+<p>同一按钮选中前后两种状态命名</p>
+
+<h3 id="左侧导航切图命名规则">左侧导航切图命名规则</h3>
+<p>leftbar＿(功能描述)png
+如:</p>
+
+<ul>
+  <li>leftbar＿info.png</li>
+  <li>leftbar＿info＿pre.png(个人中心)</li>
+</ul>
+
+<h3 id="菜单按钮命名规则">菜单按钮命名规则</h3>
+
+<p>tab（功能描述）.png
+如:</p>
+
+<ul>
+  <li>tabset.png</li>
+  <li>nav＿set＿pre.png（tabbar标签栏）（设置）</li>
+</ul>
+
+<h3 id="菜单按钮命名规则-1">菜单按钮命名规则</h3>
+<p>home(界面名称)_(功能属性简写+描述).png</p>
+
+<p>如:
+home＿btn＿recommended.png（推荐）</p>
+
+<p>部分功能属性简写:</p>
+
+<ul>
+  <li>按钮:btn</li>
+  <li>按钮文字:btntext</li>
+  <li>复选框:chb（check box）</li>
+  <li>背景:bg</li>
+  <li>单选框:rb（radio box）</li>
+  <li>下拉:cbb（combobox）</li>
+  <li>输入:ip（input）</li>
+</ul>
+
+<h3 id="列表页命名规则">列表页命名规则</h3>
+
+<p>list＿(功能属性+描述).png</p>
+
+<p>如: listmenucollect.png（列表页收藏按钮）</p>
+
+<h3 id="内容页可重复使用按钮命名规则">内容页：可重复使用按钮命名规则</h3>
+
+<p>btn(功能属性或色彩均可).png</p>
+
+<h3 id="参考资料">参考资料</h3>
+
+<p><a href="https://www.zcool.com.cn/article/ZODU0NDg4.html">APP命名规范</a></p>
+
+
+    </article>
+
+    
+    <div class="social-share-wrapper">
+      <div class="social-share"></div>
+    </div>
+    
+  </div>
+<div class="tabBar">
+    <div class="tabBar_icon">
+        <li><a href="/index.html"><span class="iconfont tabicon iconfavico"></span></a></li>
+        <li><a  href="/tags.html"><span class="iconfont tabicon iconnote"></span></a></li>
+       <li><a href="https://github.com/alexdesign001" target="_blank"><span class="iconfont tabicon iconuser"></span></a></li>
+    </div>
+</div>
+  <section class="author-detail">
+    <section class="post-footer-item author-card">
+      <div class="avatar">
+        <img src="/assets/img/profile.png" alt="">
+      </div>
+      <div class="author-name" rel="author">Alex Hu</div>
+      <div class="bio">
+        <p>UI设计师，热爱生活&设计，简单乐观爱创造</p>
+      </div>
+      
+      <ul class="sns-links">
+        
+        <li>
+          <a href="//github.com/alexdesign001" target="_blank">
+                    <i class="iconfont icon-github"></i>
+                </a>
+        </li>
+        
+      </ul>
+      
+    </section>
+    <section class="post-footer-item read-next">
+      
+      <div class="read-next-item">
+        <a href="/2020/04/02/%E5%88%87%E5%9B%BE%E8%A7%84%E8%8C%83.html" class="read-next-link"></a>
+        <section>
+          <span>切图规范</span>
+          <p>  设计切图输出的目的是跟开发工程师团队协同工作，那么在团队协作过程中首先应该保证切图输出能够满足工程师设计效果图...</p>
+        </section>
+        
+        <div class="filter"></div>
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586709492069&di=fcedde0cc89362f6f9c9d0e8d982b427&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20190116%2Fcd8c164856fa4b709769058e477adc43.png" alt="">
+        
+     </div>
+      
+
+      
+      <div class="read-next-item">
+        <a href="/2020/04/01/%E8%8B%B9%E6%9E%9CiOS-13-%E6%96%B0%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83%E5%85%A8%E9%9D%A2%E8%A7%A3%E6%9E%90.html" class="read-next-link"></a>
+          <section>
+            <span>苹果iOS 13 设计规范解析</span>
+            <p>  iOS 13已经发布，结合WWDC 2019的官方视频与苹果官方资料，为大家带来最全面细致的iOS 13交互设...</p>
+          </section>
+          
+          <div class="filter"></div>
+          <img src="https://d-image.i4.cn/i4web/image//upload/20190416/1555376528423024934.jpg" alt="">
+          
+      </div>
+      
+    </section>
+    
+  </section>
+
+  <footer class="g-footer">
+  <section>Alex Design - Creativity Never Sleeps ©
+  
+  
+  2020
+  </section>
+  
+</footer>
+
+
+  <script src="/assets/js/social-share.min.js"></script>
+  <script>
+    socialShare('.social-share', {
+      sites: [
+        
+          'wechat'
+          ,
+          
+        
+          'weibo'
+          ,
+          
+        
+          'douban'
+          ,
+          
+        
+          'twitter'
+          
+        
+      ],
+      wechatQrcodeTitle: "分享到微信朋友圈",
+      wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+    });
+  </script>
+
+  
+
+  <script src="/assets/js/prism.js"></script>
+  <script src="/assets/js/index.min.js"></script>
+</body>
+
+</html>

@@ -5,9 +5,1412 @@
     <description>Alex Hu，90后，UI设计师，热爱技术&amp;设计。很高兴能在这里与你分享我对设计和生活的思考。</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 12 Apr 2020 21:07:09 +0800</pubDate>
-    <lastBuildDate>Sun, 12 Apr 2020 21:07:09 +0800</lastBuildDate>
+    <pubDate>Sun, 12 Apr 2020 21:50:27 +0800</pubDate>
+    <lastBuildDate>Sun, 12 Apr 2020 21:50:27 +0800</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>Android点九图</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;在android平台下使用点九PNG技术，可以将图片横向和纵向同时进行拉伸，以实现在多分辨率下的完美显示效果。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;智能手机中有自动横屏的功能,同一幅界面会在随着手机(或平板电脑)中的方向传感器的参数不同而改变显示的方向,在界面改变方向后,界面上的图形会因为长宽的变化而产生拉伸,造成图形的失真变形。&lt;/p&gt;
+
+&lt;p&gt;我们都知道android平台有多种不同的分辨率，很多控件的切图文件在被放大拉伸后，边角会模糊失真。&lt;/p&gt;
+
+&lt;p&gt;在android平台下使用点九PNG技术，可以将图片横向和纵向同时进行拉伸，以实现在多分辨率下的完美显示效果。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img.zcool.cn/community/018eb75e143f97a80120a895fd9bfe.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;左上两条线是限制可拉伸区域，两者的原理是一样的，当没有左边黑线时，纵向拉伸会造成圆角变形。&lt;/p&gt;
+
+&lt;p&gt;左边加一条黑线或黑点，相当于把原来的图形分为三个部分，纵向拉伸时，只会拉伸黑线的部分，这样无论拉伸到多高，都不会变形。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img.zcool.cn/community/01299c5e143f89a80120a89535b8c9.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;右下两条线是控制内容区域的，以右边线为例，如果没有右边那条黑线，相当于没有限制，在切图上输入内容，内容会撑满整个背景图。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img.zcool.cn/community/0182b55e143f6aa8012165182a4ab8.png&quot; alt=&quot;&quot; /&gt;￼&lt;/p&gt;
+
+&lt;p&gt;加上右边黑线后，相当于把原来的图形分为三个部分，内容只显示在中间区域。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img.zcool.cn/community/01bd9c5e153baba80120a8956c02fe.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;上右两边都加上黑线后&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img.zcool.cn/community/017fff5e144176a80120a8956f8c0c.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;最后导出一张后缀名为“ *.9.png ”格式的图片，图片上下左右各增加了1px的黑线，其中，左上为1 * 1的黑线，黑线颜色必须是#000000，透明度100%，并且图像四边不能出现半透明像素，黑线离图形要有1px的间距。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img.zcool.cn/community/0176765e1539c5a801216518299c08.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 02 Apr 2020 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2020/04/02/%E5%AE%89%E5%8D%93%E7%82%B9%E4%B9%9D%E5%9B%BE.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2020/04/02/%E5%AE%89%E5%8D%93%E7%82%B9%E4%B9%9D%E5%9B%BE.html</guid>
+        
+        <category>移动端</category>
+        
+        
+        <category>移动端</category>
+        
+      </item>
+    
+      <item>
+        <title>切图规范</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;设计切图输出的目的是跟开发工程师团队协同工作，那么在团队协作过程中首先应该保证切图输出能够满足工程师设计效果图的高保真还原的需求。其次切图输出应该尽可能的降低工程师的开发工作量，避免因切图输出而导致的不必要的工作量。最后输出的切图应当尽可能的压缩大小，以降低APP的总大小，提升用户使用时的加载速度。所以切图输出应当做到切图精准、便与协同和压缩大小。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;一切图原则&quot;&gt;一、切图原则&lt;/h2&gt;
+&lt;p&gt;设计切图输出的目的是跟开发工程师团队协同工作，那么在团队协作过程中首先应该保证切图输出能够满足工程师设计效果图的高保真还原的需求。其次切图输出应该尽可能的降低工程师的开发工作量，避免因切图输出而导致的不必要的工作量。最后输出的切图应当尽可能的压缩大小，以降低APP的总大小，提升用户使用时的加载速度。所以切图输出应当做到切图精准、便与协同和压缩大小。&lt;/p&gt;
+
+&lt;h2 id=&quot;二双数&quot;&gt;二、双数&lt;/h2&gt;
+
+&lt;p&gt;众所周知智能手机的屏幕大小都是双数值，比如 iphone7的屏幕分辨率是750＊1334p切图资源尺寸必须为双数是为了保证切图资源在工程师开发时是高清显示因为1px是智能手机能够识别的最小单位，换句话说就是1像素不能在智能手机被分为两份。所以如果是单数切图的话手机系统就会自动拉伸切图从而导致切图元素边缘模糊，进而造成开发出来的APP界面效果与原设计效果差距甚远。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/03/14/h43FdqAyKZUXfHs.jpg&quot; alt=&quot;Alt&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;三适配&quot;&gt;三、适配&lt;/h2&gt;
+
+&lt;p&gt;目前主流的ios设备有 iPhone6/7 iPhone6/7 plus iPhone5/seipad/iPad mini iPad Pro这5种，他们都采用了 retina视网膜屏幕，其中除了 iPhone6/7plus使用了3倍率的分辨率之外，其他都是2倍率，即前者的分辨率是后者的1.5倍，无论是在屏幕分辨率、栏高度，还是在应用图标，设计师交给开发人员的切片大小，前者始终是后者的1.5倍，并且分别以＠3×和＠2在文件名结尾命名，程序再根据不同的分辨率自动加载＠2或者＠3的切片。&lt;/p&gt;
+
+&lt;p&gt;可以简单的理解为倍数关系（其实是为了满足不同分辨率，我觉得不用过于深究），如果你使用 iPhone6尺寸做设计稿，那么切片输出就是＠2x，缩小2倍就是＠1，扩大1.5倍就是＠3了。理论上，为了达到最好的视觉效果，你应该输出3套尺寸，推荐输出3种尺寸的切图资源。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img.zcool.cn/community/01b7f85c340aaca8012029acb0130e.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;四压缩&quot;&gt;四、压缩&lt;/h2&gt;
+
+&lt;p&gt;为了提升APP使用速度，尽量降低图片文件大小。&lt;/p&gt;
+
+&lt;p&gt;在切图资源输出中图标切图输出是很重要的部分，比如新手引导页、启动页面、默认图、广告图等图片切图一般情况下文件大小都是相对较大，不利于用户在使用app过程中加载页面。因此图片切图要尽量压缩图片文件的大小（文加压缩的方法在文章后面有详细讲解）。&lt;/p&gt;
+
+&lt;p&gt;在线压缩图片神器tinypng : https: //tinypng.com/）&lt;/p&gt;
+
+&lt;p&gt;在线压缩图片工具“Tinypng＂利用“Tinypng＂智能在线压缩工具，将较大的图片切图在不影响图片质量的情况下压缩。 Tinypng在线压缩工具可以在图片质量和文件大小上找到一个完美的平衡，基本不会降低图片视觉质量但却会极大的压缩图片大小。 Tinypng是非常值得推荐的图片压缩利器，也是现在被运用最广广泛的在线压缩工具。&lt;/p&gt;
+
+&lt;h2 id=&quot;五图片&quot;&gt;五、图片&lt;/h2&gt;
+
+&lt;p&gt;图片类切图主要是指启动页、新手引导页、默认提示、广告图等需要完整切图的图片。同一类型的图片切图一般要保持同样的大小尺寸以便于工程师开发使用。另外一般这些切图的文件较大，在切图过程中需要控制切图文件的大小。&lt;/p&gt;
+
+&lt;h4 id=&quot;全屏类切图&quot;&gt;全屏类切图&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/03/14/gVEb8Fw4iLXM6H7.jpg&quot; alt=&quot;Alt&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;局部类切图&quot;&gt;局部类切图&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/03/14/vTxUXrsinQWjwKD.jpg&quot; alt=&quot;Alt&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;动效元素切图&quot;&gt;动效元素切图&lt;/h4&gt;
+
+&lt;p&gt;动效元素切图一般是指在APP中加载动效所需要的切图元素，比如QQ的下拉加载动效就是由若千张切图连续播放形成的动画效果。这些图片按照序号排序播放我们也把他们叫做序列切图。序列切图是在做U设计的过程中必然会遇到的问题，这种切图要求要保证动效播放时的流畅自然，是需要设计师仔细斟酌的。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/03/14/iTMaUskVuelKEAP.jpg&quot; alt=&quot;Alt&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;六热区&quot;&gt;六、热区&lt;/h2&gt;
+
+&lt;p&gt;可点击部件应当注意其点击区域不小于88px.
+44px的点击区域 iphone数值是在3（320×480p×）普通显示屏下制定出来的，在手机分辨率大幅提升的现在，这个数据自然要与时俱进。在 iphone77（750＊1334p×）的 Retina显示屏下44p点击区域就变为了88px。但无论是320480px尺寸下的44px还是在750＊134px尺寸下的88p×换算成物理尺寸后大致是在7mm-9mm之间。早在人机工程学的研究中曾得出结论，认为人类舒适的触击范围需在7-9mm的大小所以在is官方的空间尺寸也经常出现88px的数值，比如菜单栏的高度便是88px。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/03/14/3UuHhwFbzt15jPv.jpg&quot; alt=&quot;Alt&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;所以现在做设计，为了图标精致，你可以把图标做的小一些，但是切图输出的时候，要考虑用户点击难易度的问题，所以，切图的时候，涉及到需要点击的小图标的时候，普通屏幕还是切44p大小，高清屏就需要切88p×，不够的地方用透明区域补全，否则用户点击的时候会比较困难，会很不灵敏。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/03/14/ds2hxLl8yzjkYFn.jpg&quot; alt=&quot;Alt&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;切图时先和工程师沟通好，是只切图标大小，还是点击区域一起切进去。如果是点击区域一起切进去，先和工程师沟通好，有必要在页面上标明。&lt;/p&gt;
+
+&lt;h2 id=&quot;七图标&quot;&gt;七、图标&lt;/h2&gt;
+
+&lt;h4 id=&quot;图标的提交尺寸&quot;&gt;图标的提交尺寸&lt;/h4&gt;
+
+&lt;p&gt;iOS系统可以自动把图片裁剪为圆角,所以提交图标的时候,你只需要提交正方形的PNG图片即可。因为需要的图标非常多，不可能全部加进去,只能选择最好的尺寸，我们的工程师要求我提供以下图标尺寸:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;尺寸&lt;/th&gt;
+      &lt;th&gt;用途&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1024*1024&lt;/td&gt;
+      &lt;td&gt;Retina APP Icon for APP Store(高清屏的 APP Store)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;512*512&lt;/td&gt;
+      &lt;td&gt;APP Icon for APP Store(普通屏幕的 APP Store)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;120*120&lt;/td&gt;
+      &lt;td&gt;6以及以下的主屏幕尺寸&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;180*180&lt;/td&gt;
+      &lt;td&gt;6 plus的主屏幕图标尺寸&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;58*58&lt;/td&gt;
+      &lt;td&gt;Settings on devices with retina display&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;87*87&lt;/td&gt;
+      &lt;td&gt;]Settings on iPhone 6 Plus&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;80*80&lt;/td&gt;
+      &lt;td&gt;Spotlight on devices with retina display&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;在提案设计一般可以采用512px512px角114px来检测效果单位是px&quot;&gt;在提案设计一般可以采用512px*512px(角114px),来检测效果,单位是px&lt;/h4&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;设备&lt;/th&gt;
+      &lt;th&gt;App Store&lt;/th&gt;
+      &lt;th&gt;APP&lt;/th&gt;
+      &lt;th&gt;Spotlight&lt;/th&gt;
+      &lt;th&gt;设置&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;iPhone6/7plus&lt;/td&gt;
+      &lt;td&gt;1024*1024px&lt;/td&gt;
+      &lt;td&gt;180*180p(圆角39)&lt;/td&gt;
+      &lt;td&gt;120*120px&lt;/td&gt;
+      &lt;td&gt;87*87px&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;iPhone 6/7&lt;/td&gt;
+      &lt;td&gt;1024*1024p×&lt;/td&gt;
+      &lt;td&gt;120*120px(圆角26)&lt;/td&gt;
+      &lt;td&gt;80*80p×&lt;/td&gt;
+      &lt;td&gt;58*58px&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;iPhone5/5s/se&lt;/td&gt;
+      &lt;td&gt;1024*1024p×&lt;/td&gt;
+      &lt;td&gt;10*120px(圆角26)&lt;/td&gt;
+      &lt;td&gt;80*80p×&lt;/td&gt;
+      &lt;td&gt;58*58px&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;iPad&lt;/td&gt;
+      &lt;td&gt;1024*1024p×&lt;/td&gt;
+      &lt;td&gt;152*152px(圆角34)&lt;/td&gt;
+      &lt;td&gt;80*80p×&lt;/td&gt;
+      &lt;td&gt;58*58px&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;iPad Pro&lt;/td&gt;
+      &lt;td&gt;1024*1024p×&lt;/td&gt;
+      &lt;td&gt;167*167px(圆角37)&lt;/td&gt;
+      &lt;td&gt;80*80p×&lt;/td&gt;
+      &lt;td&gt;80*80px&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;iPhone图标现在给开发的不需要设计圆角,开发时圆角系统会自动预留,也就是全方形即可。&lt;/p&gt;
+
+&lt;h2 id=&quot;八安卓&quot;&gt;八、安卓&lt;/h2&gt;
+
+&lt;h4 id=&quot;普遍情况&quot;&gt;普遍情况&lt;/h4&gt;
+&lt;p&gt;公司受时间以及资金预算的限制，先做的设计稿子，定稿；之后更改尺寸（可能还不改尺寸），调一调界面各元素位置，给 Android使用。&lt;/p&gt;
+
+&lt;h4 id=&quot;基础概念&quot;&gt;基础概念&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;手机分辨率:&lt;/strong&gt;分辨率就是手机屏幕的像素点数，类似480＊800、720＊1280、1080＊1920这个意思&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;手机屏幕尺寸:&lt;/strong&gt;手机对角线的物理尺寸，单位是英寸；比如小米4的尺寸就是5英寸， IPhone6的尺寸就是4.7英&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;手机屏幕密度:&lt;/strong&gt;dpi或PPl（dPl是 Dot Per Inch即每英寸拥有多少点，PPl是 Pixel Per Inch即每英寸拥有的像素数，PP=DP电子屏幕上所说的DPI和PP是同样的概念），每英寸的像素点数，数值越高显示的越逼真细腻。下面是屏幕密度的计算方法~&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/03/14/2waRuGXiCVjBT98.jpg&quot; alt=&quot;Alt&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;android自身设定的屏幕密度&quot;&gt;Android自身设定的屏幕密度&lt;/h4&gt;
+&lt;p&gt;安卓尺寸众多，按每个屏幕去适配肯定不现实；所以为了解决这个问题，安卓手机屏幕有自己初始的固定密度，安卓会根据这些屏幕不同的密度自己进行适配。以下是 Android的密度划分以及代表的分辨率。&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;密度&lt;/th&gt;
+      &lt;th&gt;LDPI&lt;/th&gt;
+      &lt;th&gt;MDPI&lt;/th&gt;
+      &lt;th&gt;HDPI&lt;/th&gt;
+      &lt;th&gt;XHDPI&lt;/th&gt;
+      &lt;th&gt;XXHDPI&lt;/th&gt;
+      &lt;th&gt;XXXHDPI&lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;密度数&lt;/td&gt;
+      &lt;td&gt;120dpi&lt;/td&gt;
+      &lt;td&gt;160dpi&lt;/td&gt;
+      &lt;td&gt;20dpi&lt;/td&gt;
+      &lt;td&gt;320dpi&lt;/td&gt;
+      &lt;td&gt;480dpi&lt;/td&gt;
+      &lt;td&gt;64dpi&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;分辨率&lt;/td&gt;
+      &lt;td&gt;240＊320&lt;/td&gt;
+      &lt;td&gt;320＊480&lt;/td&gt;
+      &lt;td&gt;480＊800&lt;/td&gt;
+      &lt;td&gt;720＊1280&lt;/td&gt;
+      &lt;td&gt;1080＊1920&lt;/td&gt;
+      &lt;td&gt;3840×2160&lt;/td&gt;
+      &lt;td&gt;平板电视的4K分辨率&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;市场比&lt;/td&gt;
+      &lt;td&gt;消失了&lt;/td&gt;
+      &lt;td&gt;目前少见&lt;/td&gt;
+      &lt;td&gt;常见&lt;/td&gt;
+      &lt;td&gt;常见&lt;/td&gt;
+      &lt;td&gt;常见&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1dp对应像素&lt;/td&gt;
+      &lt;td&gt;0.75px&lt;/td&gt;
+      &lt;td&gt;1px&lt;/td&gt;
+      &lt;td&gt;1.5px&lt;/td&gt;
+      &lt;td&gt;2px&lt;/td&gt;
+      &lt;td&gt;3px&lt;/td&gt;
+      &lt;td&gt;4px&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;目前 Android设备的主流分辨率分别是720＊1280p×1080＊1920p×，480＊800px，为Android系统进行视觉适配的时候请注意，设计师只需要考虑设计 hdpi xhdpi xxhdpi这三种分辨率即可，程序会自动为其他分辨率进行适配。&lt;/p&gt;
+
+&lt;h4 id=&quot;android开发单位dp和sp&quot;&gt;Android开发单位DP和SP&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;dp:&lt;/strong&gt;安卓专用长度单位，其实相当于一种比例换算单位，它可以保证控件在不同密度的屏幕上按照这个比例单位换算显示相同的效果。以160dp屏幕为标注，则1d=1PX
+计算公式: dp dpi/160=p
+（例:以720×1280p×（320dpi）为例计算1dp320dpi/160=2px）&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;sp:&lt;/strong&gt;android开发使用的文字单位，和dp差不多，也是为了保证文字在不同密度的屏幕上显示相同的效果。以160DP屏幕为标注，则1SP=1PX&lt;/p&gt;
+
+&lt;p&gt;计算公式: sp dpi/160=p
+（例:以720×1280p×（320dpi）为例计算1sp×320dpi/160=2px）&lt;/p&gt;
+
+&lt;h4 id=&quot;android设计稿尺寸&quot;&gt;Android设计稿尺寸&lt;/h4&gt;
+&lt;p&gt;XHDP下，倍数关系为2（1dp=2px），而且XHDP就目前的市场来看，还算属于主流机型；这样无论是标注，还是主流机型都能兼顾的到，所以推荐使用720＊1280尺寸做设计稿，这样即使你标注的是p，工程师也可以换算的比较方便。&lt;/p&gt;
+
+&lt;h5 id=&quot;界面设计控件尺寸&quot;&gt;界面设计控件尺寸:&lt;/h5&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;分辨率&lt;/th&gt;
+      &lt;th&gt;DPI&lt;/th&gt;
+      &lt;th&gt;状态栏高度&lt;/th&gt;
+      &lt;th&gt;导航栏高度&lt;/th&gt;
+      &lt;th&gt;标签栏高度&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;720＊1280&lt;/td&gt;
+      &lt;td&gt;320dpi&lt;/td&gt;
+      &lt;td&gt;50px&lt;/td&gt;
+      &lt;td&gt;96px&lt;/td&gt;
+      &lt;td&gt;96px&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1080＊1920&lt;/td&gt;
+      &lt;td&gt;480dpi&lt;/td&gt;
+      &lt;td&gt;75px&lt;/td&gt;
+      &lt;td&gt;144px&lt;/td&gt;
+      &lt;td&gt;144px&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;因为在安卓中这些控件高度都能用程序自定义，所以并没有很严格的尺寸数值。&lt;/p&gt;
+
+&lt;h4 id=&quot;android启动图标&quot;&gt;Android启动图标&lt;/h4&gt;
+
+&lt;p&gt;启动图标（ launcher icon）在&lt;主屏幕&gt;和&lt;所有应用&gt;中显示；设备上图标大小是48＊48dp电子市场中图标大小是512＊512px
+安卓的图标相对iOS来说较少，我们只需提供以下几个尺寸就可以了，但是需要提高2套，圆角和直角各一套，因为有的地方都会用到。（圆角没固定要求）&lt;/所有应用&gt;&lt;/主屏幕&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;512px＊512px&lt;/li&gt;
+  &lt;li&gt;192px＊192px&lt;/li&gt;
+  &lt;li&gt;144px＊144px&lt;/li&gt;
+  &lt;li&gt;96px＊96px&lt;/li&gt;
+  &lt;li&gt;72px＊72px&lt;/li&gt;
+  &lt;li&gt;48px＊48px&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;一键生成所有尺寸图标神器 https: //icon. wuruihong.com）&lt;/p&gt;
+
+&lt;h4 id=&quot;android图标尺寸表&quot;&gt;Android图标尺寸表&lt;/h4&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;分辨率&lt;/th&gt;
+      &lt;th&gt;启动图标&lt;/th&gt;
+      &lt;th&gt;操作栏图标&lt;/th&gt;
+      &lt;th&gt;上下文图标&lt;/th&gt;
+      &lt;th&gt;系统通知&lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;mdpi&lt;/td&gt;
+      &lt;td&gt;320＊480px&lt;/td&gt;
+      &lt;td&gt;48＊48px&lt;/td&gt;
+      &lt;td&gt;32＊32px&lt;/td&gt;
+      &lt;td&gt;16＊16px&lt;/td&gt;
+      &lt;td&gt;24＊24px&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;hdpi&lt;/td&gt;
+      &lt;td&gt;480＊800px&lt;/td&gt;
+      &lt;td&gt;72＊72px&lt;/td&gt;
+      &lt;td&gt;48＊48px&lt;/td&gt;
+      &lt;td&gt;24＊24px&lt;/td&gt;
+      &lt;td&gt;36＊36px&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;xhdpi&lt;/td&gt;
+      &lt;td&gt;720＊1280px&lt;/td&gt;
+      &lt;td&gt;96＊96px&lt;/td&gt;
+      &lt;td&gt;64＊64px&lt;/td&gt;
+      &lt;td&gt;32＊32px&lt;/td&gt;
+      &lt;td&gt;48＊48px&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;xxhdpi&lt;/td&gt;
+      &lt;td&gt;1080＊1920px&lt;/td&gt;
+      &lt;td&gt;144＊144px&lt;/td&gt;
+      &lt;td&gt;96＊96px&lt;/td&gt;
+      &lt;td&gt;48＊48px&lt;/td&gt;
+      &lt;td&gt;72＊72px&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;xxxhdpi&lt;/td&gt;
+      &lt;td&gt;1440＊2560px&lt;/td&gt;
+      &lt;td&gt;192＊192px&lt;/td&gt;
+      &lt;td&gt;128＊128px&lt;/td&gt;
+      &lt;td&gt;64＊64px&lt;/td&gt;
+      &lt;td&gt;96＊96px&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;48dp原则&quot;&gt;48dp原则&lt;/h4&gt;
+&lt;p&gt;一般来说，所有可操作元素的最小点击区域为48＊48dp，无论是用户头像、小图标还是按钮、都应保持统一的点击热区。它能保证统一的图片尺寸，和用户不用精准点击也能轻易操作成功。48dp转化为一个物理尺寸约9毫米。建议的目标大小为7-10毫米的范围，这是一个用户手指能准并且舒适触摸的区域。&lt;/p&gt;
+
+&lt;p&gt;如果你设计的元素高和宽至少48dp，你就可以保证:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;触摸目标绝不会比建议的最低目标（7mm）小，无论在什么屏幕上显示。&lt;/li&gt;
+  &lt;li&gt;在整体信息密度和触摸目标大小之间取得了一个很好的平衡。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;安卓设计使用的字体&quot;&gt;安卓设计使用的字体:&lt;/h4&gt;
+
+&lt;p&gt;西文字体: Roboto Android西文默认字体。
+在 Android5.0之后，使用的是思源黑体，思源黑体是 AdobeGoogle和领导开发的开源字体，支持繁简日韩，有7种字体粗细。&lt;/p&gt;
+
+&lt;p&gt;在720＊1280px的 xhdpi分辨率下，规定导航标题18sp、文章标题或图标名称16sp、文本字体14sp、注释最小字体12sp在此分辨率下的换算关系是1sp=2px，所以在实际界面设计时请注意正确标注和使用。&lt;/p&gt;
+
+&lt;h4 id=&quot;android文本规范表7201280p&quot;&gt;Android文本规范表。（720＊1280p×）&lt;/h4&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;应用场景&lt;/th&gt;
+      &lt;th&gt;文字大小（sp）&lt;/th&gt;
+      &lt;th&gt;文字大小（px）&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;导航标题&lt;/td&gt;
+      &lt;td&gt;18sp&lt;/td&gt;
+      &lt;td&gt;36px&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;文章标题或图标名称&lt;/td&gt;
+      &lt;td&gt;16sp&lt;/td&gt;
+      &lt;td&gt;32px&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;文本字体&lt;/td&gt;
+      &lt;td&gt;14sp&lt;/td&gt;
+      &lt;td&gt;28px&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;注释最小字体&lt;/td&gt;
+      &lt;td&gt;12sp&lt;/td&gt;
+      &lt;td&gt;24px&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;点九切图&quot;&gt;点九切图&lt;/h4&gt;
+&lt;p&gt;安卓平台的应用软件开发包的一种特殊的图片形式，文件扩展名为「.9.png」，故称为点9切图。运用点9图可以保证图片在不模糊变形的前提下做到自适应。点9图的出现是安卓机为了适配不同的手机分辨率的解决方案。另一个重要的作用就是可以减少不必要的图片文件大小，极大提升页面加载速度。&lt;/p&gt;
+
+&lt;p&gt;制作点九的软件是“DRAW9PATCH＂可以很方便的制作点九图并且可以预览切图后的开发效果十分方便。设计师的话也可以在PS中用铅笔工具绘制点九图。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/03/14/hE34wnevgZaSibC.jpg&quot; alt=&quot;Alt&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;点九图格式规定由左侧和上侧来控制图片的拉伸，右侧和下侧控制文字的显示区域。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;拉伸区域:&lt;/strong&gt;当实际程序中设定了对话框的宽高时，横向拉伸区域和纵向拉伸区域就会被拉伸成所需要的宽和高，呈现出于设计稿一样的视觉效果。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;内容区域:&lt;/strong&gt;为了让文字被输入框完整包裹，以达到显示效果的正常，所画黑线的区域就是你文字显示的区域，这样你的文字就不会超出对话框。&lt;/p&gt;
+
+&lt;h2 id=&quot;九蓝湖&quot;&gt;九、蓝湖&lt;/h2&gt;
+
+&lt;h4 id=&quot;自动切图&quot;&gt;自动切图&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;同时支持Mac和 Windows双系统&lt;/li&gt;
+  &lt;li&gt;同时支持P和 Sketch&lt;/li&gt;
+  &lt;li&gt;免费！&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;1photoshop用户&quot;&gt;1.Photoshop用户&lt;/h5&gt;
+&lt;p&gt;第一步:通过蓝湖插件在PS中标记你需要生成的切图
+第二步:通过蓝湖插件将页面上传至蓝湖
+第三步:在蓝湖Web端，双击设计图查看标注和切图，（查看所有元素的尺寸、字号、距离等信息，并可直接复制相应代码，一键下载切图文件）&lt;/p&gt;
+
+&lt;h5 id=&quot;2-sketch用户&quot;&gt;2. Sketch用户&lt;/h5&gt;
+&lt;p&gt;第一步:通过蓝湖插件在 Sketch中标记你需要生成的切图
+第二步:通过蓝湖插件将页面上传至蓝湖
+第三步:在蓝湖Web端，双击设计图查看标注和切图。（查看所有元素的尺寸、字号、距离等信息，并可直接复制相应代码，一键下载切图文件）&lt;/p&gt;
+
+&lt;p&gt;###参考资料
+&lt;a href=&quot;https://www.zcool.com.cn/article/ZODU0NDc2.html&quot;&gt;切图规范&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 02 Apr 2020 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2020/04/02/%E5%88%87%E5%9B%BE%E8%A7%84%E8%8C%83.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2020/04/02/%E5%88%87%E5%9B%BE%E8%A7%84%E8%8C%83.html</guid>
+        
+        <category>移动端</category>
+        
+        
+        <category>移动端</category>
+        
+      </item>
+    
+      <item>
+        <title>APP命名规范</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;有的公司命名规则可能有所不同，因此为了确保命名的正确性，建议设计师先去和合作的开发工程师沟通确认！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;概述&quot;&gt;概述&lt;/h3&gt;
+&lt;p&gt;有规范的命名可以极大的节省程序开发的时间成本，减少很多不必要的沟通与重复切图的概率，程序员完全可以直接使用的我们切片而不更改切片的名称，后期我们更换切图，只要切片名称不变，开发看都不用看直接替换就可以了。&lt;/p&gt;
+
+&lt;p&gt;有的公司命名规则可能有所不同，因此为了确保命名的正确性，建议设计师先去和合作的开发工程师沟通确认！&lt;/p&gt;
+
+&lt;h3 id=&quot;所有命名全部为小写英文字母&quot;&gt;所有命名全部为小写英文字母&lt;/h3&gt;
+
+&lt;p&gt;在程序员的代码里只有小写的英文字母，如果你给出的命名全是中文的，那么他们是一定会更改的，所以命名全部用小写的英文字母是最基本的规则。&lt;/p&gt;
+
+&lt;h3 id=&quot;命名格式&quot;&gt;命名格式&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;切片命名的通用规范是，界面功能状.png&lt;/strong&gt;
+（例如:一个首页的处于正常状态的确定按钮是home＿btn＿noro2x.png）&lt;/p&gt;
+
+&lt;p&gt;众所周知，一个大型项目会分很多模块，每个模块由不同的设计师来独立完成，还有人会专门管理公共的组件如 tabbar、 navbar等等，这种情况下就会分为两种切图，一种是通用类型的切图，还有一种就是各个模块特有的切图。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;通用切片命名格式:组件＿类别＿功能＿状态＠2x.png&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;举例: tabbar＿icon＿home default2x.png（对应中文:标签栏＿图标主页默认＠2xpng）&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;模块特有切图命名规则:模块类别功能状态＠2x.png&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;举例:mail＿iconsearchdefault＠2x.png（应的中文为:邮件图标＿搜索＿默认＠2xpng）&lt;/p&gt;
+
+&lt;p&gt;当然这两个例子都是比较基本的情况，有很多时候可能一个单词并不能清楚的描述功能，比如有两个名字相同的搜索图标，大小不一，那这种情况你就可以这样命名:mail＿iconsearch＿big＿ default＠2x.png，我们的原则就是清晰的表达出切片的具体内容并且没有重复的名称，希望大家能够活学活用。（注意，命名中不能含有空格！）&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/03/15/VrOfh48IaYjpn1C.jpg&quot; alt=&quot;Alt&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;常用英文单词&quot;&gt;常用英文单词&lt;/h4&gt;
+&lt;p&gt;如果所有命名都写为全称，名字就会特别长，所以我们可以将一些常用的英文单词进行缩写，减少工作成本与开发代码资源。至于怎么缩写，只要整个团队能够达成共识并且输出一份缩写清单，任何缩写规则都是可以的。常用的几大原则&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;较短的单词可通过去掉“元音”形成缩写&lt;/li&gt;
+  &lt;li&gt;较长的单词可取单词的头部几个字母形成缩写&lt;/li&gt;
+  &lt;li&gt;还有一些约定俗成的英文单词缩写&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;界面命名&quot;&gt;界面命名&lt;/h5&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;中文&lt;/th&gt;
+      &lt;th&gt;英文&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;整个主程序&lt;/td&gt;
+      &lt;td&gt;App&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;搜索结果&lt;/td&gt;
+      &lt;td&gt;Search results&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;活动&lt;/td&gt;
+      &lt;td&gt;Activity&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;信息&lt;/td&gt;
+      &lt;td&gt;Message&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;首页&lt;/td&gt;
+      &lt;td&gt;Home&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;应用详情&lt;/td&gt;
+      &lt;td&gt;App detail&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;探索&lt;/td&gt;
+      &lt;td&gt;Explore&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;音乐&lt;/td&gt;
+      &lt;td&gt;Music&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;软件&lt;/td&gt;
+      &lt;td&gt;Software&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;日历&lt;/td&gt;
+      &lt;td&gt;Calendar&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;联系人&lt;/td&gt;
+      &lt;td&gt;Contacts&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;新闻&lt;/td&gt;
+      &lt;td&gt;News&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;游戏&lt;/td&gt;
+      &lt;td&gt;Game&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;相机&lt;/td&gt;
+      &lt;td&gt;Camera&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;控制中心&lt;/td&gt;
+      &lt;td&gt;Control center&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;笔记&lt;/td&gt;
+      &lt;td&gt;Note&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;管理&lt;/td&gt;
+      &lt;td&gt;Management&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;照片&lt;/td&gt;
+      &lt;td&gt;Photo&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;健康&lt;/td&gt;
+      &lt;td&gt;Health&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;天气&lt;/td&gt;
+      &lt;td&gt;Weather&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;发现&lt;/td&gt;
+      &lt;td&gt;Find&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;视频&lt;/td&gt;
+      &lt;td&gt;Video&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;邮件&lt;/td&gt;
+      &lt;td&gt;Mail&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;手表&lt;/td&gt;
+      &lt;td&gt;watch&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;个人中心&lt;/td&gt;
+      &lt;td&gt;Personal center&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;设置&lt;/td&gt;
+      &lt;td&gt;Setting&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;地图&lt;/td&gt;
+      &lt;td&gt;Map&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;锁屏&lt;/td&gt;
+      &lt;td&gt;Lock screen&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;系统控件库&quot;&gt;系统控件库&lt;/h4&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;中文&lt;/th&gt;
+      &lt;th&gt;英文&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;状态栏&lt;/td&gt;
+      &lt;td&gt;Status bar&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;搜索栏&lt;/td&gt;
+      &lt;td&gt;Search bar&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;提醒视图&lt;/td&gt;
+      &lt;td&gt;Alert view&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;弹出视图&lt;/td&gt;
+      &lt;td&gt;Popover&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;导航栏&lt;/td&gt;
+      &lt;td&gt;Navigatonbar&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;表格视图&lt;/td&gt;
+      &lt;td&gt;Table view&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;编辑菜单&lt;/td&gt;
+      &lt;td&gt;Edit menu&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;开关&lt;/td&gt;
+      &lt;td&gt;Switch&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;标签栏&lt;/td&gt;
+      &lt;td&gt;Tab bar&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;分段控制&lt;/td&gt;
+      &lt;td&gt;Segmented Control&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;选择器&lt;/td&gt;
+      &lt;td&gt;Picker&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;弹出&lt;/td&gt;
+      &lt;td&gt;Pop up&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;工具栏&lt;/td&gt;
+      &lt;td&gt;Tool bar&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;活动视图&lt;/td&gt;
+      &lt;td&gt;Activity view&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;滑动器&lt;/td&gt;
+      &lt;td&gt;Slider&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;扫描&lt;/td&gt;
+      &lt;td&gt;Scanning&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;功能命名&quot;&gt;功能命名&lt;/h4&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;中文&lt;/th&gt;
+      &lt;th&gt;英文&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;确定&lt;/td&gt;
+      &lt;td&gt;OK&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;添加&lt;/td&gt;
+      &lt;td&gt;Add&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;卸载&lt;/td&gt;
+      &lt;td&gt;Uninstall&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;选择&lt;/td&gt;
+      &lt;td&gt;Select&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;默认&lt;/td&gt;
+      &lt;td&gt;Default&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;查看&lt;/td&gt;
+      &lt;td&gt;Check&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;搜索&lt;/td&gt;
+      &lt;td&gt;Search&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;更多&lt;/td&gt;
+      &lt;td&gt;More&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;取消&lt;/td&gt;
+      &lt;td&gt;Cancel&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;删除&lt;/td&gt;
+      &lt;td&gt;Delete&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;暂停&lt;/td&gt;
+      &lt;td&gt;Pause&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;刷新&lt;/td&gt;
+      &lt;td&gt;Refresh&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;关闭&lt;/td&gt;
+      &lt;td&gt;Close&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;下载&lt;/td&gt;
+      &lt;td&gt;Download&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;继续&lt;/td&gt;
+      &lt;td&gt;Continue&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;发送&lt;/td&gt;
+      &lt;td&gt;Send&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;最小化&lt;/td&gt;
+      &lt;td&gt;Min&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;等待&lt;/td&gt;
+      &lt;td&gt;Waiting&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;导入&lt;/td&gt;
+      &lt;td&gt;Import&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;前进&lt;/td&gt;
+      &lt;td&gt;Forward&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;最大化&lt;/td&gt;
+      &lt;td&gt;Max&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;加载&lt;/td&gt;
+      &lt;td&gt;Loading&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;导出&lt;/td&gt;
+      &lt;td&gt;Export&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;重新开始&lt;/td&gt;
+      &lt;td&gt;Restart&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;菜单&lt;/td&gt;
+      &lt;td&gt;Menu&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;安装&lt;/td&gt;
+      &lt;td&gt;Install&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;后退&lt;/td&gt;
+      &lt;td&gt;Back&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;更新&lt;/td&gt;
+      &lt;td&gt;Update&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;资源类型图片&lt;/td&gt;
+      &lt;td&gt;Image&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;滚动条&lt;/td&gt;
+      &lt;td&gt;Scroll bar&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;进度条&lt;/td&gt;
+      &lt;td&gt;Progressbar&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;线条&lt;/td&gt;
+      &lt;td&gt;Line&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;图标&lt;/td&gt;
+      &lt;td&gt;Icon&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;标签&lt;/td&gt;
+      &lt;td&gt;Tab&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;树&lt;/td&gt;
+      &lt;td&gt;Tree&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;蒙版&lt;/td&gt;
+      &lt;td&gt;Mask&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;文本框&lt;/td&gt;
+      &lt;td&gt;Textbox&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;勾选框&lt;/td&gt;
+      &lt;td&gt;Checkbox&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;音频&lt;/td&gt;
+      &lt;td&gt;Audio&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;标记&lt;/td&gt;
+      &lt;td&gt;sign&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;编辑框&lt;/td&gt;
+      &lt;td&gt;Edit&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;下拉框&lt;/td&gt;
+      &lt;td&gt;Combobox&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;按钮&lt;/td&gt;
+      &lt;td&gt;Button&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;动画&lt;/td&gt;
+      &lt;td&gt;Animation&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;列表&lt;/td&gt;
+      &lt;td&gt;List&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;单选框&lt;/td&gt;
+      &lt;td&gt;Radiobox&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;背景&lt;/td&gt;
+      &lt;td&gt;Background&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;播放&lt;/td&gt;
+      &lt;td&gt;Play&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;常见状态普通&lt;/td&gt;
+      &lt;td&gt;Normal&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;获取焦点&lt;/td&gt;
+      &lt;td&gt;Focused&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;已访问&lt;/td&gt;
+      &lt;td&gt;Visited&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;默认&lt;/td&gt;
+      &lt;td&gt;Default&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;按下&lt;/td&gt;
+      &lt;td&gt;Pressed&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;点击&lt;/td&gt;
+      &lt;td&gt;Highlight&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;禁用&lt;/td&gt;
+      &lt;td&gt;Disabled&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;选中&lt;/td&gt;
+      &lt;td&gt;Selected&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;悬停&lt;/td&gt;
+      &lt;td&gt;Hover&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;错误&lt;/td&gt;
+      &lt;td&gt;Eror&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;完成&lt;/td&gt;
+      &lt;td&gt;Complete&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;空白&lt;/td&gt;
+      &lt;td&gt;Blank&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;位置排序&quot;&gt;位置排序&lt;/h4&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;中文&lt;/th&gt;
+      &lt;th&gt;英文&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;顶部&lt;/td&gt;
+      &lt;td&gt;Top&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;底部&lt;/td&gt;
+      &lt;td&gt;Bottom&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;第二&lt;/td&gt;
+      &lt;td&gt;Second&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;页头&lt;/td&gt;
+      &lt;td&gt;Header&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;中间&lt;/td&gt;
+      &lt;td&gt;Middle&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;第一&lt;/td&gt;
+      &lt;td&gt;First&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;最后&lt;/td&gt;
+      &lt;td&gt;Last&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;页脚&lt;/td&gt;
+      &lt;td&gt;Footer&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;英文缩写&quot;&gt;英文缩写&lt;/h4&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;英文缩写&lt;/th&gt;
+      &lt;th&gt;英文&lt;/th&gt;
+      &lt;th&gt;中文&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;bg&lt;/td&gt;
+      &lt;td&gt;background&lt;/td&gt;
+      &lt;td&gt;背景&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;logo&lt;/td&gt;
+      &lt;td&gt;logo&lt;/td&gt;
+      &lt;td&gt;标志&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;navbar&lt;/td&gt;
+      &lt;td&gt;navbar&lt;/td&gt;
+      &lt;td&gt;导航栏&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;login&lt;/td&gt;
+      &lt;td&gt;login&lt;/td&gt;
+      &lt;td&gt;登陆&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;tabbar&lt;/td&gt;
+      &lt;td&gt;tabbar&lt;/td&gt;
+      &lt;td&gt;标签栏&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;register&lt;/td&gt;
+      &lt;td&gt;register&lt;/td&gt;
+      &lt;td&gt;注册&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;statusbar&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;状态栏&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;refresh&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;刷新&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;toolbar&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;工具栏&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;banner&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;广告&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;searchbar&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;搜索栏&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;link(链接)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;btn&lt;/td&gt;
+      &lt;td&gt;button&lt;/td&gt;
+      &lt;td&gt;按钮&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;user&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;用户&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;img&lt;/td&gt;
+      &lt;td&gt;image&lt;/td&gt;
+      &lt;td&gt;图片&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;download&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;下载&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;msg&lt;/td&gt;
+      &lt;td&gt;message&lt;/td&gt;
+      &lt;td&gt;提示信息&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ok&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;确定&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;pop&lt;/td&gt;
+      &lt;td&gt;pop up&lt;/td&gt;
+      &lt;td&gt;弹出&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;cancel&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;取消&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;icon&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;图标&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;close&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;关闭&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;back&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;返回&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;min&lt;/td&gt;
+      &lt;td&gt;minimize&lt;/td&gt;
+      &lt;td&gt;最小化&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;edit&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;编辑&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;max&lt;/td&gt;
+      &lt;td&gt;maximize&lt;/td&gt;
+      &lt;td&gt;最大化&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;content&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;内容&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;menu&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;菜单&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;note&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;注释&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;add&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;添加&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;title&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;标题&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;delete&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;删除&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;sign&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;标记&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;waiting&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;等待&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;view&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;视图&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;loading&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;加载&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;tableview&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;表视图&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;install&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;安装&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;activityview&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;活动视图&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;uninstall&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;卸载&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;alertview&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;提醒视图&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;search&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;搜索&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;panel&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;面板&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;pause&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;暂停&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;sheet&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;弹出面板&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;continue&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;继续&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;home&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;首页&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;mask&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;蒙板&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;启动界面命名规则&quot;&gt;启动界面命名规则&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;default＿image.png（启动图片）&lt;/li&gt;
+  &lt;li&gt;default＿logo.png（启动logo)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;引导页面命名规则&quot;&gt;引导页面命名规则&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;link＿btn.png(引导页按钮)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;登陆界面命名规则&quot;&gt;登陆界面命名规则&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;login＿bg.png（登陆背景)&lt;/li&gt;
+  &lt;li&gt;login＿logo.png（登陆logo）&lt;/li&gt;
+  &lt;li&gt;login＿input.png（登陆界面输入框）&lt;/li&gt;
+  &lt;li&gt;logininput＿pre.png（输入框选中状态)&lt;/li&gt;
+  &lt;li&gt;login＿bt.png（登陆按钮）&lt;/li&gt;
+  &lt;li&gt;login＿btn_pre.png（登陆按钮选中状态）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;注册界面命名规则&quot;&gt;注册界面命名规则&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;register＿bg.png（注册背景）&lt;/li&gt;
+  &lt;li&gt;register＿input.png（输入框）&lt;/li&gt;
+  &lt;li&gt;register＿input＿pre.png（输入框选中状态）&lt;/li&gt;
+  &lt;li&gt;register＿btn.png（注册按钮）&lt;/li&gt;
+  &lt;li&gt;register＿btn＿pre.png（注册按钮选中状态）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;导航栏按钮命名规则&quot;&gt;导航栏按钮命名规则&lt;/h3&gt;
+&lt;p&gt;nav＿(功能描述).png&lt;/p&gt;
+
+&lt;p&gt;如：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;nav＿menu＿default.png&lt;/li&gt;
+  &lt;li&gt;nav＿menu＿pre.png&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;同一按钮选中前后两种状态命名&lt;/p&gt;
+
+&lt;h3 id=&quot;左侧导航切图命名规则&quot;&gt;左侧导航切图命名规则&lt;/h3&gt;
+&lt;p&gt;leftbar＿(功能描述)png
+如:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;leftbar＿info.png&lt;/li&gt;
+  &lt;li&gt;leftbar＿info＿pre.png(个人中心)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;菜单按钮命名规则&quot;&gt;菜单按钮命名规则&lt;/h3&gt;
+
+&lt;p&gt;tab（功能描述）.png
+如:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;tabset.png&lt;/li&gt;
+  &lt;li&gt;nav＿set＿pre.png（tabbar标签栏）（设置）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;菜单按钮命名规则-1&quot;&gt;菜单按钮命名规则&lt;/h3&gt;
+&lt;p&gt;home(界面名称)_(功能属性简写+描述).png&lt;/p&gt;
+
+&lt;p&gt;如:
+home＿btn＿recommended.png（推荐）&lt;/p&gt;
+
+&lt;p&gt;部分功能属性简写:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;按钮:btn&lt;/li&gt;
+  &lt;li&gt;按钮文字:btntext&lt;/li&gt;
+  &lt;li&gt;复选框:chb（check box）&lt;/li&gt;
+  &lt;li&gt;背景:bg&lt;/li&gt;
+  &lt;li&gt;单选框:rb（radio box）&lt;/li&gt;
+  &lt;li&gt;下拉:cbb（combobox）&lt;/li&gt;
+  &lt;li&gt;输入:ip（input）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;列表页命名规则&quot;&gt;列表页命名规则&lt;/h3&gt;
+
+&lt;p&gt;list＿(功能属性+描述).png&lt;/p&gt;
+
+&lt;p&gt;如: listmenucollect.png（列表页收藏按钮）&lt;/p&gt;
+
+&lt;h3 id=&quot;内容页可重复使用按钮命名规则&quot;&gt;内容页：可重复使用按钮命名规则&lt;/h3&gt;
+
+&lt;p&gt;btn(功能属性或色彩均可).png&lt;/p&gt;
+
+&lt;h3 id=&quot;参考资料&quot;&gt;参考资料&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.zcool.com.cn/article/ZODU0NDg4.html&quot;&gt;APP命名规范&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 02 Apr 2020 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2020/04/02/APP%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2020/04/02/APP%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83.html</guid>
+        
+        <category>移动端</category>
+        
+        
+        <category>移动端</category>
+        
+      </item>
     
       <item>
         <title>苹果iOS 13 设计规范解析</title>
