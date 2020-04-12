@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>区域分割 - Alex Design - Creativity Never Sleeps</title>
+    <meta name="author"  content="Alex Hu">
+    <meta name="description" content="区域分割">
+    <meta name="keywords"  content="移动端, 设计规范">
+    <!-- Open Graph -->
+    <meta property="og:title" content="区域分割 - Alex Design - Creativity Never Sleeps">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/2020/04/01/%E5%8C%BA%E5%9F%9F%E5%88%86%E5%89%B2.html">
+    <meta property="og:description" content="Alex Hu，90后，UI设计师，热爱技术&设计。很高兴能在这里与你分享我对设计和生活的思考。">
+    <meta property="og:site_name" content="Alex Design - Creativity Never Sleeps">
+    <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1748563_z2xad1yakte.css">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/share.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+	
+	<!--
+Author: Ray-Eldath
+refer to:
+ - http://docs.mathjax.org/en/latest/options/index.html
+-->
+
+	<script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [ ["$", "$"] ],
+			displayMath: [ ["$$", "$$"] ],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+	
+    <!--
+Author: Ray-Eldath
+-->
+<style>
+    .markdown-body .anchor{
+        float: left;
+        margin-top: -8px;
+        margin-left: -20px;
+        padding-right: 4px;
+        line-height: 1;
+        opacity: 0;
+    }
+    
+    .markdown-body .anchor .anchor-icon{
+        font-size: 15px
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        let nodes = document.querySelector(".markdown-body").querySelectorAll("h1,h2,h3")
+        for(let node of nodes) {
+            var anchor = document.createElement("a")
+            var anchorIcon = document.createElement("i")
+            anchorIcon.setAttribute("class", "fa fa-anchor fa-lg anchor-icon")
+            anchorIcon.setAttribute("aria-hidden", true)
+            anchor.setAttribute("class", "anchor")
+            anchor.setAttribute("href", "#" + node.getAttribute("id"))
+            
+            anchor.onmouseover = function() {
+                this.style.opacity = "0.4"
+            }
+            
+            anchor.onmouseout = function() {
+                this.style.opacity = "0"
+            }
+            
+            anchor.appendChild(anchorIcon)
+            node.appendChild(anchor)
+        }
+    })
+</script>
+</head>
+
+
+<body>
+  <!--[if lt IE 10]>
+<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+<![endif]-->
+  <input id="nm-switch" type="hidden" value="true"> <header class="g-header">
+    <div class="g-logo">
+      <a href="/"></a>
+    </div>
+    <i id="menu-toggle" class="iconfont icon-menu"></i>
+    <nav class="g-nav">
+        <ul>
+            
+            <li><a href="/">首页</a></li>
+            
+            <li><a href="/tags.html">文章</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+
+  <header
+    class="g-banner post-header post-pattern-circuitBoard bgcolor-default "
+    data-theme="default"
+  >
+
+    <div class="post-wrapper">
+      <div class="post-tags">
+        
+          
+            <a href="/tags.html#%E7%A7%BB%E5%8A%A8%E7%AB%AF" class="post-tag">移动端</a>
+          
+            <a href="/tags.html#%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83" class="post-tag">设计规范</a>
+          
+        
+      </div>
+      <h1>区域分割</h1>
+      <div class="post-meta">
+        <span class="post-meta-item"><i class="iconfont icon-author"></i>Alex Hu</span>
+        <time class="post-meta-item" datetime="20-04-01"><i class="iconfont icon-date"></i>01 Apr 2020</time>
+      </div>
+    </div>
+    
+    <div class="filter"></div>
+      <div class="post-cover" style="background: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586696951436&di=a0eb7850ce13d35486a7c9d68e9b0ea5&imgtype=0&src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2Ff9d636180a30ca744c21e685e47232e9848c8653.jpg') center no-repeat; background-size: cover;"></div>
+    
+  </header>
+
+  <div class="post-content visible">
+    
+
+    <article class="markdown-body">
+      <blockquote>
+  <p>Android设计规范解读。</p>
+</blockquote>
+
+<h2 id="1分割线设计">1、分割线设计</h2>
+
+<p>在UI设计中，最传统也是最常见的的分隔方式是“线”。它能起到分隔、组织、细化的作用，帮助用户了解页面层次，赋予内容组织性。</p>
+
+<p>对信息的阻隔程度的大小：全出血分隔线（全屏分割线）＞内嵌式分割线（单边分割线）＞悬浮分割线</p>
+
+<p>全屏分割线主要用于区隔差异度较大的信息内容，如不同功能模块之间的区分；</p>
+
+<p>单边分割线主要用于区隔差异度适中的信息内容，如一级信息与二级信息的区分；</p>
+
+<p>悬浮分割线主要用于区隔差异度较小的信息内容，如同级信息之间的区分。</p>
+
+<p><img src="https://img.zcool.cn/community/01c8d45db781c7a801209e1f6d4016.png" alt="" /></p>
+
+<h3 id="a全出血分隔线全屏分割线">a.全出血分隔线（全屏分割线）</h3>
+
+<p>“出血”是一种平面印刷中的概念，而“全出血”指的是分隔线横向贯穿整个页面，一般为了<strong>区分更加独立性的内容信息</strong>。</p>
+
+<p>比如：知乎的“想法”feed流里，就是采用全出血分隔线的形式，让信息分隔的更明显，更加独立性。 （可以点击看大图）</p>
+
+<p><img src="https://img.zcool.cn/community/0132505a558fb6a8012113c7eee529.png" alt="" /></p>
+
+<p>如今日头条的首页，在信息流的卡片中运用了全屏分割线，将新闻内容和工具栏这两个不同功能的信息明确地区分开来。</p>
+
+<p><img src="https://img.zcool.cn/community/0137945c417de4a801203d2246e109.png" alt="" /></p>
+
+<p>其他App的使用情况：区分导航栏与信息流内容，区分卡片标题与下级功能入口。</p>
+
+<p><img src="https://img.zcool.cn/community/0168f35c417eaba801203d2273faf6.png" alt="" /></p>
+
+<h3 id="b内嵌式分割线单边分割线">b.内嵌式分割线（单边分割线）</h3>
+
+<p>内嵌式分割线，不同于前者，它一般会在“线”的前面留有缺口，来区分统一模块下的相关内容，目的是为了让用户浏览大量相关内容时，更加高效。</p>
+
+<p>比如：知乎的“更多”页面，卡片内采用内嵌式分割线，来区分同一维度下有关联的内容。</p>
+
+<p>比如第二个模块里，我的创作、我的收藏、我的关注、我的邀请回答，都是“我”操作后的内容信息；而第三个模块，已购内容、我的私家课、我的Live…，都是跟“钱”或“付费”相关的。</p>
+
+<p><img src="https://img.zcool.cn/community/01438c5a558feda80120121fdf08be.png" alt="" /></p>
+
+<p>所以，采用内嵌式分割线，比较<strong>适合这种划分有关联性的内容，同时有提升浏览效率</strong>。</p>
+
+<p>其实，采用“线”的分割方式是比较保守的解决方案，但是，前提是要处理好“线”的<strong>间距、粗细、颜色，等问题</strong>。</p>
+
+<p>单边分割线在形式上起到了<strong>平衡视觉重心的作用</strong>。如下面左图平衡了加减图标的重量感，右图平衡了方块的重量感。但单边分割线在这里更重要的作用是，配合全屏分割线，形成信息的主次关系。</p>
+
+<p><img src="https://img.zcool.cn/community/018f175c418731a801203d22a5a7c6.png" alt="" /></p>
+
+<h3 id="悬浮分割线">悬浮分割线</h3>
+
+<p>悬浮分割线两侧均有留白，与页面边缘不接触。</p>
+
+<p>悬浮分割线运用在信息流页面中，两侧的留白会形成清晰流畅的视觉流，引导用户往下滑动页面，浏览更多的信息。</p>
+
+<p><img src="https://img.zcool.cn/community/0160065c418776a801213f26831006.png" alt="" /></p>
+
+<h2 id="2无框设计">2.无框设计</h2>
+
+<p>无框设计是近两年流行起来的的一种新的趋势，是去除界面中的边框，分割线，用间距来区分内容。</p>
+
+<h3 id="a大图为主">a.大图为主</h3>
+
+<p>大图为主指的是以图片为主的产品，每张图片本身就可以起到分割的作用，因此，不需要采用多余的线或边框进行分割。</p>
+
+<p>比如：instagram，发布图片前，用户被强制对图片进行正方形截取，才能保证图片在feed流里的宽度，撑满全屏，从而看起来很整体。</p>
+
+<p><img src="https://img.zcool.cn/community/01778b5a55902aa8012113c7a70db7.png" alt="" /></p>
+
+<p>为什么国外的产品就这么高大上，微博怎么就不能去分割线，做减法，搞的洋气一些呢？</p>
+
+<p>微博支持发送图片、文章、视频、纯文字、签到、点评…等等的内容。同时微博feed流里的图片，支持1张－9张不同情况的排版，而且1张图片时，为了更好的呈现出用户的原图比例，还要处理成4:3，16:9，正方形，以及特殊尺寸的缩略样式，同时还有gif图的情况，还支持你在自己状态下添加不同话题。</p>
+
+<p><img src="https://img.zcool.cn/community/011e5e5a559040a8012113c736a1ad.png" alt="" /></p>
+
+<h3 id="b内容有规律">b.内容有规律</h3>
+
+<p>内容有规律指的是，<strong>留白间距上下的内容，最好是相对一致的、重复的、亲密的</strong>，这样用户会下意识的将其分为一组。</p>
+
+<p>比如，Airbnb采用的无框设计，原因是它们的信息元素很统一、重复，才给人营造出比较整体的感觉。同时，合理的运用大标题也起到关键性作用。</p>
+
+<p><img src="https://img.zcool.cn/community/0158a25a559058a80120121ffd4f92.png" alt="" /></p>
+
+<p>而同样采用无框设计的“下厨房”APP，首屏由于每个模块信息元素不一致，而且模块内元素的左右间距也不一样，字号种类过多，导致界面看起来相对有些杂乱。</p>
+
+<p><img src="https://img.zcool.cn/community/0195705a55906ca80120121fada511.png" alt="" /></p>
+
+<h3 id="c小众且垂直产品">c.小众且垂直产品</h3>
+
+<p>小众且垂直的产品，一般情况下目标用户聚焦，功能简洁。因此，<strong>能够比较好的运用无框设计，跳出传统的规范做出创新的设计</strong>。</p>
+
+<p>比如：轻芒杂志，采用无框设计的同时打破传统的移动端浏览体验，更符合它们自己的产品调性。</p>
+
+<p><img src="https://img.zcool.cn/community/010da45a559080a8012113c7db9479.png" alt="" /></p>
+
+<p>下面是FOOTAGE，一款小众且文艺的产品，由VUE的团队设计的。他们采用无框设计的前提是，每个界面元素有限，功能内容简洁。</p>
+
+<p><img src="https://img.zcool.cn/community/011ec15a559092a80120121ff11018.png" alt="" /></p>
+
+<h2 id="2颜色分割">2、颜色分割</h2>
+
+<p>优点：分区明显，比线段更醒目；</p>
+
+<p>缺点：页面层级多，颜色多；</p>
+
+<p>视觉风格走向：偏清单列表，客观陈列；</p>
+
+<p><img src="https://img.zcool.cn/community/01455d5db78203a8012163ba2a9661.png" alt="" /></p>
+
+<h2 id="3留白">3、留白</h2>
+
+<p><img src="https://img.zcool.cn/community/010c345db7823ca8012163ba50b26b.png" alt="" /></p>
+
+<p>使用卡片的留白：由卡片对内容由进行区域归纳整合，所以，留白的多少对于信息的区隔影响不大。</p>
+
+<p>不使用卡片的留白：留白的大小决定着区隔的强弱。</p>
+
+<p>留白的大小至关重要，如果没有使用“卡片”和“线段”进行区域间隔，我们需要加大留白来增强区域间隔感。因为格式塔接近性原则告诉我们：靠的近的元素比离得远的元素更被认为是有关联。以下，是我在街上看到的一个广告招牌，由于信息留白区域不合理，直接影响信息呈现与内容阅读。</p>
+
+<p><img src="https://img.zcool.cn/community/016be95db78272a8012163babd5fad.png" alt="" /></p>
+
+<h3 id="参考资料">参考资料</h3>
+
+<p><a href="https://www.zcool.com.cn/article/ZODYyNDU2.html">连1px的分割线都用不好，可别说你懂界面设计</a></p>
+
+
+    </article>
+
+    
+    <div class="social-share-wrapper">
+      <div class="social-share"></div>
+    </div>
+    
+  </div>
+<div class="tabBar">
+    <div class="tabBar_icon">
+        <li><a href="/index.html"><span class="iconfont tabicon iconfavico"></span></a></li>
+        <li><a  href="/tags.html"><span class="iconfont tabicon iconnote"></span></a></li>
+       <li><a href="https://github.com/alexdesign001" target="_blank"><span class="iconfont tabicon iconuser"></span></a></li>
+    </div>
+</div>
+  <section class="author-detail">
+    <section class="post-footer-item author-card">
+      <div class="avatar">
+        <img src="/assets/img/profile.png" alt="">
+      </div>
+      <div class="author-name" rel="author">Alex Hu</div>
+      <div class="bio">
+        <p>UI设计师，热爱生活&设计，简单乐观爱创造</p>
+      </div>
+      
+      <ul class="sns-links">
+        
+        <li>
+          <a href="//github.com/alexdesign001" target="_blank">
+                    <i class="iconfont icon-github"></i>
+                </a>
+        </li>
+        
+      </ul>
+      
+    </section>
+    <section class="post-footer-item read-next">
+      
+      <div class="read-next-item">
+        <a href="/2020/04/01/%E5%AE%89%E5%8D%93%E5%92%8CiOS%E7%9A%84%E5%8C%BA%E5%88%AB.html" class="read-next-link"></a>
+        <section>
+          <span>安卓和iOS的区别</span>
+          <p>  现在iOS的优势在哪？还是说Android已经和iOS平起平坐了？</p>
+        </section>
+        
+        <div class="filter"></div>
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586621043442&di=90c4f8ab303363d89d091e71ee4ea7b1&imgtype=0&src=http%3A%2F%2Fask-fd.zol-img.com.cn%2Fg5%2FM00%2F09%2F02%2FChMkJlm7bn6IYE_7AAE5HGfeDyAAAgfcACPF60AATk0713.jpg" alt="">
+        
+     </div>
+      
+
+      
+      <div class="read-next-item">
+        <a href="/2020/04/01/iOS%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83%E6%80%BB%E7%BB%93.html" class="read-next-link"></a>
+          <section>
+            <span>iOS设计规范总结</span>
+            <p>  iOS设计规范总结。</p>
+          </section>
+          
+          <div class="filter"></div>
+          <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1999076324,2994244836&fm=26&gp=0.jpg" alt="">
+          
+      </div>
+      
+    </section>
+    
+  </section>
+
+  <footer class="g-footer">
+  <section>Alex Design - Creativity Never Sleeps ©
+  
+  
+  2020
+  </section>
+  
+</footer>
+
+
+  <script src="/assets/js/social-share.min.js"></script>
+  <script>
+    socialShare('.social-share', {
+      sites: [
+        
+          'wechat'
+          ,
+          
+        
+          'weibo'
+          ,
+          
+        
+          'douban'
+          ,
+          
+        
+          'twitter'
+          
+        
+      ],
+      wechatQrcodeTitle: "分享到微信朋友圈",
+      wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+    });
+  </script>
+
+  
+
+  <script src="/assets/js/prism.js"></script>
+  <script src="/assets/js/index.min.js"></script>
+</body>
+
+</html>

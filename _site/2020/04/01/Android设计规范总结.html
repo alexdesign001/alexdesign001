@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android设计规范 - Alex Design - Creativity Never Sleeps</title>
+    <meta name="author"  content="Alex Hu">
+    <meta name="description" content="Android设计规范">
+    <meta name="keywords"  content="移动端, 设计规范">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Android设计规范 - Alex Design - Creativity Never Sleeps">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/2020/04/01/Android%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83%E6%80%BB%E7%BB%93.html">
+    <meta property="og:description" content="Alex Hu，90后，UI设计师，热爱技术&设计。很高兴能在这里与你分享我对设计和生活的思考。">
+    <meta property="og:site_name" content="Alex Design - Creativity Never Sleeps">
+    <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1748563_z2xad1yakte.css">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/share.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+	
+	<!--
+Author: Ray-Eldath
+refer to:
+ - http://docs.mathjax.org/en/latest/options/index.html
+-->
+
+	<script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [ ["$", "$"] ],
+			displayMath: [ ["$$", "$$"] ],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+	
+    <!--
+Author: Ray-Eldath
+-->
+<style>
+    .markdown-body .anchor{
+        float: left;
+        margin-top: -8px;
+        margin-left: -20px;
+        padding-right: 4px;
+        line-height: 1;
+        opacity: 0;
+    }
+    
+    .markdown-body .anchor .anchor-icon{
+        font-size: 15px
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        let nodes = document.querySelector(".markdown-body").querySelectorAll("h1,h2,h3")
+        for(let node of nodes) {
+            var anchor = document.createElement("a")
+            var anchorIcon = document.createElement("i")
+            anchorIcon.setAttribute("class", "fa fa-anchor fa-lg anchor-icon")
+            anchorIcon.setAttribute("aria-hidden", true)
+            anchor.setAttribute("class", "anchor")
+            anchor.setAttribute("href", "#" + node.getAttribute("id"))
+            
+            anchor.onmouseover = function() {
+                this.style.opacity = "0.4"
+            }
+            
+            anchor.onmouseout = function() {
+                this.style.opacity = "0"
+            }
+            
+            anchor.appendChild(anchorIcon)
+            node.appendChild(anchor)
+        }
+    })
+</script>
+</head>
+
+
+<body>
+  <!--[if lt IE 10]>
+<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+<![endif]-->
+  <input id="nm-switch" type="hidden" value="true"> <header class="g-header">
+    <div class="g-logo">
+      <a href="/"></a>
+    </div>
+    <i id="menu-toggle" class="iconfont icon-menu"></i>
+    <nav class="g-nav">
+        <ul>
+            
+            <li><a href="/">首页</a></li>
+            
+            <li><a href="/tags.html">文章</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+
+  <header
+    class="g-banner post-header post-pattern-circuitBoard bgcolor-default "
+    data-theme="default"
+  >
+
+    <div class="post-wrapper">
+      <div class="post-tags">
+        
+          
+            <a href="/tags.html#%E7%A7%BB%E5%8A%A8%E7%AB%AF" class="post-tag">移动端</a>
+          
+            <a href="/tags.html#%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83" class="post-tag">设计规范</a>
+          
+        
+      </div>
+      <h1>Android设计规范</h1>
+      <div class="post-meta">
+        <span class="post-meta-item"><i class="iconfont icon-author"></i>Alex Hu</span>
+        <time class="post-meta-item" datetime="20-04-01"><i class="iconfont icon-date"></i>01 Apr 2020</time>
+      </div>
+    </div>
+    
+    <div class="filter"></div>
+      <div class="post-cover" style="background: url('https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2586133197,590351406&fm=26&gp=0.jpg') center no-repeat; background-size: cover;"></div>
+    
+  </header>
+
+  <div class="post-content visible">
+    
+
+    <article class="markdown-body">
+      <blockquote>
+  <p>Android设计规范解读。</p>
+</blockquote>
+
+<h3 id="一安卓开发单位是dpsp">一、安卓开发单位是DP、SP</h3>
+
+<p><strong>DP：安卓专用长度单位。</strong>
+以160 DPI屏幕为标注，则1DP=1PX
+计算公式：dp x dpi/160=px
+例：以720x1280px （320dpi）为例， 1dp x 320 dpi/160=2px</p>
+
+<p><strong>SP：安卓专用字体单位。</strong>
+以160 DPI屏幕为标注，则1SP=1PX
+计算公式：sp x dpi/160=px
+例：以720x1280px （320dpi）为例， 1sp x 320 dpi/160=2px</p>
+
+<h3 id="二安卓设计尺寸以1080x1920px作为设计稿标准尺寸">二、安卓设计尺寸：以1080x1920px作为设计稿标准尺寸</h3>
+
+<ul>
+  <li>
+    <p>从中间尺寸向上、下适配，界面调整幅度最小，最方便适配。</p>
+  </li>
+  <li>
+    <p>大屏幕时代依然以小尺寸作为设计尺寸，会限制设计师的设计视角。</p>
+  </li>
+  <li>
+    <p>用主流尺寸来做设计稿尺寸，极大的提高了视觉还原和其他机型适配。</p>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>分辨率</th>
+      <th>DPI</th>
+      <th>状态栏高度</th>
+      <th>导航栏高度</th>
+      <th>标签栏高度</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>720x1280px</td>
+      <td>XHDPI</td>
+      <td>50px</td>
+      <td>96px</td>
+      <td>96px</td>
+    </tr>
+    <tr>
+      <td>1080x1920px</td>
+      <td>XXHDPI</td>
+      <td>60px</td>
+      <td>144px</td>
+      <td>150px</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="三安卓图标尺寸">三、安卓图标尺寸</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>屏幕大小</th>
+      <th>启动图标</th>
+      <th>操作栏图标</th>
+      <th>上下文图标</th>
+      <th>系统通知图标</th>
+      <th>最细画笔</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>320x480</td>
+      <td>48x48px</td>
+      <td>32x32px</td>
+      <td>16x16px</td>
+      <td>24x24px</td>
+      <td>不小于2px</td>
+    </tr>
+    <tr>
+      <td>480x800</td>
+      <td>72x72px</td>
+      <td>48x48px</td>
+      <td>24x24px</td>
+      <td>36x36px</td>
+      <td>不小于3px</td>
+    </tr>
+    <tr>
+      <td>480x854</td>
+      <td>720x1280</td>
+      <td>96x96px</td>
+      <td>64x64px</td>
+      <td>48x48px</td>
+      <td>不小于4px</td>
+    </tr>
+    <tr>
+      <td>1080x1920</td>
+      <td>144x144px</td>
+      <td>96x96px</td>
+      <td>48x48px</td>
+      <td>72x72px</td>
+      <td>不小于6px</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="四安卓字体">四、安卓字体</h2>
+
+<p>中文：思源黑体 / Noto Sans Han
+英文：Roboto
+大小：主题文字 36-34px    正文 28-26px     提示文字 24-22px
+链接: https://pan.baidu.com/s/17cKM9co53TEN85gj4vy5dw 提取码: hd35</p>
+
+<h2 id="五切图规范">五、切图规范</h2>
+
+<ul>
+  <li>
+    <p>切图尺寸必须为双数</p>
+  </li>
+  <li>
+    <p>单像素的图会出现边缘模糊的情况</p>
+  </li>
+  <li>
+    <p>一般情况下，我们只需要提供3套切图资源就可以满足安卓工程师的适配，分别是HDPI、XHDPI、 XXHDPI 3套切图资源。</p>
+  </li>
+</ul>
+
+<h2 id="六如何用ios的设计稿适配安卓">六、如何用iOS的设计稿适配安卓</h2>
+
+<p>现在绝大多数公司限于人力物力的限制，不能把iOS和安卓的设计稿全部执行出来，因此就存在一稿两用的情况；设计师以iOS版本的设计稿来适配安卓，下面我们来看一组有趣的数学换算题：</p>
+
+<p>1080/1.5=720，720/1.5=480，1242x2208/1.15=1080c1920，也就是说，<strong>1242x2208（iOS@3倍尺寸）</strong>与1080x1920（安卓尺寸）是可以等比缩放的，所以，<strong>iOS与Android的尺寸是可共用1242x2208px</strong>。因此，以iOS设计尺寸进行设计是可以适配Android的。</p>
+
+<p>另一种方式，就是把750×1334px等比例调整尺寸到安卓1080×1920px，对各个控件进行微调，重新提供标注（用dp标注）。也就是需要提供两套标注，一套给iOS，一套给Android。</p>
+
+    </article>
+
+    
+    <div class="social-share-wrapper">
+      <div class="social-share"></div>
+    </div>
+    
+  </div>
+<div class="tabBar">
+    <div class="tabBar_icon">
+        <li><a href="/index.html"><span class="iconfont tabicon iconfavico"></span></a></li>
+        <li><a  href="/tags.html"><span class="iconfont tabicon iconnote"></span></a></li>
+       <li><a href="https://github.com/alexdesign001" target="_blank"><span class="iconfont tabicon iconuser"></span></a></li>
+    </div>
+</div>
+  <section class="author-detail">
+    <section class="post-footer-item author-card">
+      <div class="avatar">
+        <img src="/assets/img/profile.png" alt="">
+      </div>
+      <div class="author-name" rel="author">Alex Hu</div>
+      <div class="bio">
+        <p>UI设计师，热爱生活&设计，简单乐观爱创造</p>
+      </div>
+      
+      <ul class="sns-links">
+        
+        <li>
+          <a href="//github.com/alexdesign001" target="_blank">
+                    <i class="iconfont icon-github"></i>
+                </a>
+        </li>
+        
+      </ul>
+      
+    </section>
+    <section class="post-footer-item read-next">
+      
+      <div class="read-next-item">
+        <a href="/2020/04/01/iOS%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83%E6%80%BB%E7%BB%93.html" class="read-next-link"></a>
+        <section>
+          <span>iOS设计规范总结</span>
+          <p>  iOS设计规范总结。</p>
+        </section>
+        
+        <div class="filter"></div>
+        <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1999076324,2994244836&fm=26&gp=0.jpg" alt="">
+        
+     </div>
+      
+
+      
+    </section>
+    
+  </section>
+
+  <footer class="g-footer">
+  <section>Alex Design - Creativity Never Sleeps ©
+  
+  
+  2020
+  </section>
+  
+</footer>
+
+
+  <script src="/assets/js/social-share.min.js"></script>
+  <script>
+    socialShare('.social-share', {
+      sites: [
+        
+          'wechat'
+          ,
+          
+        
+          'weibo'
+          ,
+          
+        
+          'douban'
+          ,
+          
+        
+          'twitter'
+          
+        
+      ],
+      wechatQrcodeTitle: "分享到微信朋友圈",
+      wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+    });
+  </script>
+
+  
+
+  <script src="/assets/js/prism.js"></script>
+  <script src="/assets/js/index.min.js"></script>
+</body>
+
+</html>
