@@ -5,8 +5,8 @@
     <description>Alex Hu，90后，UI设计师，热爱技术&amp;设计。很高兴能在这里与你分享我对设计和生活的思考。</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 12 Apr 2020 18:21:21 +0800</pubDate>
-    <lastBuildDate>Sun, 12 Apr 2020 18:21:21 +0800</lastBuildDate>
+    <pubDate>Sun, 12 Apr 2020 21:07:09 +0800</pubDate>
+    <lastBuildDate>Sun, 12 Apr 2020 21:07:09 +0800</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -462,6 +462,158 @@
       </item>
     
       <item>
+        <title>小公司里如何主导设计项目</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;小公司没人带如何提升自己，我是这样做的！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;一设计稿文字图片不要一样&quot;&gt;一、设计稿文字图片不要一样&lt;/h3&gt;
+&lt;p&gt;刚做UI的时候，根本就没有注意设计稿文字图片要保持不一样。&lt;/p&gt;
+
+&lt;p&gt;我以为这些图片和文字都是后台配置，认为没有必要单独去做啊，这不是浪费时间么，本来项目那么紧，那时候做的项目基本和下图一样，图片文字都一模一样。&lt;/p&gt;
+
+&lt;p&gt;直到有一次去面试，面试官问我:＂为什么你的设计稿图片文字都是一样的呢？＂，我对他说，＂因为这些是后台配置的，所以我就觉得没有必要设计＂。他反问道，＂你不设计出来，我怎么知道这个界面好不好？＂，就这样短短聊了几句，他就让我回家等通知了。&lt;/p&gt;
+
+&lt;p&gt;但那时候我并没有在意，直到后来工作中领导又问了同样的问题，我才回来做了一个实验，在网上找一张设计还不错的案例，这个界面整体给人清爽简洁、配图活跃个性的感觉。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/04/09/MapOPsSZJk6BjUi.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后在将里面的图都改成一样的，我就发现改完之后，确实很难判断这个界面的好坏，尤其像这种内容少图片多的界面，他的成败其实重点就在配图上，如下图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/04/09/4RjFSYD62MntvBf.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;后来在做设计稿时，不管在忙，我都会把图、文字好好编辑，哪怕图可以丑一点，但是一定要保证不一样的内容。&lt;/p&gt;
+
+&lt;h3 id=&quot;二别用其他组件代替&quot;&gt;二、别用其他组件代替&lt;/h3&gt;
+&lt;p&gt;在设计时，一定不要为了省事直接用其他平台的组件来代替，这直接会导致设计效果和规范的不统一，同时还会浪费大量的沟通时间。&lt;/p&gt;
+
+&lt;p&gt;比如我们公司的后台界面用的 View Ul的框架，现在需要给公司的后台进行优化，但是我手上又没有View的组件库，如果重新画感觉有点浪费时间，如下图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/04/09/7LuFZmWzKlUX2kC.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;于是想着反正手上有现成的蚂蚁金服后台组件库，要不直接拖过来用，大不了后面给前端说下，设计稿只是整体效果，具体的控件还是用原来的样式。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/04/09/3T1wmPLS7UKDYWI.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;但是，我以为这样嘱咐了前端就没问题了实际上前端其实搞不懂哪些是用原来的，哪些用现在的，或者他干脆忘记我说的话了，直接就按照设计稿上来实现了，结果验收时才发现又得重新调整。&lt;/p&gt;
+
+&lt;p&gt;最后，我本来只需花20分钟画套控件，但是我却花了2个小时来和前端沟通，重要的是还浪费了前端的时间。&lt;/p&gt;
+
+&lt;p&gt;这件事情让我明白，有些懒你偷了，迟早是要加倍还回来的。&lt;/p&gt;
+
+&lt;h3 id=&quot;1极限值要考虑全面&quot;&gt;1、极限值要考虑全面&lt;/h3&gt;
+&lt;p&gt;在设计时，一定要把极限值考虑全面，我之前在设计数据页面时，就上过一次当。&lt;/p&gt;
+
+&lt;p&gt;我在设计数据页面时，由于整个界面都是数据，没有图片，因此想着用图标来丰富一下。但是却忘记了解数据最大会显示多少位，就导致上线后才发现当前样式容纳不下，真实数据最长有7位数，然后我这最大只能展示5位。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/04/09/kDfGJOpjz3isNcl.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;于是领导通知马上调整一版新的出来，于是我只能将图标删掉，保证数据展示出来。如果这样的情况多次发生，我想这个月的绩效就只能得C了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/04/09/Fb8cZQVBKmDeLxO.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;因此，为了避免这样的情况再次发生，我想着要不把界面中常用到的极限值都总结出来，下次在设计时就不会这样手忙脚乱了。&lt;/p&gt;
+
+&lt;h5 id=&quot;2列表&quot;&gt;2、列表&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;需要注意标题的长短、标题过长最多展示几行、如何做截断处理；&lt;/li&gt;
+  &lt;li&gt;描述文字过长如何处理，是否展开收起；&lt;/li&gt;
+  &lt;li&gt;列表中，两个不确定长短的内容，不要排一行，避免内容过多排不下；&lt;/li&gt;
+  &lt;li&gt;考虑各角色参数的变化，进行适配；&lt;/li&gt;
+  &lt;li&gt;考虑图片适配规则；&lt;/li&gt;
+  &lt;li&gt;考虑交互手势操作；&lt;/li&gt;
+  &lt;li&gt;标题域最多支持几个字，超过如何展示。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;3表单&quot;&gt;3、表单&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输入域展示宽度确定；&lt;/li&gt;
+  &lt;li&gt;对于地址、备注等文本框当文字超过一行如何展现，是滚动还是换行，输入文字是否有限制数量；&lt;/li&gt;
+  &lt;li&gt;考虑当标题超过1行如何显示，&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;4弹窗提示框控制面板等&quot;&gt;4、弹窗、提示框、控制面板等&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;当内容超过一行如何显示；&lt;/li&gt;
+  &lt;li&gt;后台获取的数字、文字一定要去后台确定最长数据，保证当前设计能够承载。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;三所有流程都需展示出来&quot;&gt;三、所有流程都需展示出来&lt;/h3&gt;
+&lt;p&gt;在设计时，一定要把整个流程的界面都设计出来，哪怕是一个 Toast、一个弹窗也要展示出来。&lt;/p&gt;
+
+&lt;p&gt;我就犯过这样的问题，之前我在设计购物车列表时，界面中有个删除按钮，需要二次确认弹窗，类似下图当当上面的弹窗，于是我口头告知前端这里直接加个二次确认的弹窗组件即可，我就不画出来了，但是由于时间比较长，他们写的时候就忘记了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/04/09/RFrTLYXmClAzqZ8.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;后来也是在验收时才发现，删除的时候直接就删除了，没有二次确认，收藏成功也没有提示。这时候只好在拜托前端加上。&lt;/p&gt;
+
+&lt;p&gt;因此这次的教训告诉我，尽量将各流程都画出来，不仅可以让自己逻辑更清晰，不易漏掉界面，同时也不怕前端忘记，从而减少沟通成本。&lt;/p&gt;
+
+&lt;h3 id=&quot;四所有状态都应设计出来&quot;&gt;四、所有状态都应设计出来&lt;/h3&gt;
+
+&lt;p&gt;界面中的状态，以前我都是根据自己的经验来设计，但是人脑有时候是最不靠谱的，当我们大脑高度紧张时，就容易出现漏考虑的情况。&lt;/p&gt;
+
+&lt;p&gt;比如下面贝壳的提交表单，在设计时我们需要考虑默认态是什么，选中是什么；预算金额的滑块最小时如何显示，最大时如何显示；选择区域时默认是什么状态、选中是什么状态，联动的状态又是什么。键盘弹起的默认状态和输入状态，键盘收起弹出收起的交互操作，以及提示、成功、失败等反馈的效果都需要设计出来。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/04/09/Hi7PRsOGBJKI8ho.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;是不是看着脑袋都很晕，这种表单流程，我在设计时就很容易将地址联动、键盘交互这些漏掉。因此为了避免这种情况发生，我同样根据项目制作了一份常见的状态表，避免考虑不周全的情况。&lt;/p&gt;
+
+&lt;h4 id=&quot;1列表&quot;&gt;1、列表&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;空状态如何显示，是否需要引导&lt;/li&gt;
+  &lt;li&gt;列表标题过长如何显示&lt;/li&gt;
+  &lt;li&gt;描述文字为空、正常、过长如何显示&lt;/li&gt;
+  &lt;li&gt;翻页加载样式、没有更多内容的样式&lt;/li&gt;
+  &lt;li&gt;数据加载提示&lt;/li&gt;
+  &lt;li&gt;默认状态、点击状态、长按状态&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;2表单输入&quot;&gt;2、表单输入&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;考虑默认状态、编辑状态、常态&lt;/li&gt;
+  &lt;li&gt;输入时的键盘交互操作&lt;/li&gt;
+  &lt;li&gt;报错、网络断开、成功、失败等提示&lt;/li&gt;
+  &lt;li&gt;编辑后跳转到哪里？是直接跳转到列表，还是需要展示预览输入有逻辑关系的内容如何交互&lt;/li&gt;
+  &lt;li&gt;输入出行意外该如何处理，是否保存，需要做什么操作输入特殊字符是否做限制&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;3按钮&quot;&gt;3、按钮&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;正常、触发、禁用、加载等状态&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;4搜索&quot;&gt;4、搜索&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;在当前页操作，还是跳转到新页面&lt;/li&gt;
+  &lt;li&gt;实时搜索，还是提交后才更新数据&lt;/li&gt;
+  &lt;li&gt;正常态、触发态、输入态、提交态&lt;/li&gt;
+  &lt;li&gt;历史记录最多展示几条数据？是否支持清空&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;参考资料&quot;&gt;参考资料&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://m.zcool.com.cn/article/ZMTExOTU0OA==.html&quot;&gt;小公司没人带如何提升自己，我是这样做的！&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 01 Apr 2020 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2020/04/01/%E5%B0%8F%E5%85%AC%E5%8F%B8%E9%87%8C%E5%A6%82%E4%BD%95%E4%B8%BB%E5%AF%BC%E8%AE%BE%E8%AE%A1%E9%A1%B9%E7%9B%AE.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2020/04/01/%E5%B0%8F%E5%85%AC%E5%8F%B8%E9%87%8C%E5%A6%82%E4%BD%95%E4%B8%BB%E5%AF%BC%E8%AE%BE%E8%AE%A1%E9%A1%B9%E7%9B%AE.html</guid>
+        
+        <category>设计经验</category>
+        
+        
+        <category>设计经验</category>
+        
+      </item>
+    
+      <item>
         <title>安卓和iOS的区别</title>
         <description>&lt;blockquote&gt;
   &lt;p&gt;现在iOS的优势在哪？还是说Android已经和iOS平起平坐了？&lt;/p&gt;
@@ -755,8 +907,6 @@
         
         <category>移动端</category>
         
-        <category>设计规范</category>
-        
         
         <category>移动端</category>
         
@@ -765,7 +915,7 @@
       <item>
         <title>区域分割</title>
         <description>&lt;blockquote&gt;
-  &lt;p&gt;Android设计规范解读。&lt;/p&gt;
+  &lt;p&gt;连1px的分割线都用不好，可别说你懂界面设计。&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;1分割线设计&quot;&gt;1、分割线设计&lt;/h2&gt;
@@ -898,8 +1048,6 @@
         <guid isPermaLink="true">http://localhost:4000/2020/04/01/%E5%8C%BA%E5%9F%9F%E5%88%86%E5%89%B2.html</guid>
         
         <category>移动端</category>
-        
-        <category>设计规范</category>
         
         
         <category>移动端</category>
