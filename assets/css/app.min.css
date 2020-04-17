@@ -1523,7 +1523,8 @@ a {
   padding-left: 40px;
   padding-right: 40px;
   z-index: -1;
-  height: 40px;
+  height: 60px;
+  display: block;
 }
 
 .tabicon:hover, .tabicon.active{
