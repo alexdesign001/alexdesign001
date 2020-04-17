@@ -764,6 +764,7 @@ a {
 	height: 100%;
 	z-index: -2;
 	opacity: .5;
+        display: none !important;
 }
 
 .bgcolor-default {
