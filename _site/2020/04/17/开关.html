@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拆解「开关」背后的设计细节 - Alex Design - Creativity Never Sleeps</title>
+    <meta name="author"  content="Alex Hu">
+    <meta name="description" content="拆解「开关」背后的设计细节">
+    <meta name="keywords"  content="移动端">
+    <!-- Open Graph -->
+    <meta property="og:title" content="拆解「开关」背后的设计细节 - Alex Design - Creativity Never Sleeps">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/2020/04/17/%E5%BC%80%E5%85%B3.html">
+    <meta property="og:description" content="Alex Hu，90后，UI设计师，热爱技术&设计。很高兴能在这里与你分享我对设计和生活的思考。">
+    <meta property="og:site_name" content="Alex Design - Creativity Never Sleeps">
+    <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
+   <link rel="stylesheet" href="/assets/css/ionicons.min.css" | relative_url }}">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1748563_z2xad1yakte.css">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/share.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+	
+	<!--
+Author: Ray-Eldath
+refer to:
+ - http://docs.mathjax.org/en/latest/options/index.html
+-->
+
+	<script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [ ["$", "$"] ],
+			displayMath: [ ["$$", "$$"] ],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+	
+    <!--
+Author: Ray-Eldath
+-->
+<style>
+    .markdown-body .anchor{
+        float: left;
+        margin-top: -8px;
+        margin-left: -20px;
+        padding-right: 4px;
+        line-height: 1;
+        opacity: 0;
+    }
+    
+    .markdown-body .anchor .anchor-icon{
+        font-size: 15px
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        let nodes = document.querySelector(".markdown-body").querySelectorAll("h1,h2,h3")
+        for(let node of nodes) {
+            var anchor = document.createElement("a")
+            var anchorIcon = document.createElement("i")
+            anchorIcon.setAttribute("class", "fa fa-anchor fa-lg anchor-icon")
+            anchorIcon.setAttribute("aria-hidden", true)
+            anchor.setAttribute("class", "anchor")
+            anchor.setAttribute("href", "#" + node.getAttribute("id"))
+            
+            anchor.onmouseover = function() {
+                this.style.opacity = "0.4"
+            }
+            
+            anchor.onmouseout = function() {
+                this.style.opacity = "0"
+            }
+            
+            anchor.appendChild(anchorIcon)
+            node.appendChild(anchor)
+        }
+    })
+</script>
+</head>
+
+
+<body>
+  <!--[if lt IE 10]>
+<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+<![endif]-->
+  <input id="nm-switch" type="hidden" value="true"> <header class="g-header">
+    <div class="g-logo">
+      <a href="/"></a>
+    </div>
+    <i id="menu-toggle" class="iconfont icon-menu"></i>
+    <nav class="g-nav">
+        <ul>
+            
+            <li><a href="/">首页</a></li>
+            
+            <li><a href="/tags.html">文章</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+
+  <header
+    class="g-banner post-header post-pattern-overlappingCircles bgcolor-default "
+    data-theme="default"
+  >
+
+    <div class="post-wrapper">
+      <div class="post-tags">
+        
+          
+            <a href="/tags.html#%E7%A7%BB%E5%8A%A8%E7%AB%AF" class="post-tag">移动端</a>
+          
+        
+      </div>
+      <h1>拆解「开关」背后的设计细节</h1>
+      <div class="post-meta">
+        <span class="post-meta-item"><i class="iconfont icon-author"></i>Alex Hu</span>
+        <time class="post-meta-item" datetime="20-04-17"><i class="iconfont icon-date"></i>17 Apr 2020</time>
+      </div>
+    </div>
+    
+    <div class="filter"></div>
+      <div class="post-cover" style="background: url('https://img.zcool.cn/community/01c1685db7e792a8012163ba30a18b.png') center no-repeat; background-size: cover;"></div>
+    
+  </header>
+
+  <div class="post-content visible">
+    
+
+    <article class="markdown-body">
+      <blockquote>
+  <p>有些开关的设计因为使用广泛，已经在用户的心智中扎根，我们如果强行改变反而适得其反导致体验变差。</p>
+</blockquote>
+
+<h3 id="开关类型">开关类型</h3>
+
+<h4 id="1icon">1、icon</h4>
+
+<ul>
+  <li>由单一的 icon 通过颜色或图形的变化来表示开或关的状态。</li>
+  <li>如今各类 App 设计中常见的且体验比较好的方案还是将开关样式设计为当前状态样式。如下图iPhone自带相机的实况照片开关icon就是显示当前状态。</li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/016d375d44dbe8a8012187f4421795.png" alt="" /></p>
+
+<ul>
+  <li>有些开关的设计因为使用广泛，已经在用户的心智中扎根，我们如果强行改变反而适得其反导致体验变差。最典型的就是视频和音乐的播放暂停开关，他们表示的就是操作后的状态而不是当前状态，如下图。</li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/0153d45d44dcd2a8012187f41b4364.png" alt="" /></p>
+
+<ul>
+  <li>单一的 icon 开关如果没有其他的辅助提示会造成意符和反馈的缺失，进而形成较大的歧义性，用户会在疑惑中按照自己固有的心理模型和过往经验进行判断，体验因此降低。</li>
+</ul>
+
+<h4 id="2主体与开关分离分离式">2、主体与开关分离（分离式）</h4>
+
+<p>主体不再充当开关，只当做开关的名称或icon，另外制作一个开关传达意符和反馈，解决了当前状态与操作后状态混淆的问题。</p>
+
+<p>分离式开关直观展示了当前状态，在消除歧义方面优于 icon 开关，但同时缺点也很明显，它占用了过多页面空间并美感欠佳。</p>
+
+<p><img src="https://img.zcool.cn/community/01662f5d44dcffa80120695c6c86a4.png" alt="" /></p>
+
+<p><img src="https://img.zcool.cn/community/01ab175d44dd30a80120695c216c19.png" alt="" /></p>
+
+<p><img src="https://img.zcool.cn/community/018f4e5d44dd45a80120695c297160.png" alt="" /></p>
+
+<h4 id="3名称变化">3、名称变化</h4>
+<p>指的是开关依赖于其名称的变化告知用户开关的当前状态和操作。</p>
+
+<p><img src="https://img.zcool.cn/community/019a975d44dd61a8012187f4911507.png" alt="" /></p>
+
+<p>部分 App 会将开关的名称变化的方式统一，但也有部分 App 会将这两类进行混用，即一个是表示当前状态，一个是表示操作。</p>
+
+<p><img src="https://img.zcool.cn/community/0126805d44dd78a8012187f417bcba.png" alt="" /></p>
+
+<p>表示操作的按钮文字具有一定引导性，用户容易感知和触发，反之，表示状态的按钮文字由于不具有引导性，如果用户没有对这类按钮形成使用习惯甚至难以意识到它是可点击的，因此我们可以利用其特性进行逆向应用引导用户的行为。</p>
+
+<blockquote>
+  <p>比如在直播App中，我们希望引导用户关注主播，又试图避免用户关注后又取关主播。我们就可以将“关注”制作为表示操作，文案写为“关注主播”（属于1.开启…）。将“取消关注”制作为表示当前状态，文案写为“已关注”（属于7.已开启…）。前后的颜色进行区分，“关注主播”的按钮制作得对比度强，吸引力大，“已关注”做得弱一些，让用户误以为不可点击，如下图的斗鱼直播。</p>
+</blockquote>
+
+<blockquote>
+  <p><img src="https://img.zcool.cn/community/0175625d44dd89a8012187f4b02b0b.png" alt="" /></p>
+</blockquote>
+
+<p>名称变化的开关由于语言的模糊性，仍然造成了部分歧义。我们可以发现很多App的名称变化开关设计中，都会在操作后加入其它提示来消除歧义（如：toast 提示），有些App则并未加入，因此在后文中会着重介绍辅助提示的优点和使用方法。</p>
+
+<h3 id="辅助提示">辅助提示</h3>
+
+<h4 id="环境暗示">环境暗示</h4>
+<p>用户在操作开关前，开关以外的区域给予用户的提示，这些提示本身存在于交互流程中并不是我们刻意加入的，用户根据这些提示可以判断当前状态以及按下开关后的状态。</p>
+
+<p>例如在观看视频时，当用户去按下视频播放按钮前，用户会通过当前图像静止与无声音这个环境暗示明白当前状态是可能是视频未播放，所以应该按下播放按钮让视频播放。</p>
+
+<p>再比如得到 App 的夜间模式，用户可以通过当前界面的样式判断当前是否已经开启了夜间模式。</p>
+
+<p><img src="https://img.zcool.cn/community/01accf5d44ddc1a8012187f492223e.png" alt="" /></p>
+
+<h4 id="模态非模态提示">模态/非模态提示</h4>
+
+<p>当用户按下开关后模态和非模态提示可以在反馈层面告知用户，让用户知道自己是触发了开启还是关闭。</p>
+
+<p>常见的模态提示控件是「警告框（Alerts）」，非模态提示控件是「提示框（Toast）」，前者提示强度大，使用在一些危险、重要的反馈中，后者则使用在一些轻量的提示中。</p>
+
+<p>介绍 icon 开关的部分我们提到了美颜相机的夜拍模式的 icon 开关状态难以区分，但美图秀秀在这里使用了顶部的非模态提示在反馈层面告知用户当前状态，很好地解决了这个问题，如下图。</p>
+
+<p><img src="https://img.zcool.cn/community/011cc75d44dde1a8012187f4dbf38f.png" alt="" /></p>
+
+<p><img src="https://img.zcool.cn/community/012cf45d44ddf6a8012187f45034dd.png" alt="" /></p>
+
+<h4 id="辅助文案">辅助文案</h4>
+<p>指的是在主体（主体可能是开关名称、icon 或二者皆有之）之外另外放置一些文案信息来充当意符和反馈。</p>
+
+<p>下图案例就是高德地图的下车提示的开关，开关的主体是名称，但是下面的一行辅助文案很清晰地传达了当前的开关是什么状态。</p>
+
+<p><img src="https://img.zcool.cn/community/01b7b15d44de0da80120695c401478.png" alt="" /></p>
+
+<h4 id="其他辅助提示">其他辅助提示</h4>
+
+<p>并不是所有提示都需要让用户看见，我们可以给予用户其他感官的信号告知用户当前开关的状态。</p>
+
+<p>在现实生活中，我们会通过钥匙在锁中扭动发出的声音判断锁是否被打开，通过触摸感受摩托车是否继续震动判断其是否已经熄火。</p>
+
+<p>同样，在 UI 设计中，我们也仍然可以使用听觉和触觉来消除开关的歧义。</p>
+
+<p>一个比较优秀的案例是高德地图，当用户打开下车提示之后，会出现语音提示“已开启下车提醒”，它充分考虑到身处户外的用户可能并不能很方便地获取屏幕上的视觉信息，因此使用语音的形式提示用户。</p>
+
+<h4 id="如何进行取舍">如何进行取舍</h4>
+
+<p>我们可以从以下角度分析，使用频率、用户人群、潜在风险等。</p>
+
+<p>使用频率：使用频率越高，用户对操作的熟悉度越高，歧义对用户造成的理解与记忆成本就降低了，设计可以偏向低干扰和美观度，反之使用频率越低，歧义对用户造成的理解与记忆成本升高，设计就应该偏向于易理解。</p>
+
+<p>用户人群：不同的用户人群的风格偏好、认知能力是不一样的。例如，我们要设计一款目标用户为年轻人的相机产品，设计风格简约，此时我们比较偏向的设计方案可能就类似美颜相机。反之，如果我们的目标用户是中老年人，就要偏向于易用而牺牲美观度，方案转而偏向美图秀秀或 Faceu 激萌。</p>
+
+<p>潜在风险：开关的切换如果会导致潜在风险，设计就应该偏向于易理解，且需要使用模态提示告知用户风险。例如用户如果关闭了推送通知开关，会导致接收不到实时重要的信息通知，此时不仅要使用易识别的开关类型，还需要添加模态提示告知用户风险。</p>
+
+<p>我们可以将这些考虑角度放到雷达图，如下图所示，最终形成的面积越大我们越应该将按钮制作得易理解、易使用，反之我们可以偏向于将开关制作得更美观牺牲一些易用性。考虑到一些特殊产品的特殊用户属性，我们可以在下图中增加其他考虑角度，其并不是一成不变的。</p>
+
+<p><img src="https://img.zcool.cn/community/0197b85d44de5ea8012187f45c2c1d.png" alt="" /></p>
+
+<h3 id="参考资料">参考资料</h3>
+
+<p><a href="https://m.zcool.com.cn/article/ZMTAxMDMzMg==.html">拆解「开关」背后的设计细节</a></p>
+
+    </article>
+
+    
+    <div class="social-share-wrapper">
+      <div class="social-share"></div>
+    </div>
+    
+  </div>
+<div class="tabBar">
+    <div class="tabBar_icon">
+        <li><a href="/index.html"><span class="iconfont tabicon iconfavico"></span></a></li>
+        <li><a  href="/tags.html"><span class="iconfont tabicon iconnote"></span></a></li>
+       <li><a href="https://github.com/alexdesign001" target="_blank"><span class="iconfont tabicon iconuser"></span></a></li>
+    </div>
+</div>
+  <section class="author-detail">
+    <section class="post-footer-item author-card">
+      <div class="avatar">
+        <img src="/assets/img/profile.png" alt="">
+      </div>
+      <div class="author-name" rel="author">Alex Hu</div>
+      <div class="bio">
+        <p>UI设计师，热爱生活&设计，简单乐观爱创造</p>
+      </div>
+      
+      <ul class="sns-links">
+        
+        <li>
+          <a href="//github.com/alexdesign001" target="_blank">
+                    <i class="iconfont icon-github"></i>
+                </a>
+        </li>
+        
+      </ul>
+      
+    </section>
+    <section class="post-footer-item read-next">
+      
+      <div class="read-next-item">
+        <a href="/2020/04/17/%E6%90%9C%E7%B4%A2.html" class="read-next-link"></a>
+        <section>
+          <span>移动搜索体验设计总结</span>
+          <p>  通过搜索方便用户，高效地从大量信息内容中通过一些关键词迅速找到自己需要的内容；其次可以通过适当的引导来达成产品...</p>
+        </section>
+        
+        <div class="filter"></div>
+        <img src="https://img.zcool.cn/community/01dc115d3ee22fa80120695c49ae19.png" alt="">
+        
+     </div>
+      
+
+      
+      <div class="read-next-item">
+        <a href="/2020/04/17/%E5%B0%8F%E6%A0%87%E7%AD%BE.html" class="read-next-link"></a>
+          <section>
+            <span>你真的会设计小标签吗？</span>
+            <p>  这是目前一种社会现象的延伸，每个人在不同的环境里都会有标签或者给别人贴标签，这是人们面对信息量过多的环境来进行...</p>
+          </section>
+          
+          <div class="filter"></div>
+          <img src="https://img.zcool.cn/community/01c1685db7e792a8012163ba30a18b.png" alt="">
+          
+      </div>
+      
+    </section>
+    
+  </section>
+
+  <footer class="g-footer">
+  <section>Alex Design - Creativity Never Sleeps ©
+  
+  
+  2020
+  </section>
+  
+</footer>
+
+
+  <script src="/assets/js/social-share.min.js"></script>
+  <script>
+    socialShare('.social-share', {
+      sites: [
+        
+          'wechat'
+          ,
+          
+        
+          'weibo'
+          ,
+          
+        
+          'douban'
+          ,
+          
+        
+          'twitter'
+          
+        
+      ],
+      wechatQrcodeTitle: "分享到微信朋友圈",
+      wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+    });
+  </script>
+
+  
+
+  <script src="/assets/js/prism.js"></script>
+  <script src="/assets/js/index.min.js"></script>
+</body>
+
+</html>

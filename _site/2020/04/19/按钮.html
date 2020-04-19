@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App设计体系之按钮 - Alex Design - Creativity Never Sleeps</title>
+    <meta name="author"  content="Alex Hu">
+    <meta name="description" content="App设计体系之按钮">
+    <meta name="keywords"  content="移动端">
+    <!-- Open Graph -->
+    <meta property="og:title" content="App设计体系之按钮 - Alex Design - Creativity Never Sleeps">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/2020/04/19/%E6%8C%89%E9%92%AE.html">
+    <meta property="og:description" content="Alex Hu，90后，UI设计师，热爱技术&设计。很高兴能在这里与你分享我对设计和生活的思考。">
+    <meta property="og:site_name" content="Alex Design - Creativity Never Sleeps">
+    <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
+   <link rel="stylesheet" href="/assets/css/ionicons.min.css" | relative_url }}">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1748563_z2xad1yakte.css">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/share.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+	
+	<!--
+Author: Ray-Eldath
+refer to:
+ - http://docs.mathjax.org/en/latest/options/index.html
+-->
+
+	<script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [ ["$", "$"] ],
+			displayMath: [ ["$$", "$$"] ],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+	
+    <!--
+Author: Ray-Eldath
+-->
+<style>
+    .markdown-body .anchor{
+        float: left;
+        margin-top: -8px;
+        margin-left: -20px;
+        padding-right: 4px;
+        line-height: 1;
+        opacity: 0;
+    }
+    
+    .markdown-body .anchor .anchor-icon{
+        font-size: 15px
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        let nodes = document.querySelector(".markdown-body").querySelectorAll("h1,h2,h3")
+        for(let node of nodes) {
+            var anchor = document.createElement("a")
+            var anchorIcon = document.createElement("i")
+            anchorIcon.setAttribute("class", "fa fa-anchor fa-lg anchor-icon")
+            anchorIcon.setAttribute("aria-hidden", true)
+            anchor.setAttribute("class", "anchor")
+            anchor.setAttribute("href", "#" + node.getAttribute("id"))
+            
+            anchor.onmouseover = function() {
+                this.style.opacity = "0.4"
+            }
+            
+            anchor.onmouseout = function() {
+                this.style.opacity = "0"
+            }
+            
+            anchor.appendChild(anchorIcon)
+            node.appendChild(anchor)
+        }
+    })
+</script>
+</head>
+
+
+<body>
+  <!--[if lt IE 10]>
+<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+<![endif]-->
+  <input id="nm-switch" type="hidden" value="true"> <header class="g-header">
+    <div class="g-logo">
+      <a href="/"></a>
+    </div>
+    <i id="menu-toggle" class="iconfont icon-menu"></i>
+    <nav class="g-nav">
+        <ul>
+            
+            <li><a href="/">首页</a></li>
+            
+            <li><a href="/tags.html">文章</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+
+  <header
+    class="g-banner post-header post-pattern-overlappingCircles bgcolor-default "
+    data-theme="default"
+  >
+
+    <div class="post-wrapper">
+      <div class="post-tags">
+        
+          
+            <a href="/tags.html#%E7%A7%BB%E5%8A%A8%E7%AB%AF" class="post-tag">移动端</a>
+          
+        
+      </div>
+      <h1>App设计体系之按钮</h1>
+      <div class="post-meta">
+        <span class="post-meta-item"><i class="iconfont icon-author"></i>Alex Hu</span>
+        <time class="post-meta-item" datetime="20-04-19"><i class="iconfont icon-date"></i>19 Apr 2020</time>
+      </div>
+    </div>
+    
+    <div class="filter"></div>
+      <div class="post-cover" style="background: url('https://img.zcool.cn/community/01eabc5de7ac35a80120956873dcb2.png') center no-repeat; background-size: cover;"></div>
+    
+  </header>
+
+  <div class="post-content visible">
+    
+
+    <article class="markdown-body">
+      <blockquote>
+  <p>按钮样式主要分为面形、线性、文字加图标、文字按钮等，视觉优先级：面性&gt;线性&gt;文字</p>
+</blockquote>
+
+<p><img src="https://i.loli.net/2020/03/22/8nyQLHpeqS3lFus.jpg" alt="Alt" /></p>
+
+<h2 id="一按钮的设计形式">一、按钮的设计形式</h2>
+<h3 id="1类型和表现形式">1、类型和表现形式</h3>
+<p>按钮样式主要分为面形、线性、文字加图标、文字按钮等，视觉优先级：面性&gt;线性&gt;文字</p>
+
+<p><img src="https://img.zcool.cn/community/01eabc5de7ac35a80120956873dcb2.png" alt="" /></p>
+
+<p>按钮的表现形式包括文字+背景、icon+背景、文字+icon+背景、纯文字、纯icon、文字+icon。</p>
+
+<p><img src="https://img.zcool.cn/community/01b17c5e06c8a0a80120a8954d0f68.png" alt="" /></p>
+
+<h3 id="2按钮形状">2、按钮形状</h3>
+<p>按钮设计时，需要根据产品属性和界面风格设计合适的形式，按钮形状主要有直角、小圆角、全圆角三种样式。</p>
+
+<p><img src="https://img.zcool.cn/community/01b5385de7abe5a8012095686e133a.png" alt="" /></p>
+
+<ul>
+  <li>
+    <p>直角按钮：直角具有严谨、力量、高端的特点。适用于金融类、奢侈品类产品中，给人严谨安全、高端的感觉，符合产品调性。例如京东金融</p>
+  </li>
+  <li>
+    <p>小圆角按钮：小圆角具有稳定、中性的感觉。适用于用户跨度较大的常规类产品中，例如微信、滴滴。</p>
+  </li>
+  <li>
+    <p>全圆角按钮：全圆角具有活泼、年轻、安全的特点。适用于儿童类、年轻化、娱乐类、购物类的产品中，具有亲和力，拉近与用户之间的距离。例如淘宝、京东、爱奇艺。</p>
+  </li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/0180a55de7abffa8012095681c0e0f.png" alt="" /></p>
+
+<h3 id="3按钮的状态">3、按钮的状态</h3>
+
+<p>在界面设计中需要考虑按钮不同状态的设计，从而提高用户操作流畅度。移动端常用的按钮可以分为正常状态、按压状态、禁用状态三种。</p>
+
+<p><img src="https://img.zcool.cn/community/0170bd5de7ac45a80120956855acb2.png" alt="" /></p>
+
+<p>正常状态展示的是APP的主色；按压状态在正常态的基础上叠加15%不透明度的黑色#000000蒙版；禁用状态是设置灰色或者将正常状态设置45%不透明度。</p>
+
+<p><img src="https://img.zcool.cn/community/013aeb5de7ac81a801209568348f39.png" alt="" /></p>
+
+<p>通过上图的对比可以发现，都是不可点击，纯灰色按钮更像是禁止且不会被可用的状态。而使用品牌色，降低不透明度，可加强用户对该产品按钮的认知。且暗示用户该按钮满足条件即可被点击，所以个人觉得第二种方案会更合理。</p>
+
+<h3 id="4通过颜色来定义按钮意义">4、通过颜色来定义按钮意义</h3>
+
+<p>越是重要的按钮越是要足够引人注目，例如使用主色调或者背景对比色，将所占面积放大。即使是弱点击感的文字按钮，在页面中也要让用户直观的感受它们的存在。当需要强调按钮中的文字时，不妨采用圆角的按钮。圆角按钮不仅可以带给用户亲和的感觉,也可以让用户更加聚集文字内容。</p>
+
+<blockquote>
+  <p>例如：在马蜂窝的详情页面里，我们可以依次看到：底部的操作栏（客服、店铺、收藏、购买）、开通vip、价格说明、更多班期和一些表示更多的图标按钮。底部的“立即购买”和价格底下的“开通vip”都是重要的业务按钮，这个两个在颜色上都做了突出显示，点击区域也是最大的，即使是“价格说明”、“更多班期”这类弱点击感的文字按钮，也在用蓝色做了突出显示，让用户感知到它们。</p>
+</blockquote>
+
+<blockquote>
+  <p><img src="https://img.zcool.cn/community/010cc95d415298a8012187f485ba30.jpg" alt="" /></p>
+</blockquote>
+
+<p>此外，如果“删除”是一个潜在的危险操作，您可以使用红色来声明这一事实。</p>
+
+<p><img src="https://img.zcool.cn/community/01776b5d19cccfa8012051cd4a126f.png" alt="" /></p>
+
+<h3 id="5按钮的描述">5、按钮的描述</h3>
+<p>按钮的描述是对按钮的说明，也是对面操作后产生情况的描述。可以直接将说明放在按钮里面，例如：常见的保存按钮；也可以先进行一段文字描述，再抛出按钮。其目的都是为了让用户了解到按钮的功能，使用户对自己的行为有掌控的感觉。</p>
+
+<p><img src="https://img.zcool.cn/community/0177975d4152bea8012187f4bb9161.jpg" alt="" /></p>
+
+<h3 id="6按钮的尺寸">6、按钮的尺寸</h3>
+
+<h4 id="a-对触屏按钮尺寸的分析">a. 对触屏按钮尺寸的分析</h4>
+<ul>
+  <li>麻省理工学院触摸实验室的研究发现，指垫的平均值在 10-14mm 之间，指尖的平均值为 8-10mm。</li>
+  <li>研究者在对于按钮尺寸和间距的深入探索中，发现了一个适用于大多数用户包括
+老年人的标准尺寸。该研究发现，用户在按钮上的触摸精度上小于42像素或超过72像素的按钮都具有最低的精度率。使用42-72像素之间的按钮可以获得最高精度反馈。这意味着42个像素是按钮的最小值，而72个像素则是最适合用户的最大值。</li>
+  <li>研究发现最优选的单个按钮尺寸是60像素，大约是42-72像素的中间范围，不过如果不考虑设计的因素，72像素按钮产生会最高的触摸精度，也是设计师对大范围人群设计时的首选。</li>
+</ul>
+
+<p><img src="https://i.loli.net/2020/03/22/YQ6zAfJeN4cL5ny.jpg" alt="Alt" /></p>
+
+<ul>
+  <li>在使用多层按钮选择时，指示优先级也非常重要。这样用户就知道哪些操作会使他们获得最理想的结果。按照按钮大小标准，您可以有效地指示优先级不再需要选择任意大小并希望它是用户友好的。</li>
+</ul>
+
+<blockquote>
+  <p><img src="https://i.loli.net/2020/03/22/2WOetgquZnk6xva.jpg" alt="Alt" /></p>
+</blockquote>
+
+<blockquote>
+  <p>该音乐播放的示例演示了使用按钮大小标准来指示优先级。播放的按钮最大，其次是上下选择，再其次是循环与随机。</p>
+</blockquote>
+
+<ul>
+  <li>大小优先级的顺序
+    <ul>
+      <li>高优先级按钮=72像素</li>
+      <li>中优先级按钮=60像素</li>
+      <li>低优先级按钮=42像素</li>
+    </ul>
+  </li>
+</ul>
+
+<p>用户最常使用的按钮现在更容易被发现和点击。他们能够以更快的反应时间和更高的准确度来点击它。如果用户的注意力分配在不同的任务之间，这尤其有用。</p>
+
+<h4 id="b-ios-android微软按钮尺寸规范建议">b. iOS, Android,微软按钮尺寸规范建议</h4>
+<ul>
+  <li>iOS：44×44 points（逻辑分辨率），尺寸约等于 7mm。</li>
+  <li>Android：48×48dp +8dp 或更多间距 = 56 x 56dp（设备分辨率），约等于 9 mm。</li>
+  <li>微软：82×82 points，9×9mm± 两侧分别 2mm 的推荐间隔= 13×13mm。</li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/0176a45d648782a8012187f45c6b32.png" alt="" /></p>
+
+<ul>
+  <li>在界面设计中，按钮尺寸低于 12.8 毫米（微软建议的 82 pt），基本能符合大多数设计情况。</li>
+  <li>按钮尺寸至少高于 5.5 毫米（36 pt），否则用户点击时会较为吃力。</li>
+  <li>
+    <p>按钮内容的最大宽度(W)应该大于最大高度(H)的 2～3 倍，W=2 * H～3 * H。按钮尺寸一般有2种设计形式：</p>
+
+    <ul>
+      <li>按钮长度固定，文字长度变化；</li>
+      <li>按钮长度根据文字长短而变化，这种情况文字距离按钮上下左右边距一般成一定比例关系。</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/018ce35de7abd0a8012095684021a7.png" alt="" /></p>
+
+<ul>
+  <li>按钮圆角的范围，不大于高度的 1/4。</li>
+</ul>
+
+<p><strong>按钮与文字参考表</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>按钮高度</th>
+      <th>文字大小</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>56</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>48</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <td>44</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <td>36</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td>28</td>
+      <td>12</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>相应的单位换算公式</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>毫米</th>
+      <th>Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>6.9</td>
+      <td>44(Apple)</td>
+    </tr>
+    <tr>
+      <td>8.8</td>
+      <td>56(Google)</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>58</td>
+    </tr>
+    <tr>
+      <td>9.2</td>
+      <td>59</td>
+    </tr>
+    <tr>
+      <td>9.6</td>
+      <td>62</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>64</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>77</td>
+    </tr>
+    <tr>
+      <td>12.5</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <td>12.8</td>
+      <td>82(Microsoft)</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>96</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="7按钮间距标准">7、按钮间距标准</h3>
+
+<ul>
+  <li>当按钮相距太远时，用户移动到触摸目标的速度要慢得多。当按钮太靠近时，用户的触摸精度最低。</li>
+  <li>12至48像素的范围是最佳按钮间距。</li>
+</ul>
+
+<p><img src="https://i.loli.net/2020/03/22/GQ3B5DlpRHxJ9d8.jpg" alt="Alt" /></p>
+
+<ul>
+  <li>与标准按钮尺寸对应的按钮间距标准</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>按钮尺寸</th>
+      <th>间距标准</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>大按钮</td>
+      <td>12-24像素</td>
+    </tr>
+    <tr>
+      <td>中等按钮</td>
+      <td>24-36像素</td>
+    </tr>
+    <tr>
+      <td>小按钮</td>
+      <td>36-48像素</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>*更大的按钮允许用户准确地击中他们的目标，即使他们的手指略微偏离目标。但如果他们用较小的按钮离开目标，他们就会错过并按下相邻的按钮。这就是为什么较小的按钮需要比较大按钮更多的间距。</li>
+</ul>
+
+<p><img src="https://i.loli.net/2020/03/22/3JrbhzaqWVFmSoX.jpg" alt="Alt" /></p>
+
+<ul>
+  <li>由于宽度较大，按钮间距标准不适用于文本按钮。但是至少12个像素的间隔对于视觉分离是有利的。</li>
+</ul>
+
+<p><img src="https://i.loli.net/2020/03/22/rh26pFDC8OoLBYg.jpg" alt="Alt" /></p>
+
+<h3 id="8按钮的位置">8、按钮的位置</h3>
+
+<h4 id="a古腾堡原则">a.古腾堡原则</h4>
+<ul>
+  <li>20 世纪 50 年代，现代报纸设计之父Edmund C. Arnold 在设计报纸的过程中，提出了一项原则，认为人的阅读方式应该是遵循某种习惯进行的 —— 除了从左到右，还有从上到下的方式。</li>
+  <li>古腾堡图将显示介质分为四个象限：左上角的「第一视觉落点区」，也叫「主光学区域」，类似自然光的落点；右下角的「终端区域」；右上角的「强休区」和左下角的「弱休区」。)</li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/01212a5d648832a8012187f498cf55.png" alt="" /></p>
+
+<ul>
+  <li>整个阅读方式由左向右方向前进，读者倾向于关注整个页面的开始与结束区域，至于段落的起始与结尾则较少被关注到，也就是休闲区。这个原则的支撑点为「阅读重心」，由人们一直以来的阅读习惯形成。</li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/0135375d648842a80120695c7dcd32.png" alt="" /></p>
+
+<h4 id="b手机端各个点击区域的操作难易情况">b.手机端各个点击区域的操作难易情况</h4>
+<p>按钮的位置要考虑操作便捷性和阅读性。阅读性是指按钮的放置位置要符合常使用的视觉线路：“F”线路、“Z”线路。便捷性即按钮的位置要放在容易点击的地方，web页面边缘部分是最易操作的区域，手机端则是靠下居中的区域。</p>
+
+<p><img src="https://img.zcool.cn/community/01090c5d4152cfa8012187f45bc3af.jpg" alt="" /></p>
+
+<p>例如网易音乐的弹窗，为了适应大屏手机的操作，将之前水平并排的两个文字按钮变成了右对齐的展示方式。</p>
+
+<p><img src="https://img.zcool.cn/community/01902c5d4152e9a80120695c302b41.jpg" alt="" /></p>
+
+<h5 id="c-底部按钮核心在于按钮本身">c. 底部按钮：核心在于按钮本身</h5>
+
+<ul>
+  <li>如果界面是需要<strong>用户阅读完</strong>并进行操作的话，根据古腾堡原则，按钮的最佳位置应该是在界面底部。界面红色区域的颜色深度代表了点击率的高低。用户的浏览视线，影响了界面信息的布局。</li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/0168a15d6488a6a80120695cd2f13d.png" alt="" /></p>
+
+<blockquote>
+  <p>但如果对这方面不熟悉，只是纯粹的觉得按钮位置占用了屏幕空间，而把按钮移到右上角，反而本末倒置。这样无论在操作还是阅读上，都会影响用户的使用路径。不仅如此，顶部按钮尺寸较小，因为它所占空间有限，因此在操作上相对来说不便于点击。</p>
+</blockquote>
+
+<blockquote>
+  <p><img src="https://img.zcool.cn/community/01de375d6488c3a8012187f40181b6.png" alt="" /></p>
+</blockquote>
+
+<ul>
+  <li><strong>评论的视觉流</strong>也是按照从上到下的视觉流进行设计的。产品的评论和点赞功能放在底部。</li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/01053e5d6488baa80120695cb0a926.png" alt="" /></p>
+
+<h5 id="d顶部按钮的关键在于可编辑内容区域而不是按钮本身">d.顶部按钮的：关键在于可编辑内容区域，而不是按钮本身。</h5>
+
+<p>顶部按钮更适用于「编辑页面」，需要用户谨慎操作。在这样的情况下，使用顶部按钮，可以让用户在注意到应用栏中的状态更改后更快地采取操作行为。按钮与状态标题的接近意味着用户的眼睛不必偏离太远。</p>
+
+<p><img src="https://img.zcool.cn/community/01a2305d6488cfa80120695c7c1a2f.png" alt="" /></p>
+
+<h4 id="e-水平按钮当产品希望用户进行什么操作时就把主按钮放在右边">e. 水平按钮：当产品希望用户进行什么操作时，就把主按钮放在右边。</h4>
+
+<ul>
+  <li>遵循古腾堡原则的视觉终点说明，让用户最快的看到主要操作内容。</li>
+  <li>当主要动作在左侧时，用户的眼睛想要向右下方移动，而左边的主按钮需要用户的视线来回移动，增加用户的阅读时间。</li>
+  <li>同时也要结合「左边取消，右边行进」的原则。</li>
+</ul>
+
+<blockquote>
+  <p><img src="https://img.zcool.cn/community/0103e25d6488eea8012187f467df48.png" alt="" />
+keep 把「继续」和「结束」按钮并排放置，结束放在右边，完全符合「取消」和「退出」的排列逻辑，也符合古腾堡原则。且熟悉的朋友都知道，这个页面的「结束」按钮需要长按至多少秒才能结束。</p>
+</blockquote>
+
+<blockquote>
+  <p><img src="https://img.zcool.cn/community/01107b5d6488faa80120695c20a168.png" alt="" />
+购物产品的「喜欢」按钮相对于「加入购物车」来说，用户的关注点更多的会在是否购买上，而不是是否喜欢上。虽然也有，但程度更低，所以「喜欢」按钮相对就更弱化。</p>
+</blockquote>
+
+<blockquote>
+  <p><img src="https://img.zcool.cn/community/01edd95d648907a8012187f4ea37ca.png" alt="" />
+支付宝的余额宝，在「转入」和「转出」上的设计。用户的关注点更多的会「转入」在上，而不是是否「转出」上。所以「转出」相对弱化。</p>
+</blockquote>
+
+<blockquote>
+  <p><img src="https://img.zcool.cn/community/01f8ad5d648918a8012187f4405a94.png" alt="" />
+类似的内容还能找到很多，比如微信朋友圈的点赞和评论；以及知乎的点赞和评论的位置摆放，也从一定程度上说明产品希望用户做什么的思路。</p>
+</blockquote>
+
+<h4 id="f-垂直按钮业务与原则出现矛盾时业务还是占据高优先级的">f. 垂直按钮：业务与原则出现矛盾时，业务还是占据高优先级的。</h4>
+<ul>
+  <li>如果一个界面上同时存在两个按钮，虽然优先级不同，但设计师希望用户单独关注每个操作，那么垂直摆放就是最理想的选择。垂直摆放的按钮虽然在样式上做了区分，但用户同样会停留一段时间进行对比思考。</li>
+  <li>垂直按钮比水平按钮更突出，他们占据更多屏幕空间的宽度。</li>
+  <li>按照古腾堡原则来说，正常的垂直按钮设计应该是这样。</li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/0160845d648968a8012187f4fd1b0a.png" alt="" /></p>
+
+<ul>
+  <li>业务与原则出现矛盾时，业务还是占据高优先级的。
+    <blockquote>
+      <p><img src="https://img.zcool.cn/community/01eeca5d648950a8012187f4f2e24e.png" alt="" />
+这里要举一个特殊的例子，为了突出充值，微信将其颜色进行了反转。意图是连接零钱和充值的关系，而把提现与底部的说明性文字融合，从而提倡用户进行充值操作。即使有多余的零钱也不要体现了，来理财。</p>
+    </blockquote>
+  </li>
+</ul>
+
+<blockquote>
+  <p>但如果把充值移到下方，提现放到上方，就会遇到业务问题，即零钱和提现绑定，违背了零钱与充值的业务关系。</p>
+</blockquote>
+
+<blockquote>
+  <p>微信认为业务与原则出现矛盾时，业务还是占据高优先级的。</p>
+</blockquote>
+
+<h3 id="8提供互动方面的视听反馈">8、提供互动方面的视听反馈</h3>
+<p>当用户单击或点击按钮时，他们期望用户界面会以适当的反馈响应。根据操作类型，这可能是视觉或音频反馈。当用户没有任何反馈时，他们可能会认为系统没有收到他们的命令，并且会重复操作。这种行为通常会导致多个不必要的操作。</p>
+
+<p>作为人类，我们期望在与对象交互之后得到一些反馈。它可能是视觉、音频或触觉反馈 — 以便用于确认对象得到我们的信息。</p>
+
+<p><img src="https://img.zcool.cn/community/0155275d19cfc9a8012051cdbcaf47.gif" alt="" /></p>
+
+<p>对于某些操作，例如下载，它不仅值得确认用户输入，而且还显示了进程的当前状态。</p>
+
+<p><img src="https://img.zcool.cn/community/0183eb5d19d002a8012051cd51e088.gif" alt="" /></p>
+
+<h2 id="二按钮功能类型及使用">二、按钮功能类型及使用</h2>
+<p>按钮的功能类型往往决定了一个按钮的设计方式是需要强调还是需要弱化；文案是需要强引导，还是直接阐述功能；按钮上放不放图标等。按钮根据功能的不同，可以分为不同的类型，主要有行为召唤按钮、悬浮按钮、命令按钮、开关按钮等。</p>
+
+<h5 id="行为召唤按钮">行为召唤按钮</h5>
+<p>通过设计诱导或激励用户点击， 从而提高产品的转化率。例如立即购买、订阅关注、利益诱导等。</p>
+
+<p><strong>诱导购买</strong>：当行为召唤的目的是诱导购买时，按钮的设计从颜色、形状、样式上都需要突出。让用户进来第一眼就能知道该按钮的用途。在淘宝，考拉这类电商app的界面中，购买行为是整个业务的核心，也是最需要着重强调的。所以在这类app的页面中购买按钮最为突出，是一种典型的CAT按钮。</p>
+
+<p><img src="https://img.zcool.cn/community/0124bf5d4151e0a8012187f4feff3c.jpg" alt="" /></p>
+
+<p><strong>订阅关注</strong>：当行为召唤的目的是订阅关注时，在设计时根据产品目的判断是诱导用户订阅关注重要，还是让用户阅读内容重要，来设计按钮大小、样式等。</p>
+
+<p><img src="https://img.zcool.cn/community/019e1a5de7ad35a80121385343ebfe.png" alt="" /></p>
+
+<h5 id="悬浮按钮">悬浮按钮</h5>
+<p>悬浮按钮通常是在页面中的某个固定位置漂浮着，是一种高优先级别的按钮，通常用在一些核心、频繁使用的操作上。例如摩拜app中的“扫码开锁”。</p>
+
+<p><img src="https://img.zcool.cn/community/0145fa5d4151f7a8012187f4c55415.jpg" alt="" /></p>
+
+<h5 id="命令按钮">命令按钮</h5>
+<p>命令按钮指该按钮具有明确的指令，多出现在弹框中，一般分为一个文字命令或2个文字命令。其要求是文字语义要明确，同时根据用户的操作习惯，一般遵循”左回退右行进”的设计原则。</p>
+
+<p><img src="https://img.zcool.cn/community/018bfc5de7ace0a80120956831402c.png" alt="" /></p>
+
+<h5 id="开关按钮">开关按钮</h5>
+<p>表示两种相互对立的状态间的切换，多用于表示功能的开启和关闭。当按钮开启后可能还会带来其他的相应操作。开关按钮最常见的就是手机设置中，但是也有很多APP将其用到界面中使用。</p>
+
+<p><img src="https://img.zcool.cn/community/0145c25de7ad19a8012138539f2cbf.png" alt="" /></p>
+
+<h5 id="图标按钮">图标按钮</h5>
+<p>顾名思义就是用一个个形象的图标来表示不同的操作，例如，我们最常见的“点赞” “留言” “收藏” 等等。页面中的主要操作可以考虑使用图标按钮，但在某些地方图标按钮无法准确的表达出按钮的含义，则会配上一些简短的文字，来进行解说和强调。</p>
+
+<p><img src="https://img.zcool.cn/community/0159735d415207a80120695cb07710.jpg" alt="" /></p>
+
+<h5 id="文字按钮">文字按钮</h5>
+<p>用几个文字来代表按钮，文字可以是按钮的操作结果，也可以是一个动词。它没有集成为我们常见的形状，和一般的文本相似，所有看起来并不是很特别像按钮，是一种点击感比较弱的按钮，通常用于创建辅助交互区域。在使用时为了传达可点击的感觉，会使用主题色，或者加粗等方式来突出它。</p>
+
+<p><img src="https://img.zcool.cn/community/010e965d41521ca80120695ceb5b8f.jpg" alt="" /></p>
+
+<blockquote>
+  <h5 id="纯文本按钮更难点击">纯文本按钮更难点击</h5>
+</blockquote>
+
+<blockquote>
+  <p><img src="https://i.loli.net/2020/03/22/JnOIM3UoDapXPB9.jpg" alt="Alt" /></p>
+</blockquote>
+
+<blockquote>
+  <p>手指比鼠标光标大，将手指放在较小的目标上感觉很尴尬用户的手指遮挡了按钮的内容，使得他们没有视觉上的提示来确认是否提交了该动作。如果纯文本按钮里的文本足够长，用户通过露出手指外的内容，会得到一个小的视觉反馈，这会好一点，但仍然不足以使他们确保已经击中了目标。</p>
+</blockquote>
+
+<blockquote>
+  <p>小尺寸的纯文本按钮强迫用户精确地移动手指以击中目标。但越精确越需要用户付出更多的努力。他们必须密切注意手指和目标，以确保他们点中了按钮所在区域。</p>
+</blockquote>
+
+<blockquote>
+  <p>缺少直边使得纯文本按钮边界难以区分，更难以瞄准。实心按钮不会出现这样的问题，因为它们具有更大的目标区域和笔直的边缘。</p>
+</blockquote>
+
+<blockquote>
+  <h5 id="所有大写的纯文本按钮都难以阅读">所有大写的纯文本按钮都难以阅读</h5>
+</blockquote>
+
+<blockquote>
+  <p>为了解决纯文本按钮的点击问题，一些设计师将它们的文本按钮全部大写。 Google的 Material Design系统推广了这种按钮风格，但也有其缺陷。</p>
+</blockquote>
+
+<blockquote>
+  <p>全部大写确实为纯文本按钮提供了更直的边缘和更大的目标区域。但这并没有好很多，因为目标区域只是略大，但是大写样式却降低了可读性。</p>
+</blockquote>
+
+<blockquote>
+  <p>所有大写的纯文本按钮都难以阅读，尤其是对于有阅读障碍的用户。用户依靠字母的形状来识别单词。大写字母外形上没有对比鲜明的上升和下降，这使单词更难以阅读。</p>
+</blockquote>
+
+<blockquote>
+  <p><img src="https://i.loli.net/2020/03/22/srmweM7Tgk8ucyz.jpg" alt="Alt" /></p>
+</blockquote>
+
+<blockquote>
+  <h5 id="什么时候纯文字按钮起作用">什么时候纯文字按钮起作用</h5>
+  <p>三级操作不会得到那么多的点击，也不需要多么突出。一级和二级操作更重要，因此他们需要更多的视觉重量。</p>
+</blockquote>
+
+<blockquote>
+  <p><img src="https://i.loli.net/2020/03/22/W4SbmkFgxdLJX2B.jpg" alt="Alt" /></p>
+</blockquote>
+
+<blockquote>
+  <p>另一处纯文本按钮具有意义的地方，是在用户想采取行动需要帮助的情况下。当您需要向用户提供与上下文有关的信息以帮助他们选择最佳选项时，请使用纯文本按钮。纯文本按钮可防止用户将帮助视为号召性用语，因为纯文本的形式不会与其他按钮竞争。</p>
+</blockquote>
+
+<blockquote>
+  <p><img src="https://i.loli.net/2020/03/22/AzXGfH4xOhaqUrn.jpg" alt="Alt" /></p>
+</blockquote>
+
+<h5 id="幽灵按钮">幽灵按钮</h5>
+<p>不同于文字按钮，幽灵按钮在文本的周围加上了一圈细线，看上去更加像是一个可以点击的按钮。幽灵按钮具有简洁轻盈的特点，可以使得它即表达出了自己的按钮特性,又不会影响页面的平衡。页面中的主要操作也可以时常看到它们的身影。</p>
+
+<p><img src="https://img.zcool.cn/community/01f0245d41522fa8012187f4226c2d.jpg" alt="" /></p>
+
+<h5 id="下拉按钮">下拉按钮</h5>
+<p>单击下拉按钮时，将显示互斥项目的下拉列表。通常填写列表中遇到此类型。</p>
+
+<p><img src="https://img.zcool.cn/community/0199b85d41523ea80120695c022dc3.jpg" alt="" />￼</p>
+
+<h5 id="汉堡按钮">汉堡按钮</h5>
+<p>汉堡按钮将所有的操作都折叠起来，只有点击开来才可以看到里面的操作内容。因此汉堡按钮里面的操作都不易被发现，通常都使用在一些不常用的操作中。</p>
+
+<p><img src="https://img.zcool.cn/community/01b3875d41525fa80120695cd63310.jpg" alt="" /></p>
+
+<h3 id="参考资料">参考资料</h3>
+<p><a href="https://m.zcool.com.cn/article/ZMTAyMTY1Mg==.html">按钮规范系列 - 「按钮尺寸」与「按钮位置」| 设计详解</a></p>
+
+<p><a href="https://m.zcool.com.cn/article/ZMTA4OTU0NA==.html">App设计体系之按钮</a></p>
+
+<p><a href="https://m.zcool.com.cn/article/ZMTA3NjU4MA==.html">UI界面中的按钮设计总结</a></p>
+
+<p><a href="https://m.zcool.com.cn/article/ZMTAwODkwMA==.html">哈喽“按钮”</a></p>
+
+<p><a href="https://m.zcool.com.cn/article/ZOTg3Mjgw.html">按钮设计的7个基本原则</a></p>
+
+<p><a href="https://m.zcool.com.cn/article/ZOTM5ODA0.html">移动端按钮的最佳尺寸和间距</a></p>
+
+<p><a href="https://m.zcool.com.cn/article/ZMTA4Nzg0OA==.html">为什么纯文本按钮会损害移动应用的可用性</a></p>
+
+    </article>
+
+    
+    <div class="social-share-wrapper">
+      <div class="social-share"></div>
+    </div>
+    
+  </div>
+<div class="tabBar">
+    <div class="tabBar_icon">
+        <li><a href="/index.html"><span class="iconfont tabicon iconfavico"></span></a></li>
+        <li><a  href="/tags.html"><span class="iconfont tabicon iconnote"></span></a></li>
+       <li><a href="https://github.com/alexdesign001" target="_blank"><span class="iconfont tabicon iconuser"></span></a></li>
+    </div>
+</div>
+  <section class="author-detail">
+    <section class="post-footer-item author-card">
+      <div class="avatar">
+        <img src="/assets/img/profile.png" alt="">
+      </div>
+      <div class="author-name" rel="author">Alex Hu</div>
+      <div class="bio">
+        <p>UI设计师，热爱生活&设计，简单乐观爱创造</p>
+      </div>
+      
+      <ul class="sns-links">
+        
+        <li>
+          <a href="//github.com/alexdesign001" target="_blank">
+                    <i class="iconfont icon-github"></i>
+                </a>
+        </li>
+        
+      </ul>
+      
+    </section>
+    <section class="post-footer-item read-next">
+      
+      <div class="read-next-item">
+        <a href="/2020/04/19/%E7%A9%BA%E7%8A%B6%E6%80%81%E8%AE%BE%E8%AE%A1.html" class="read-next-link"></a>
+        <section>
+          <span>5种方式提升你的空状态设计价值</span>
+          <p>  空状态是指在用户体验产品流程中出现的除主流程状态反馈外没有其他数据展示的情况，而缺少数据或内容的原因有很多种，...</p>
+        </section>
+        
+        <div class="filter"></div>
+        <img src="https://img.zcool.cn/community/0160335e7d69f0a8012165180769a1.jpg" alt="">
+        
+     </div>
+      
+
+      
+      <div class="read-next-item">
+        <a href="/2020/04/19/%E5%BC%B9%E7%AA%97.html" class="read-next-link"></a>
+          <section>
+            <span>弹窗设计那些事儿</span>
+            <p>  纵观 iOS人机交互规范和Material Design，我们可以将弹框分为两大类：模态框和非模态框。</p>
+          </section>
+          
+          <div class="filter"></div>
+          <img src="https://img.zcool.cn/community/01671a5cf4c516a801205e4b774922.jpg" alt="">
+          
+      </div>
+      
+    </section>
+    
+  </section>
+
+  <footer class="g-footer">
+  <section>Alex Design - Creativity Never Sleeps ©
+  
+  
+  2020
+  </section>
+  
+</footer>
+
+
+  <script src="/assets/js/social-share.min.js"></script>
+  <script>
+    socialShare('.social-share', {
+      sites: [
+        
+          'wechat'
+          ,
+          
+        
+          'weibo'
+          ,
+          
+        
+          'douban'
+          ,
+          
+        
+          'twitter'
+          
+        
+      ],
+      wechatQrcodeTitle: "分享到微信朋友圈",
+      wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+    });
+  </script>
+
+  
+
+  <script src="/assets/js/prism.js"></script>
+  <script src="/assets/js/index.min.js"></script>
+</body>
+
+</html>
