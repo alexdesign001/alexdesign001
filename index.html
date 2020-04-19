@@ -20,7 +20,7 @@ header-img: assets/img/hero.jpg
     <div class="article-list">
         {% for post in paginator.posts %}
             <article class="article-item" style="display: flex;">
-                <div style="width:80%;">
+                <div style="width:70%;">
                 <section class="post-preview">
                     <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title }}"></a>
                     <h2 class="post-title">{{ post.title }}</h2>
@@ -43,7 +43,7 @@ header-img: assets/img/hero.jpg
                 </footer>
             </div>
                     {% if post.cover %}
-                    <div style="width: 20%">
+                    <div style="width: 30%">
                 <div class="post-cover">
                     <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title }}"></a>
                     <div style="background:url({{ post.cover | relative_url }});background-size: cover;width: 100px;height: 100px;background-position: center;" href="{{ post.url | relative_url }}" alt="">
