@@ -1240,9 +1240,9 @@ margin-left: 30px;
 		display: none
 	}
 
-	.pagination .page-num {
+	/*.pagination .page-num {
 		display: none
-	}
+	}*/
 
 	.pagination .page-link {
 		width: 56px
