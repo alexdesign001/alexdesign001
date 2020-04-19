@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>手势交互设计背后的原理 - Alex Design - Creativity Never Sleeps</title>
+    <meta name="author"  content="Alex Hu">
+    <meta name="description" content="手势交互设计背后的原理">
+    <meta name="keywords"  content="移动端">
+    <!-- Open Graph -->
+    <meta property="og:title" content="手势交互设计背后的原理 - Alex Design - Creativity Never Sleeps">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/2020/04/17/%E4%BA%A4%E4%BA%92.html">
+    <meta property="og:description" content="Alex Hu，90后，UI设计师，热爱技术&设计。很高兴能在这里与你分享我对设计和生活的思考。">
+    <meta property="og:site_name" content="Alex Design - Creativity Never Sleeps">
+    <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1748563_z2xad1yakte.css">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/share.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+	
+	<!--
+Author: Ray-Eldath
+refer to:
+ - http://docs.mathjax.org/en/latest/options/index.html
+-->
+
+	<script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [ ["$", "$"] ],
+			displayMath: [ ["$$", "$$"] ],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+	
+    <!--
+Author: Ray-Eldath
+-->
+<style>
+    .markdown-body .anchor{
+        float: left;
+        margin-top: -8px;
+        margin-left: -20px;
+        padding-right: 4px;
+        line-height: 1;
+        opacity: 0;
+    }
+    
+    .markdown-body .anchor .anchor-icon{
+        font-size: 15px
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        let nodes = document.querySelector(".markdown-body").querySelectorAll("h1,h2,h3")
+        for(let node of nodes) {
+            var anchor = document.createElement("a")
+            var anchorIcon = document.createElement("i")
+            anchorIcon.setAttribute("class", "fa fa-anchor fa-lg anchor-icon")
+            anchorIcon.setAttribute("aria-hidden", true)
+            anchor.setAttribute("class", "anchor")
+            anchor.setAttribute("href", "#" + node.getAttribute("id"))
+            
+            anchor.onmouseover = function() {
+                this.style.opacity = "0.4"
+            }
+            
+            anchor.onmouseout = function() {
+                this.style.opacity = "0"
+            }
+            
+            anchor.appendChild(anchorIcon)
+            node.appendChild(anchor)
+        }
+    })
+</script>
+</head>
+
+
+<body>
+  <!--[if lt IE 10]>
+<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+<![endif]-->
+  <input id="nm-switch" type="hidden" value="true"> <header class="g-header">
+    <div class="g-logo">
+      <a href="/"></a>
+    </div>
+    <i id="menu-toggle" class="iconfont icon-menu"></i>
+    <nav class="g-nav">
+        <ul>
+            
+            <li><a href="/">首页</a></li>
+            
+            <li><a href="/tags.html">文章</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+
+  <header
+    class="g-banner post-header post-pattern-overlappingCircles bgcolor-default "
+    data-theme="default"
+  >
+
+    <div class="post-wrapper">
+      <div class="post-tags">
+        
+          
+            <a href="/tags.html#%E7%A7%BB%E5%8A%A8%E7%AB%AF" class="post-tag">移动端</a>
+          
+        
+      </div>
+      <h1>手势交互设计背后的原理</h1>
+      <div class="post-meta">
+        <span class="post-meta-item"><i class="iconfont icon-author"></i>Alex Hu</span>
+        <time class="post-meta-item" datetime="20-04-17"><i class="iconfont icon-date"></i>17 Apr 2020</time>
+      </div>
+    </div>
+    
+    <div class="filter"></div>
+      <div class="post-cover" style="background: url('https://img.zcool.cn/community/0150a35a5877d1a8012113c770b8df.png') center no-repeat; background-size: cover;"></div>
+    
+  </header>
+
+  <div class="post-content visible">
+    
+
+    <article class="markdown-body">
+      <blockquote>
+  <p>手势操作对我们来说如此自然和直观的主要原因是因为它们类似于与真实对象进行直接交互。</p>
+</blockquote>
+
+<p><img src="https://mubu.com/document_image/240171586752440f4-5901238.jpg" alt="" /></p>
+
+<p>手势的三个要素：简洁、易用、直观。</p>
+
+<p>手势交互的核心：触发，行动，反馈。</p>
+
+<h2 id="常见的手势行为">常见的手势行为</h2>
+
+<ul>
+  <li>点击：单指短暂触摸表面；</li>
+  <li>双击：单指快速两次触摸表面（通常是缩放）；</li>
+  <li>拖动：沿表面移动而不会破坏接触；</li>
+  <li>捏/展开：用两根手指触摸表面以移入（捏合）或移出（展开）；</li>
+  <li>按下：单指触摸表面并按住；</li>
+  <li>下拉：下拉刷新，下拉新页面，下拉快捷入口，下拉缓冲反馈；</li>
+  <li>左滑/右滑：等效 Main Navi切换、独立ubNavi切换、遍历Navi Tree切换、无Navi切换；</li>
+  <li>上滑：上滑浏览、上滑新页面</li>
+  <li>下滑：下滑浏览</li>
+</ul>
+
+<p><img src="https://mubu.com/document_image/19217157e4556b037-5901238.jpg" alt="" /></p>
+
+<h3 id="part1下拉">PART1：下拉</h3>
+<h4 id="第一部分下拉刷新">第一部分：下拉刷新</h4>
+<h5 id="展现品牌">展现品牌</h5>
+
+<p><strong>设计特点：增加品牌传播度、提升品牌辨识度</strong></p>
+
+<p>下拉刷新的过程中，一般都是展示和自己产品特色和品牌标志 loading动画这种设计的形式使得用户对产品品牌的印象进一步熟悉，对品牌的传播度也有更好的提升，常见的下拉 loading动画有品牌logo、品牌吉祥物、品牌特征等。</p>
+
+<p>例如下面的4款音乐类app，刷新的时候出现logo效，有趣的同时又强调了品牌logo辨识度。不同产品的app的动效logo都有自己的特色，网易云音乐的下拉CD播放器的波纹效果，体现了网易云品牌特征—听见好时光！音乐的力量！”</p>
+
+<p><img src="https://mubu.com/document_image/38417157ea5a06186-5901238.jpg" alt="" /></p>
+
+<h5 id="运营推广">运营推广</h5>
+
+<p><strong>设计特点：增加运营推广曝光度、提高转化率</strong></p>
+
+<p>下拉刷新的过程中，将运营推广信息露出，利用刷新下拉的空闲区域进行宣传，增加了运营推广的曝光度。</p>
+
+<p>以优酷视频app为例，下拉刷新时出现“机动部队”的电视剧的宣传，宣传图中强调了5月6日起全网独播的字样，加深用户对于“机动部队”、“每5月6日”、“全网独播”的印象。当用户下次进入app不知道看什么的时候，点击“机动部队”的电视剧节目的概率大大增加，这就是潜移默化的作用。</p>
+
+<p><img src="https://mubu.com/document_image/25217157ee315c004-5901238.jpg" alt="" /></p>
+
+<h5 id="魅力因素">魅力因素</h5>
+
+<p><strong>设计特点：给予用户魅力因素，提升app好感度</strong></p>
+
+<p>下拉刷新的过程中，用户无法预知即将看到的内容，每一次下拉都给用户满满的期待感。</p>
+
+<p>以网易新闻为例，每次下拉出现的文案都不一样，运势的推荐”、“不管我活着，还是我死去，我都是一只牛虻，快乐地飞来飞去。”
+大多以段子为主，给用户增加了趣味性和神秘感，同也会根据日历中的运势给你推荐今天该注意什么。</p>
+
+<p><img src="https://mubu.com/document_image/dd17157f7b1750ed-5901238.jpg" alt="" /></p>
+
+<h4 id="第二部分下拉新页面">第二部分:下拉新页面</h4>
+<h5 id="营销入口">营销入口</h5>
+
+<p>在下拉刷新的基础上，加大手指拖动屏幕的距离，App会进入特定的二楼页面，下面给大家介绍两种常用样式。</p>
+
+<p>通过下拉手势，进入app二级活动页面，意在通过短视频、活动H5营销，投票等的方式展现“”信息丰富、形式有趣多样”的消费内容。
+设计特点:生成专属便签，触发用户分享心理。</p>
+
+<p><img src="https://mubu.com/document_image/38917157ff4a5201f-5901238.jpg" alt="" /></p>
+
+<h5 id="个性功能">个性功能</h5>
+
+<p><strong>设计特点：生成专属便签，触发用户分享心理</strong></p>
+
+<p>下拉除了上面介绍提供的营销入口以外，还可以为了提高日活打造一些属于自己产品的个性功能，例如日签。</p>
+
+<p>以淘票票app为例，从顶部下拉进入我的日签页面，系统会自动生成一句心情状态以及一小段语音，当用户产生共鸣的时候，便会触发用户分享的心理，从而提高品牌传播度。</p>
+
+<p><img src="https://mubu.com/document_image/2c917157ff62f307b-5901238.jpg" alt="" /></p>
+
+<h4 id="第三部分下拉快捷入口">第三部分:下拉快捷入口</h4>
+
+<p><strong>设计特点：提供快捷入口，交互减步长</strong></p>
+
+<p>在执行下拉的手势时，页面会滑出一段距离，并保持开启状态，直到我们执行关闭操作时才会消失。</p>
+
+<p>支付宝的下拉小程序的收藏，容易在自己平时经常用的小程序中，通过下拉入口，有助于用户找到想要小程序。</p>
+
+<p><img src="https://mubu.com/document_image/31f17158042c7f136-5901238.jpg" alt="" /></p>
+
+<h4 id="第四部分下拉缓冲反馈">第四部分：下拉缓冲反馈</h4>
+
+<p><strong>设计特点：提供交互反馈，避免生硬死板</strong></p>
+
+<p>最后我们要介绍的是下拉缓冲反馈，下拉的时候页面中无实质的变化，我们仅能感知到页面的轻微弹动。</p>
+
+<p>例如天猫app的不同页面，在下拉的时候就是这样，且限时购页面有下刷新无可见的交互动画和页面变化。只是让用户的使用的过程中，能够轻微感知到页面反馈，而不是冷冰冰的，死板的无交互。</p>
+
+<p><img src="https://mubu.com/document_image/174171580673aa112-5901238.jpg" alt="" /></p>
+
+<h3 id="part2左滑右滑">PART2：左滑右滑</h3>
+
+<h4 id="等效-main-navi切换">等效 Main Navi切换</h4>
+
+<p>也就是单一页面切换，没有任何其他页面的关联，一个页面对应一个主菜单栏的icon点击区。</p>
+
+<p>以QQ为例，滑动就相当于首页主菜单栏的4个tab之间进行切换，我们就认为他是等效的 Main Navi切换。</p>
+
+<p><img src="https://mubu.com/document_image/1f51715808a5b70bd-5901238.jpg" alt="" /></p>
+
+<h4 id="独立-sub-navi-切换">独立 Sub Navi 切换</h4>
+<h5 id="情况1常态左右滑动到底终点就停止">情况1：常态（左右滑动到底终点就停止）</h5>
+<p>以网易云为例，从网易云1-3的顶部一级Tab栏的状态滑动切换过程中，切换到终点【演奏】状态时，就不能继续向左滑动了。</p>
+
+<p>其它同类切换状态模型的app中的细微差距就是：</p>
+
+<ul>
+  <li>一是在tab切换到终点时候，继续向左滑动，会出现缓动状态（今日头条）。</li>
+  <li>另外一种是有些app直接没有缓动状态，直接帮你做出选择，页面锁死，不允许滑动（网易云属于这种）。</li>
+</ul>
+
+<p><img src="https://mubu.com/document_image/2851715816165c064-5901238.jpg" alt="" /></p>
+
+<h5 id="情况2跳转到新页面左右滑动到底终点就跳转到新的页面">情况2：跳转到新页面（左右滑动到底终点就跳转到新的页面）</h5>
+
+<p>此类切换模型大多数适用于顶部一级Tab较多，为了帮助用户做出更好的选择，减少操作成本，快速帮助定位分流。</p>
+
+<p>以喜马拉雅为例，从顶部的一级Tab栏的【书节】滑动到【好书推荐】时，在向左继续滑动，就会出现分类页面，帮助用户快速的定位（爱奇艺、腾讯视频）。</p>
+
+<p><img src="https://mubu.com/document_image/6317158162a0f04a-5901238.jpg" alt="" /></p>
+
+<h5 id="情况3二级tab的切换在一级tab左右滑动到终点的时候继续滑动就是切换到二级tab">情况3：二级Tab的切换（在一级Tab左右滑动到终点的时候，继续滑动就是切换到二级Tab）</h5>
+
+<p>以酷我音乐为例，在一级Tab栏切换到终点【视频时，继续向左滑动时就会进行二级Tab的切换，但是这样在反向滑动的时候，会增加用户的使用操作成本，这里没有酷狗音乐做的好（酷狗音乐会帮助用户做出选择，在1级Tab状态下，向下滑动1/3屏幕才能进行2级Tab的页面滑动切换，下文会举例）；</p>
+
+<p>这里拿了一个虾米音乐来做对比，虾米这里用了标签去做出区分，来帮助用户快速定位，因为标签较多，所以没有做成二级ab的形式，减少用户的选择滑动的时间，这样更加符合用户的预期。</p>
+
+<p><img src="https://mubu.com/document_image/1b5171581640be031-5901238.jpg" alt="" /></p>
+
+<h4 id="遍历-navi-tree切换">遍历 Navi Tree切换</h4>
+
+<p>滑动操作相当于顺序Tab每个主导航项目和下属子导航，实现遍历整个树形导航结构。</p>
+
+<p><img src="https://img.zcool.cn/community/0193225ce21b9aa801208f8b0cdd52.gif" alt="" /></p>
+
+<p>也就是说当从图一【推荐】滑动到终点【学院认证】的时候，继续向左滑动，上面的一级Tab【看】的页面会变成【唱】，但是这项操作是不可逆的，也就是说【看】级菜单返回不会退回到【看】子tab的【学院认证】。</p>
+
+<p>相对于酷我音乐来说，这里有一个交互的亮点就是，在一级Tab切换时，如果想要关联到2级Tab（也就是想滑动切换2级导航），必须向下滑动1/3屏幕，才能左滑右滑的切换，不然一直都是一级导航之间的滑动切换，这样的优势就是减少用户的滑动成本，达到用户的期望预期，提高操作效率，而酷我音乐因为没有这项下滑1/3才能滑动2级Tab导航的操作，从而增加用户的操作成本，容易流失用户。</p>
+
+<h4 id="无navi切换">无Navi切换</h4>
+<p>对于无Navi切换的一般都是符合用户的心智模型且有提示性指示图标的组件。通过左滑来减少用户的操作成本，来达到产品的易用性和高效性，既符合用户操作习惯，同时符合O12 Swipe系统（滑动）的操作手势。</p>
+
+<p><img src="https://mubu.com/document_image/3551715820061204e-5901238.jpg" alt="" /></p>
+
+<h3 id="part3上滑">PART3：上滑</h3>
+<h4 id="第一部分上滑沉浸式浏览">第一部分:上滑沉浸式浏览</h4>
+
+<h5 id="导航栏悬浮">导航栏悬浮</h5>
+
+<p><strong>设计特点：凸显导航能的核心位置、减少操作成本、沉浸式阅读</strong></p>
+
+<p>在上滑浏览的过程中，一般都是为了让用户沉浸式浏览去看到更多的东西，同时导航栏的置顶，更加便捷的去让用户去寻找想要的功能。</p>
+
+<p>例如下面的2款app，都是在上滑过程中，导航栏自动置顶悬浮（Hover）在下拉体验浏览app的同时，也能够让用户快速的找到app导航功能的位置，减少操作的成本。</p>
+
+<p><img src="https://mubu.com/document_image/3551715820061204e-5901238.jpg" alt="" /></p>
+
+<h5 id="导航栏tab置顶图标的变化">导航栏/Tab置顶/图标的变化</h5>
+
+<p><strong>设计特点：快速定位，分流引导</strong></p>
+
+<p>在用户在app的上滑浏览的时候，为了让用户在上滑时候浏览页面同时更好地进行快速分流定位，上滑时候导航栏和Tab会悬浮置顶，部分首页图标会发生变化返回顶部的变化，或者有自己功能特色的图标变化。</p>
+
+<p>例如下面的2款app，UC浏览器的导航栏和一级Tab栏会悬浮置顶，同时首页的图标会变成一键返回顶部，与马蜂窝区别的是，马蜂窝的返回顶部在右上角，这样对于用户手势的操作距离有所简短。</p>
+
+<p><img src="https://mubu.com/document_image/3be17158493d050eb-5901238.jpg" alt="" /></p>
+
+<h5 id="上滑唤醒隐藏功能">上滑唤醒隐藏功能</h5>
+
+<p><strong>设计特点：提高屏幕的使用率，增加沉浸式体验</strong></p>
+
+<p>在部分功能性性app中，上滑会出现隐藏性图标，保证用户的操作体验，减少不必要的干扰元素。</p>
+
+<p>例如微信阅读上滑唤醒隐藏功能，保证用户阅读的沉浸式体验，减少不必要的干扰元素，这样设计最大限度的让用户在有限的屏幕内，展现更多的内容，突出阅读产品的核心功能。</p>
+
+<p><img src="https://mubu.com/document_image/16d171584c2f3006a-5901238.jpg" alt="" /></p>
+
+<h4 id="第二部分跳转到新页面">第二部分：跳转到新页面</h4>
+<h5 id="新页面的跳转">新页面的跳转</h5>
+
+<p><strong>设计特点：功能专栏打造，引导用户点击转化</strong></p>
+
+<p>有一些app的为了增加自己的外环功能（粘性/变现），会根据自己的产品特色，在上滑的时候出现二楼的新页面。</p>
+
+<p>例如悦跑圈中下拉之后会出现时间表，下面每个月的跑步活动日都会出现星星图标，凸显活动日的时间，引导用户去点击，增加用户粘性（这里也是强化外环的粘性和变现），通过活动的报名来实现产品的内环的（盈利）提转化率。</p>
+
+<p><img src="https://mubu.com/document_image/39e171584ec5410f1-5901238.jpg" alt="" /></p>
+
+<h3 id="part4下滑">PART4：下滑</h3>
+<h4 id="下滑浏览">下滑浏览</h4>
+
+<p><strong>*设计特点：符合用户心智模型，提供交互反馈</strong></p>
+
+<p>大多数的app的下滑手势的功能是先上滑动界面，进行浏览返回，以酷狗音乐为例，在页面下滑的过程中，页面的内容会向上移动，同时会出现搜索框，以便帮助用户找到合适的房间，这里的设计比较符合用户预期的心智模型。</p>
+
+<p><img src="https://mubu.com/document_image/717158516b8a0b2-5901238.jpg" alt="" /></p>
+
+<h2 id="拇指操作区域">拇指操作区域</h2>
+<p>移动产品的设计是建立在手势交互的基础上的。</p>
+
+<p>正常来说，大部分设计师基本都是在一张 375x667 的画板上开始设计界面的。重要功能应该是放置在「易操作区域」附近的。</p>
+
+<p><img src="https://img.zcool.cn/community/0150a35a5877d1a8012113c770b8df.png" alt="" /></p>
+
+<p>手指热区会根据设备的变大而缩小。因为手掌支撑设备的重心靠后走了，所以拇指操控屏幕的范围也就变小了。</p>
+
+<p><img src="https://img.zcool.cn/community/01ffc35a58780ea8012113c754c619.png" alt="" /></p>
+
+<p>拇指操作区域被分为三块内容，分别是：易于触达，难以触达，以及介于两者之间的区域。</p>
+
+<h2 id="内容在上操作在下">内容在上，操作在下</h2>
+
+<p>工业设计领域重要的基本设计原则。</p>
+
+<p>比如在使用电脑的时候，操作在下意味着使用者在操作过程中，手指始终处于界面下方，而内容在上面，就不会出现手指遮挡内容的情况。</p>
+
+<p><img src="https://img.zcool.cn/community/01435d5ddca3dba8012053c021cb57.png" alt="" /></p>
+
+<h2 id="操作路径与操作效率">操作路径与操作效率</h2>
+
+<p>弹框的方式始终被认为是不好的一种交互手段。侧滑删除，已经被更多产品功能用来取代弹框。</p>
+
+<p><img src="https://img.zcool.cn/community/0115bc5a58784fa8012113c7fc1b44.png" alt="" /></p>
+
+<p>手势交互与轮播图是相互矛盾的一种设计方式。除了第一张 Banner 的点击率有 83% 之外，其余的点击率都非常低。部分产品把轮播图规则改为用户进入首页随机展示轮播图页面，而不是强制指定于显示第一张。</p>
+
+<p><img src="https://img.zcool.cn/community/010f0c5a587862a80120121f2ce9fd.png" alt="" /></p>
+
+<p>如果你的产品有很多活动是在同时期进行的，那么给部分产品的建议是放一个活动主题入口，如下图。</p>
+
+<p><img src="https://img.zcool.cn/community/0118835a587885a80120121fe9c3cc.png" alt="" /></p>
+
+<p><img src="https://img.zcool.cn/community/010b935a5878a0a80120121fd32e52.png" alt="" /></p>
+
+<h2 id="交互手势的容错性和逻辑性">交互手势的容错性和逻辑性</h2>
+
+<h3 id="容错性">容错性</h3>
+
+<p><img src="https://img.zcool.cn/community/01b3e25db23466a8012163ba9d7dd9.png" alt="" /></p>
+
+<ul>
+  <li>App Store 的设计在此就有很好的容错性，用户可以通过三种方式返回首页，分别是 右滑返回、下拉返回和点击叉号返回，这不但降低了用户的记忆和学习成本，也便于不同习惯的用户使用。</li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/018f1e5db23473a8012163ba476f42.png" alt="" /></p>
+
+<p><img src="https://img.zcool.cn/community/0171725db23484a8012163ba3ece84.png" alt="" /></p>
+
+<ul>
+  <li>
+    <p>苹果为了适配所有机型，提高容错性，从今年的发布会的 iPhone 11 和iPhone 11 pro 开始，取消了 3D Touch，转而使用 Haptic Touch （有震动反馈的长按）代替，当你长按某个图标时，感受到震动后松开，即可呼出二级菜单，如果震动后仍不松开，则进入到卸载 App 时的抖动状态，使得之后的即使不支持 3D Touch的机型可以使用便捷的情景菜单了。</p>
+  </li>
+  <li>
+    <p>Android 10 在第三版内测系统开始引入全局手势操作，用户启用后，屏幕底部便不会再出现虚拟按键和导航栏，只会剩下一个指示条，上滑返回主屏、侧滑返回上一层的操作逻辑也均和 iOS 保持一致。</p>
+  </li>
+</ul>
+
+<h3 id="逻辑性">逻辑性</h3>
+
+<p><img src="https://img.zcool.cn/community/0137075db2349ba8012163ba65b58e.png" alt="" /></p>
+
+<p>在交互手势的层面上，如果用户能够通过某个手势进行某个操作后，按照逻辑用户也可以通过反向的手势或对应的手势进行逆向操作。</p>
+
+<p>举一个反例， Uki 的个人主页可以通过点击或下拉底部的固定底板收起更多信息，但是收起后只能通过点击展开更多个人信息而不能上拉，不符合逻辑与用户的心理模型。</p>
+
+<p><img src="https://img.zcool.cn/community/0139355db23492a8012163ba1932e4.png" alt="" /></p>
+
+<h2 id="常见问题">常见问题</h2>
+
+<h4 id="1-为什么-ios-要把返回放在上面而不是下面呢">1. 为什么 iOS 要把返回放在上面而不是下面呢？</h4>
+<ul>
+  <li>返回按钮如果放在下面，用户会轻易点击，而放在上面用户需要打破目前聚焦于内容的状态才能点击返回；</li>
+  <li>将标签拦与工具栏全部置于下方，会容易导致发生误操作（如 Android 设备），所以我们在设计的过程中要视情况而做合理的布局调整。</li>
+</ul>
+
+<h4 id="2-为什么-ios-设计规范建议将编辑按钮放置在界面右上方的位置呢">2. 为什么 iOS 设计规范建议将「编辑」按钮放置在界面右上方的位置呢？</h4>
+<ul>
+  <li>编辑功能会让数据发生变化。将这类控件放在难以操作的位置上（与左上角的返回是一个道理），就是一种防御性的设计策略，可以在一定程度上避免因为太容易产生误操作而导致的破坏性的结果。</li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/01af6f5ddca3eca8012053c070be23.png" alt="" /></p>
+
+<h4 id="3-汉堡包菜单的消失解析">3. 汉堡包菜单的消失解析</h4>
+<p>汉堡包菜单，也就是侧边栏导航，Facebook 早期测试显示侧边栏导航让用户使用率降低了一半。</p>
+<h5 id="a-可见性太低">a. 可见性太低</h5>
+<p>默认状态下，用户是看不见侧边栏的，除非点击了侧边栏的弹出按钮。所以这种情况下，里面的功能都是用户脑袋里已知的，但很可能都想不起来。用户对于功能的使用一定是「所见即所得」，而不是「心向往之」。用户只会注意自己看到的信息，而不是凭借记忆或想象来使用产品。</p>
+
+<p><img src="https://img.zcool.cn/community/014cb95ddca414a8012053c0f6bbd6.png" alt="" /></p>
+
+<h5 id="b-效率较低">b. 效率较低</h5>
+<p>效率较低主要在于操作频率，大家看下面两组图的对比。第一张图，当用户从首页进入到个人信息页面，只需要两步；而第二张图，则要三步。当频繁去使用这样的产品后，用户的整体效率就会下降，体验也会随之降低。</p>
+
+<p><img src="https://img.zcool.cn/community/0141655ddca42ca8012129e23c4288.png" alt="" /></p>
+
+<p><img src="https://img.zcool.cn/community/01c6575ddca42ca8012053c093b364.png" alt="" /></p>
+
+<h5 id="c-与平台模式冲突">c. 与平台模式冲突</h5>
+<p>在 iOS 的操作页面中，通过手势可对 tab 进行左右切换，而侧边栏除了通过点击菜单按钮展开之外，也可以通过右滑弹出。</p>
+
+<p>无论是导航还是控件，当它们组成一个页面后，它们的操作就会有优先级。</p>
+
+<p>当控件与控件之间的手势发生冲突时，我们要考虑优先级，将内容优先于页面来处理。</p>
+
+<p>当分段控件与汉堡包菜单的手势发生冲突时，很明显我们要优先分段控件的操作，而禁止掉汉堡包菜单的右滑手势。</p>
+
+<p><img src="https://img.zcool.cn/community/01066f5ddca43fa8012053c025fc5a.png" alt="" /></p>
+
+<h4 id="4-是否需要加入多手势操作的考虑因素">4. 是否需要加入多手势操作的考虑因素</h4>
+
+<p>我们需要考虑的因素包括使用频率、危险程度和特殊体验。</p>
+
+<p><strong>使用频率</strong>：当一个功能的使用频率足够高时，我们加入多手势操作去提高用户操作效率才是有意义的。一个低频的功能的特殊手势操作很容易被用户遗忘。</p>
+
+<p><strong>危险程度</strong>：如果一个操作不可撤销且存在危险性质，我们最好不要加入多手势操作。此时我们需要用户更加专注，如果加入多手势操作可能会增加误操作的概率。</p>
+
+<p><strong>特殊体验</strong>：当我们需要加入特殊的模拟体验时，此时我们可以加入多手势操作。如探探左滑无感右滑喜欢，给用户带来的“翻牌子”感觉是点击操作无法替代的。QQ 阅读下拉拟物绳灯进行日间和夜间模式切换，这种存在我们记忆中的交互方式能够唤起我们的情感。</p>
+
+<h4 id="5评估所选手势的考虑因素">5.评估所选手势的考虑因素</h4>
+<h5 id="1-考虑不同平台的硬件系统和操作系统特性">(1) 考虑不同平台的硬件系统和操作系统特性</h5>
+<p>由于硬件与操作系统差异，iOS 系统支持很多手势，但是安卓系统在手势支持方面就不如 iOS 丰富。由于安卓硬件设备的差异比较大，不同安卓手机厂商会在安卓系统的基础上自定义系统的手势操作，因此对于手势的支持也有较大的差异。</p>
+
+<h5 id="2-考虑所选的手势的学习成本和记忆成本用户是否已经被教育成熟">(2) 考虑所选的手势的学习成本和记忆成本，用户是否已经被教育成熟。</h5>
+
+<p>日常使用 App 时，大部分用户习惯使用的手势很少，比如单击、双击、滑动、上拉、下拉、双指扩张和收缩等。</p>
+
+<h5 id="a-如果没有教育成熟考虑加入教学或搭配简易的操作方式">a. 如果没有教育成熟，考虑加入教学或搭配简易的操作方式</h5>
+
+<p>对于我们需要加入的手势操作当前用户并未被教育成熟时，我们需要考虑加入手势教学，具体的手势教学类型下一部分会详细讨论。然而，大部分情况下用户的记忆是短期的，教学内容可能会被快速遗忘，下次用户使用 App 时仍然不会使用特殊手势。此时我们应该将一些比较难以记忆的手势操作搭配一个简单的手势操作。</p>
+
+<p>比如 QQ 阅读的下拉拟物绳灯切换夜间模式的手势操作设计，其考虑到了有些用户在现实生活中并未见过拟物绳灯，并不知道是要进行下拉才能触发操作。因此，QQ 阅读贴心地搭配了一个简单的点击操作，用户通过点击绳灯也可以切换夜间模式。</p>
+
+<p><img src="https://img.zcool.cn/community/01e3f15db234c3a8012163ba34e218.png" alt="" /></p>
+
+<h5 id="b考虑所选手势是否可能导致冲突和误操作如果导致了考虑如何避免和折中">b.考虑所选手势是否可能导致冲突和误操作，如果导致了，考虑如何避免和折中。</h5>
+
+<p>最常见的手势冲突情况就是 App 的手势与操作系统的全局手势冲突。</p>
+
+<p>解决方案有两个：</p>
+
+<ul>
+  <li>避免设计与全局手势一致的手势操作，例如 iOS 的在屏幕边缘右滑返回、全面屏机型的底部上滑退出应用等全局手势操作；</li>
+  <li>仍然设计与全局手势冲突的操作，但是将全局手势部分禁用或以其他的方式区分开。</li>
+</ul>
+
+<p>如下图有书播放页的案例，由于进度条滑动控件过于靠左，导致使用 iOS 全局右滑返回手势时有时会产生误操作，即本来想要右滑返回却不小心滑动了进度条。这种情况下我们可以标注一个右滑手势禁用区域给开发工程师说明情况，将此情况避免掉即可。</p>
+
+<p><img src="https://img.zcool.cn/community/01c6335db23720a8012163ba2db862.png" alt="" /></p>
+
+<p>误操作指的是，我们设计的手势操作与 App 内的其他操作或系统全局手势操作接近导致用户触发了非预期的操作。产品设计需要平衡与取舍，如果减少了热区是否会影响其他用户的体验还需要考虑和调研，两者并无绝对的对错。</p>
+
+<p><img src="https://img.zcool.cn/community/016bb65db23738a8012163ba513f9e.png" alt="" /></p>
+
+<h5 id="-3--让用户了解并使用新手势">( 3 ) 让用户了解并使用新手势</h5>
+<p>当新手势无法直接让用户感知时，我们需要加入一些手势教学帮助用户快速上手使用。</p>
+
+<h5 id="手势教学方式">手势教学方式</h5>
+<p><strong>a.浮层和动画引导</strong>
+使用静态或动态的手势图片或气泡示例告诉用户使用哪种手势进行操作。相比于静态，动态比静态更为直观和易学。</p>
+
+<p><img src="https://img.zcool.cn/community/01eb535db23746a8012163ba457ee6.png" alt="" /></p>
+
+<p><strong>b.内容隐喻</strong>
+通过微妙的视觉线索暗示用户此处可以通过某种手势进行操作。由于教学内容难免具有干扰性，对于高级用户来说是不必要的，但是对于初级用户又是必要的，因此以这种内容暗示的方式使教学极为轻量化，在低干扰的情况下使得用户学习了手势操作。</p>
+
+<p>如下图，哔哩哔哩在打开第一篇文章时会平移显示下一篇文章的框架，暗示用户可以通过左右滑动切换文章。再比如陌陌在打开点点功能时，会在用户进入页面的时候播放一个动画，暗示有很多卡片叠加在了一起，用户可以通过滑动切换卡片。</p>
+
+<p><img src="https://img.zcool.cn/community/01ccce5db23752a8012163ba48561e.png" alt="" /></p>
+
+<h5 id="教学的出现时机">教学的出现时机</h5>
+<p><strong>操作前</strong>
+当产品中设计了不容易感知的新手势，在用户操作前，通过教学让用户了解和学习新的手势。</p>
+
+<p><strong>错误操作后</strong>
+对于一些与用户的心理模型和习惯不一致的手势，提前预测用户可能输入的错误手势，在用户错误操作后进行提示，规范用户的操作方式。如下图，由于知乎旧版本是通过左右滑动切换回答的，新版本调整为上下滑动后，需要纠正用户使用习惯。因此，当用户仍然使用左右滑动时，会出现浮层提示用户正确的手势进行教学。</p>
+
+<p><img src="https://img.zcool.cn/community/011c3f5db2375da8012163bae5c071.png" alt="" /></p>
+
+<h3 id="参考资料">参考资料</h3>
+
+<p><a href="https://m.zcool.com.cn/article/ZNjEyNjI0.html">从「手势交互」出发，分析产品设计背后的原理</a></p>
+
+<p><a href="https://m.zcool.com.cn/article/ZOTU0NjQ4.html">交互手势的应用场景分析</a></p>
+
+
+    </article>
+
+    
+    <div class="social-share-wrapper">
+      <div class="social-share"></div>
+    </div>
+    
+  </div>
+<div class="tabBar">
+    <div class="tabBar_icon">
+        <li><a href="/index.html"><span class="iconfont tabicon iconfavico"></span></a></li>
+        <li><a  href="/tags.html"><span class="iconfont tabicon iconnote"></span></a></li>
+       <li><a href="https://github.com/alexdesign001" target="_blank"><span class="iconfont tabicon iconuser"></span></a></li>
+    </div>
+</div>
+  <section class="author-detail">
+    <section class="post-footer-item author-card">
+      <div class="avatar">
+        <img src="/assets/img/profile.png" alt="">
+      </div>
+      <div class="author-name" rel="author">Alex Hu</div>
+      <div class="bio">
+        <p>UI设计师，热爱生活&设计，简单乐观爱创造</p>
+      </div>
+      
+      <ul class="sns-links">
+        
+        <li>
+          <a href="//github.com/alexdesign001" target="_blank">
+                    <i class="iconfont icon-github"></i>
+                </a>
+        </li>
+        
+      </ul>
+      
+    </section>
+    <section class="post-footer-item read-next">
+      
+      <div class="read-next-item">
+        <a href="/2020/04/17/%E5%9B%BE%E6%A0%87.html" class="read-next-link"></a>
+        <section>
+          <span>图标落地，要注意哪些？</span>
+          <p>  了解图标落地，让前端再爱你一次。</p>
+        </section>
+        
+        <div class="filter"></div>
+        <img src="https://img.zcool.cn/community/011e925e38e66ba801216518583162.png" alt="">
+        
+     </div>
+      
+
+      
+      <div class="read-next-item">
+        <a href="/2020/04/16/%E7%A9%BA%E7%8A%B6%E6%80%81%E8%AE%BE%E8%AE%A1.html" class="read-next-link"></a>
+          <section>
+            <span>空状态设计</span>
+            <p>  空状态是指在用户体验产品流程中出现的除主流程状态反馈外没有其他数据展示的情况，而缺少数据或内容的原因有很多种，...</p>
+          </section>
+          
+          <div class="filter"></div>
+          <img src="https://pic4.zhimg.com/80/v2-ffa7955b25e62e1b9f68223d8e3fcf2b_1440w.jpg" alt="">
+          
+      </div>
+      
+    </section>
+    
+  </section>
+
+  <footer class="g-footer">
+  <section>Alex Design - Creativity Never Sleeps ©
+  
+  
+  2020
+  </section>
+  
+</footer>
+
+
+  <script src="/assets/js/social-share.min.js"></script>
+  <script>
+    socialShare('.social-share', {
+      sites: [
+        
+          'wechat'
+          ,
+          
+        
+          'weibo'
+          ,
+          
+        
+          'douban'
+          ,
+          
+        
+          'twitter'
+          
+        
+      ],
+      wechatQrcodeTitle: "分享到微信朋友圈",
+      wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+    });
+  </script>
+
+  
+
+  <script src="/assets/js/prism.js"></script>
+  <script src="/assets/js/index.min.js"></script>
+</body>
+
+</html>

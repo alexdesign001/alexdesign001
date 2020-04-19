@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>标签栏设计要点总结 - Alex Design - Creativity Never Sleeps</title>
+    <meta name="author"  content="Alex Hu">
+    <meta name="description" content="标签栏设计要点总结">
+    <meta name="keywords"  content="移动端">
+    <!-- Open Graph -->
+    <meta property="og:title" content="标签栏设计要点总结 - Alex Design - Creativity Never Sleeps">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/2020/04/17/%E6%A0%87%E7%AD%BE%E6%A0%8F.html">
+    <meta property="og:description" content="Alex Hu，90后，UI设计师，热爱技术&设计。很高兴能在这里与你分享我对设计和生活的思考。">
+    <meta property="og:site_name" content="Alex Design - Creativity Never Sleeps">
+    <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1748563_z2xad1yakte.css">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/share.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+	
+	<!--
+Author: Ray-Eldath
+refer to:
+ - http://docs.mathjax.org/en/latest/options/index.html
+-->
+
+	<script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [ ["$", "$"] ],
+			displayMath: [ ["$$", "$$"] ],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+	
+    <!--
+Author: Ray-Eldath
+-->
+<style>
+    .markdown-body .anchor{
+        float: left;
+        margin-top: -8px;
+        margin-left: -20px;
+        padding-right: 4px;
+        line-height: 1;
+        opacity: 0;
+    }
+    
+    .markdown-body .anchor .anchor-icon{
+        font-size: 15px
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        let nodes = document.querySelector(".markdown-body").querySelectorAll("h1,h2,h3")
+        for(let node of nodes) {
+            var anchor = document.createElement("a")
+            var anchorIcon = document.createElement("i")
+            anchorIcon.setAttribute("class", "fa fa-anchor fa-lg anchor-icon")
+            anchorIcon.setAttribute("aria-hidden", true)
+            anchor.setAttribute("class", "anchor")
+            anchor.setAttribute("href", "#" + node.getAttribute("id"))
+            
+            anchor.onmouseover = function() {
+                this.style.opacity = "0.4"
+            }
+            
+            anchor.onmouseout = function() {
+                this.style.opacity = "0"
+            }
+            
+            anchor.appendChild(anchorIcon)
+            node.appendChild(anchor)
+        }
+    })
+</script>
+</head>
+
+
+<body>
+  <!--[if lt IE 10]>
+<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+<![endif]-->
+  <input id="nm-switch" type="hidden" value="true"> <header class="g-header">
+    <div class="g-logo">
+      <a href="/"></a>
+    </div>
+    <i id="menu-toggle" class="iconfont icon-menu"></i>
+    <nav class="g-nav">
+        <ul>
+            
+            <li><a href="/">首页</a></li>
+            
+            <li><a href="/tags.html">文章</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+
+  <header
+    class="g-banner post-header post-pattern-overlappingCircles bgcolor-default "
+    data-theme="default"
+  >
+
+    <div class="post-wrapper">
+      <div class="post-tags">
+        
+          
+            <a href="/tags.html#%E7%A7%BB%E5%8A%A8%E7%AB%AF" class="post-tag">移动端</a>
+          
+        
+      </div>
+      <h1>标签栏设计要点总结</h1>
+      <div class="post-meta">
+        <span class="post-meta-item"><i class="iconfont icon-author"></i>Alex Hu</span>
+        <time class="post-meta-item" datetime="20-04-17"><i class="iconfont icon-date"></i>17 Apr 2020</time>
+      </div>
+    </div>
+    
+    <div class="filter"></div>
+      <div class="post-cover" style="background: url('https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=10759222,1400229676&fm=26&gp=0.jpg') center no-repeat; background-size: cover;"></div>
+    
+  </header>
+
+  <div class="post-content visible">
+    
+
+    <article class="markdown-body">
+      <blockquote>
+  <p>iOS 人机交互规范定义：出现在应用程序屏幕底部，并架构了多个屏幕之间页面内容切换的容器叫做“标签栏”（Tab Bar）。</p>
+</blockquote>
+
+<p><img src="https://i.loli.net/2020/03/16/bMam68Fe9JHOnXh.jpg" alt="Alt" /></p>
+
+<h2 id="标签栏的定义">标签栏的定义</h2>
+
+<p>iOS 人机交互规范定义：出现在<strong>应用程序屏幕底部</strong>，并<strong>架构了多个屏幕之间页面内容切换的容器</strong>叫做“标签栏”（Tab Bar）。</p>
+
+<p><img src="https://img.zcool.cn/community/0118a85e25cbc5a80120a89553f110.png" alt="" /></p>
+
+<h2 id="标签栏和工具栏的区别">标签栏和工具栏的区别</h2>
+
+<ul>
+  <li>
+    <p>标签栏存在于应用程序屏幕的底部，但存在于应用程序屏幕底部的控件，不一定是标签栏。</p>
+  </li>
+  <li>
+    <p><strong>工具栏一般只有在用户可能需要对当前页面执行操作的时候才会显示的控件</strong>，许多应用程序对工具栏都采用了不同的控制显隐的操作手势。例如Safari的底部有一组操作图标，它们主要执行与当前页面相关的动作的按钮。它在用户开始向下滑动页面阅读时隐藏，但点击屏幕底部或上滑页面时它又会再次显示。</p>
+  </li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/011e1e5e4b4790a80120a895860043.png" alt="" /></p>
+
+<ul>
+  <li>工具栏一般只有在用户可能需要对当前页面执行操作的时候才会显示的控件，许多应用程序对工具栏都采用了不同的控制显隐的操作手势。</li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/0137995e4b47a3a8012165186697d9.png" alt="" /></p>
+
+<ul>
+  <li><strong>标签栏是架构了多个屏幕之间页面内容切换的容器</strong>。iOS人机交互规范特意强调需要设计者们区分标签栏和工具栏。</li>
+</ul>
+
+<h2 id="标签栏设计的关键因素">标签栏设计的关键因素</h2>
+
+<h4 id="13至5个目标选项">1、3至5个目标选项</h4>
+
+<ul>
+  <li>少于3个目标选项不要使用底部导航栏。</li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/01959e5cc4f6f3a8012141682267c3.png" alt="" /></p>
+
+<ul>
+  <li>避免在底部导航中使用5个以上的访问标签。这种情况，尝试选项卡或抽屉导航。</li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/01205d5cc4f71da8012141688d0890.png" alt="" /></p>
+
+<ul>
+  <li>底部导航栏目标选项有固定位置，它们不会滚动或水平移动。</li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/0146685cc5056ea80121416875662e.png" alt="" /></p>
+
+<ul>
+  <li>如果由于水平空间有限而无法显示某些标签时，最后的一个可见标签将被会被系统强行转换为“更多”选项，需要用户点击“更多”选项之后，系统才将在单独屏幕上的列表中显示其他被隐藏的标签。</li>
+</ul>
+
+<h4 id="2图标和文本标签">2、图标和文本标签</h4>
+
+<h5 id="a图标">a.图标：</h5>
+<p>底部导航应该与图标的内容进行适当的结合。底部导航目标始终包含一个图标，最好的方式是图标结合文本标签展示，尤其是如果图标没有明确含义。</p>
+
+<p><img src="https://img.zcool.cn/community/010ef65cc4f962a801208f8bac37c2.png" alt="" /></p>
+
+<h5 id="b文本标签">b.文本标签：</h5>
+<p>应使用对底部导航功能简短而有意义的文字，避免使用长文本标签。</p>
+
+<p><img src="https://img.zcool.cn/community/01fb575cc4f9e4a80121416809bf24.png" alt="" />
+使用短文本</p>
+
+<p><img src="https://img.zcool.cn/community/01711d5cc4fa05a801214168a7f440.png" alt="" />
+避免截取文本，截取可能会掩盖重要的目标信息</p>
+
+<p><img src="https://img.zcool.cn/community/012fc55cc4fa17a801208f8be0427d.png" alt="" />
+避免缩小单行文本</p>
+
+<p><img src="https://img.zcool.cn/community/0153605cc4fa32a801214168b085c5.png" alt="" />
+避免文本折行显示</p>
+
+<h5 id="c图标和文本标签颜色">c.图标和文本标签颜色：</h5>
+<p>活动、非活动图标以及文本标签应与导航栏底块有明显的对比，活动图标应使用应用程序主题色或高强度被选中颜色展示，具体取决于组件的配色方案。非活动图标和文本标签可使用中强度的被选中颜色来展示。</p>
+
+<p><img src="https://img.zcool.cn/community/010a905cc4fa7ca801214168e771d1.png" alt="" />
+底部导航活动标签使用应用主题色或高强度被选中颜色显示</p>
+
+<p><img src="https://img.zcool.cn/community/018a5c5cc4faa7a801214168d1a724.png" alt="" />
+避免使用不同的颜色或低强度被选中颜色来显示图标和文本标签，因为这会使用户难以区分活动图标并导航到其他目标视图</p>
+
+<h4 id="3角标">3、角标</h4>
+
+<p>角标通常指出现在图标右上角的红色圆点（下文简称小红点）或红色圆形（圆角矩形、类圆角矩形，包括之上数字、文字），表示有新内容或者待处理信息。</p>
+
+<p>设置角标的目的在于引导用户点击新信息或向用户传递数量信息，在用户查看完新信息后，角标会消失。（购物车是你把东西清空之后角标就消失了…）</p>
+
+<p><img src="https://img.zcool.cn/community/0167d15cc4fbf5a801208f8bcefa9a.png" alt="" /></p>
+
+<h2 id="标签栏展示方式">标签栏展示方式</h2>
+
+<h4 id="图标文字">图标+文字</h4>
+<p>图往往最容易吸引人的眼球，因此采用图标+文字的展示方式更能够突出标签栏，目前95％的App都是采用该方式进行设计，如B站。</p>
+
+<p><img src="https://i.loli.net/2020/03/16/4Md5RyzxLYGgrT9.jpg" alt="Alt" /></p>
+
+<h4 id="纯图标">纯图标</h4>
+
+<p>在标签栏设计中，只采用图标的形式想必大家也见到过，样式较为简洁，但是识别性较低，一般适合于小众的产品中，对于常见的电商、视频类、社交类等不太建议用这种方式。</p>
+
+<p>以花瓣为例，产品都比较小众，同时目标用户又是互联网行业，对这些图标含义都较为熟悉，因此采用这种方式会显得产品有气质。</p>
+
+<p><img src="https://i.loli.net/2020/03/16/sPWg3jrK1D9kaIm.jpg" alt="Alt" /></p>
+
+<h4 id="文字短线">文字+短线</h4>
+<p>文字+短线类似网页中的导航，采用这种方式能够更直观的让用户进行操作，但是其样式较为单一，适合用户群体跨度较大的产品，多用于直播类的App中。</p>
+
+<p><img src="https://i.loli.net/2020/03/16/fN7OwvHZGEKFoeD.jpg" alt="Alt" /></p>
+
+<p>以抖音为例，这类短视频类的用户群体年龄跨度小到几岁大到六七十岁都会用，因此简单易用是基础。</p>
+
+<h4 id="驼式导航">驼式导航</h4>
+
+<p><img src="https://img.zcool.cn/community/018ca45e4b47e0a801216518d83c5f.png" alt="" /></p>
+
+<ul>
+  <li>舵式标签通常和产品框架体现无关，大多数应用程序使用舵式标签是用来承载系统功能。</li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/01907a5e4b47c5a801216518ca9edf.png" alt="" /></p>
+
+<ul>
+  <li>
+    <p>“驼峰”的作用主要是把一项对于产品来说高优先级的行动放在突出位置，并用较大的“视觉重量”来展示。</p>
+  </li>
+  <li>
+    <p>有一个核心功能比其它功能更重要，更需要强调。常见于UGC产品，比如微博、闲鱼、抖音以及原型案例中的小红书。</p>
+  </li>
+  <li>
+    <p>算上需要强调的标签，标签数量通常为3个或者5个。</p>
+  </li>
+  <li>
+    <p>和船的控制室的对称式设计一样，当有标签需要突出的话，两边的标签在视觉上则要设计成对称的。</p>
+  </li>
+  <li>
+    <p>标签栏所承载的信息，能触发用户行为的可能性比Banner、功能列表等一系列表现形式要更胜一筹。</p>
+  </li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/01342e5e4b4800a80121651832a044.png" alt="" /></p>
+
+<p><img src="https://img.zcool.cn/community/0176aa5e4b4812a80121651800278c.png" alt="" /></p>
+
+<h2 id="立足品牌与品牌相结合">立足品牌，与品牌相结合</h2>
+
+<p>有些APP风格非常强烈，干脆将Logo字母作为icon，这种设计非常个性，而且一定程度上也能加深品牌印象。</p>
+
+<p><img src="https://i.loli.net/2020/03/16/q2HFfWMLxNbTVPz.jpg" alt="Alt" /></p>
+
+<p><img src="https://i.loli.net/2020/03/16/qzO9TPKE1CF5hlR.jpg" alt="Alt" /></p>
+
+<p><img src="https://i.loli.net/2020/03/16/AenkjVqMCmFasy7.jpg" alt="Alt" /></p>
+
+<h2 id="设计规范">设计规范</h2>
+
+<h4 id="1标签栏在任何目标页面中的高度是不变的">1、标签栏在任何目标页面中的高度是不变的</h4>
+
+<p>iOS 规定它的高度为98px（iOS @2x）。但因为 iPhone X 之后的全面屏手机引入了 Home Bar ，所以在进行界面适配的时候，请务必要加上 Home Bar 自身的68px高度。别让Home Bar遮挡标签栏中标签的展示，这会让两个控件发生操作手势冲突。</p>
+
+<p><img src="https://img.zcool.cn/community/019dd95e25cbeea80120a8955bfd30.png" alt="" /></p>
+
+<h4 id="android-上的标签排版">Android 上的标签排版</h4>
+<p>Material Design 建议，在移动设备纵向模式下，标签排版的方式应该由标签数量而定：</p>
+
+<p><img src="https://img.zcool.cn/community/011d485e25cc48a80120a895c3074e.png" alt="" /></p>
+
+<ul>
+  <li>三个标签：所有标签都应该显示图标和标签文字，以上下结构呈现。</li>
+  <li>四个标签：选中的标签显示图标和标签文字，以上下结构呈现。未选中的标签建议仅显示图标，是否显示标签文字可自定义。</li>
+  <li>五个标签：选中的标签显示图标和标签文字，以上下结构呈现。未选中的标签仅显示图标，只有在如果空间允许的情况下，才显示标签文字。</li>
+</ul>
+
+<p>但如果应用程序可以在横向模式下展示，或支持平板设备时：</p>
+
+<ul>
+  <li>采用上下结构：沿用纵向模式标签个数规则，并且保留纵向模式下使用的相同间距，而不要在标签栏中平均分配。</li>
+  <li>采用左右结构：建议将标签平均分配在标签栏中。</li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/01eb4b5e25cc5ba80121651809bb5b.png" alt="" /></p>
+
+<p>除了标签分布上的变化，Material Design 在屏幕纵向模式和横向模式上没有再定义更多的变量值了，不管是哪一种屏幕模式下，标签栏的高度和标签图标大小都是固定值。这一点和iOS有着非常大的差异。</p>
+
+<h4 id="ios-上的标签排版">iOS 上的标签排版</h4>
+
+<p>iOS 在标签排版上的规范相对统一。在移动设备纵向模式下始终采用“图标+标签文字”上下结构形式；横向模式下始终采用“图标+标签文字”左右结构形式。</p>
+
+<p>但是标签栏高度以及元素的大小都会随着屏幕模式发生改变。</p>
+
+<p>iOS 将移动设备纵向模式下的标签栏称之为常规型、横向模式下的标签栏称之为紧凑型。图标大小规范与示例标注分别见以下图：</p>
+
+<p><img src="https://img.zcool.cn/community/01769d5e25cc7ea80120a895d161f5.png" alt="" /></p>
+
+<h4 id="2视觉分割">2、视觉分割</h4>
+
+<p><strong>毛玻璃</strong></p>
+
+<p>为了帮助用户进行标签栏与内容区域的视觉分割，iOS 的标签栏是带有毛玻璃效果的，虽然这会消耗一部分运行性能，但国内许多应用程序还是沿用了这个效果。</p>
+
+<p><img src="https://img.zcool.cn/community/01404f5e25ccc0a80121651859597b.png" alt="" /></p>
+
+<p><strong>颜色分割，阴影，分割线</strong></p>
+
+<p>安卓原生是不支持毛玻璃的，所以 Material Design 建议使用颜色分割。当然，国内的众多应用程序，也早已探索出了许多其他的视觉分割形式。</p>
+
+<p><img src="https://img.zcool.cn/community/0101195e25ccd6a80120a895840c78.png" alt="" /></p>
+
+<p>微信标签栏组成：浅灰色底层+灰色细线+纯黑色未选中态图标+彩色面性选中态图标。</p>
+
+<p><img src="https://img.zcool.cn/community/01fe945cd98b04a801208f8b08a2b7.png" alt="" /></p>
+
+<ul>
+  <li>通过浅灰色（后退色）底层保证与内容区（内容区使用纯白色底层，白色为前进色。）的层级区分，从而达到投影的效果；</li>
+  <li>使用灰色细线，进一步强化内容区与标签栏区域的区分度与层次感，也完全符合我们上文中谈到的各元素之间的优先级关系；</li>
+</ul>
+
+<p>微信通过这种方式使得浅灰色细线与投影的优点集于一身，且避免了投影存在的问题，值得我们学习。</p>
+
+<h4 id="3图标部分">3、图标部分</h4>
+
+<p><strong>2px细线条图标</strong></p>
+
+<p>以严选、星巴克为例，一般在2倍手机上显示非常细，虽然其识别度较低，但容易给人以精致、时尚的感觉。在一些时尚类App会考虑使用2px的icon。</p>
+
+<p><img src="https://i.loli.net/2020/03/16/7aOHBdXJR3yFmnW.jpg" alt="Alt" /></p>
+
+<p><img src="https://i.loli.net/2020/03/16/4oAsYEkc31WqfhV.jpg" alt="Alt" /></p>
+
+<p>同时，它可以表现更多的细节，由于其线条较细因此不会对界面内容造成干扰，多用于电商类、精细类的产品中，其选中效果可以是线性高亮，也可以面性高亮。</p>
+
+<p><strong>3px、4px 细线条图标</strong></p>
+
+<p>有 92.1% 的 APP  标签栏图标线条宽度都是 3px与4px 的细线条，其余7.9%的 APP 标签栏图标线条宽度为 6px 。</p>
+
+<p>在 3 倍的倍率下，图标最细就是 3px ，更细的图标在3倍的倍率下，线条不能以整数呈现，会出现虚边，例：如果采用 1px 的，那么在屏幕上实现显示时是1/3=0.333pt，既影响显示效果，也会影响美感。</p>
+
+<p>另外较细线条的优势在于占用的“内腔”空间少，能够更好的展现图标的特征线索。</p>
+
+<p><img src="https://img.zcool.cn/community/0183475cd97de8a80121416867de65.png" alt="" /></p>
+
+<p><strong>6px粗线条图标</strong>
+使用 6px 作为标签栏图标线条宽度的 APP 较少，使用范围主要是俏皮可爱的类型，如下图所示，闲鱼的标签栏图标线条宽度就是 6px 。</p>
+
+<p><img src="https://img.zcool.cn/community/0131eb5cd97e87a801214168181815.png" alt="" /></p>
+
+<p><strong>面性</strong></p>
+
+<p>面性图标可以简单理解为描绘的是物体大致轮廓，相较于线性更加稳重和扎实，对色彩的传达也清晰明显，因此多用于选中效果中，在默认状态做多以浅灰展示。</p>
+
+<p><img src="https://i.loli.net/2020/03/16/lp27FyV4skrIbno.jpg" alt="Alt" /></p>
+
+<p><img src="https://i.loli.net/2020/03/16/ItWinuyX7Na5epO.jpg" alt="Alt" /></p>
+
+<p>以悦动圈、得到为例，它们分别是运动类产品和阅读类产品，采用面性图标比较符合产品稳重的气质。同时在选中效果上采用渐变或投影的效果，让整个设计不至于太呆板。</p>
+
+<p><strong>线性+面性</strong></p>
+
+<p>线性+面性的图标，一般用于选中状态中，多用于主色为黄色或者其他亮度较高的颜色中，避免单独使用视觉不突出，加上描边之后反而给人活泼的感觉。</p>
+
+<p><img src="https://i.loli.net/2020/03/16/SsvgXdnuz7ZAl2B.jpg" alt="Alt" /></p>
+
+<p><img src="https://i.loli.net/2020/03/16/4MaWztn9m2ZkpGI.jpg" alt="Alt" /></p>
+
+<p>以转转和YY为例，默认状态下为线性图标，同时加入一些小元素或者断线处理，在选中状态下线性描边+颜色填充，让让图标更具风格。</p>
+
+<p><strong>轻拟物</strong></p>
+
+<p>轻拟物图标在扁平风格之后就较少使用，大多都换成了线性和面性剪影图标，不过在游戏类和儿童类的产品中仍在使用。</p>
+
+<p><img src="https://i.loli.net/2020/03/16/9HgPsXej1xayLli.jpg" alt="Alt" /></p>
+
+<p><img src="https://i.loli.net/2020/03/16/ZA1uFkQYRPaLH7D.jpg" alt="Alt" /></p>
+
+<p>以英语启蒙动画、儿童绘本为例，拟物的图标对于儿童来说更容易理解。</p>
+
+<p><strong>节日图标</strong></p>
+
+<p>节日类图标这个算是比较特殊的一类，比如新年会采用大红的灯笼、端午节会采用粽子、世界杯会采用足球元素。</p>
+
+<p><img src="https://i.loli.net/2020/03/16/a3H1EQuqRw6ZCIn.jpg" alt="Alt" /></p>
+
+<p><img src="https://i.loli.net/2020/03/16/7fC3tKQ2WbzuvVg.jpg" alt="Alt" /></p>
+
+<p>以菜鸟裹裹-世界杯、爱奇艺-春节主题为例，我们看到都是一些拟物和有趣的小插画图标，在表现上手法多变，主要突出氛围为主。</p>
+
+<h5 id="标签栏及图标大小规范">标签栏及图标大小规范</h5>
+
+<p><img src="https://img.zcool.cn/community/0116a85cd98030a801208f8b18e918.png" alt="" /></p>
+
+<h5 id="图标的变换形式分析">图标的变换形式分析</h5>
+
+<p>视觉重量：画面中元素给人的重量感。从人类的视觉出发，越重要的元素，它的“视觉重量”越大。</p>
+
+<blockquote>
+  <p>数据来自国内主流的 56 个 APP 的标签栏，主要涵盖 BAT 及京东、网易等大厂的各类产品，选择类型上基本达到了随机抽样”的要求（这里的随机指的是覆盖大厂的各种类型的移动端设计），样本数量超过 30 个。</p>
+</blockquote>
+
+<blockquote>
+  <p><img src="https://img.zcool.cn/community/01c4915cd99f68a801208f8b2acb68.jpg" alt="" /></p>
+</blockquote>
+
+<p><strong>线型（未选中态）-面型（选中态）变换形式占比为 46.4 %。</strong></p>
+
+<p>线型图标与面型图标视觉重量差距较大，相比上方表格中其他四种变换形式，线到面这种形式的变换给用户的反馈是最强烈的，在用户点击后，相对其他变换形式能够更快发现点击位置，这是绝大多数 APP 使用这种变换形式的主要原因。</p>
+
+<p><strong>仅从选中态来说，选中态为面型图标占整体的比例为 76.75%。</strong></p>
+
+<p>选中态图标，相比线性图标、线性填充等形式，彩色面型图标有最大的视觉重量，加之与周围无彩色系未选中态图标的对比，能够让用户快速辨别自己在哪，这是绝对数量的 APP 使用彩色面性图标作为选中态图标的原因。</p>
+
+<p><img src="https://img.zcool.cn/community/01ce005cd980e0a801208f8bc24cd7.png" alt="" /></p>
+
+<p>线型图标需要避免视觉噪音，也就是避免“内腔”出现空间过小，或者细节过多的情况，如下图“扳手 1 ”图标所示，图标加入了很多没必要的细节，增加用户视觉负担，而“扳手 2 ”图标仅保留了关键的特征线索，但丝毫没有影响可识别性。</p>
+
+<p><img src="https://img.zcool.cn/community/01073c5cd981aba801208f8b1e5b87.png" alt="" /></p>
+
+<p><strong>线型（未选中态）-线型（选中态）变化占比为 5.9 %</strong></p>
+
+<ul>
+  <li>从线到线的视觉重量差距较小，相对其他方式辨识“自己在哪”的成本上升；</li>
+  <li>未选中态线型图标若采用较深无彩色系会导致与选中态差别小，若选淡色导致识别性下降。</li>
+</ul>
+
+<h5 id="图标组的对齐方式">图标组的对齐方式</h5>
+
+<p><strong>均分屏幕并将图标组在每个模块中居中对齐</strong></p>
+
+<p>如下图造作、网易蜗牛阅读的标签栏所示，均采用的是这种对齐方式，这种对齐方式是 APP 标签栏图标的最主要对齐方式。</p>
+
+<p><img src="https://img.zcool.cn/community/0125425cd9892ca801208f8b785aff.png" alt="" /></p>
+
+<p><strong>减去左右间距等分</strong></p>
+
+<p>如下图所示，one 采用的就是这种方式，这种排列方式能够使得图标更紧凑，对于标签栏仅有三个图标的 APP 较为适用，能够避免标签栏图标之间相隔太远，不便在每个图标之间切换的情况发生。 除标签栏有 3 个图标 APP 有适合这种设计方式，当然 iPad 的标签栏图标也得是这种设计方式，除此之外，上一种方式会是更好地方式，毕竟上一种方式距离间隔只有一种，秩序性更强。</p>
+
+<p><img src="https://img.zcool.cn/community/014ffb5cd989b2a801208f8bb10cce.png" alt="" /></p>
+
+<p><strong>图标左右间距相等</strong></p>
+
+<p>图标左右距离相等多用在标签数量为3个的情况，部分设计师认为采用采用等分形式图标太散，因此采用等距等分的方式可以将图标更为集中。</p>
+
+<p><img src="https://i.loli.net/2020/03/16/YAXEPjTUe63p5og.jpg" alt="Alt" /></p>
+
+<p>以in为例，通过上图我们可以看出红色色块为标签区域，蓝色色块为间距，并且间距相等。</p>
+
+<h5 id="角标的表现形式">角标的表现形式</h5>
+
+<p><strong>色彩：</strong>绝大多数的角标用色都是红色，使用红色的原因在于相对其他色彩，红色性格强烈、外露，能够立即吸引用户注意力，但部分品牌色为橙色或其他暖色系色彩的 APP 也会使用其品牌色作为角标色彩。
+如下图所示，小米商城标签栏使用橙色（品牌色）作为角标的色彩，橙色等暖色系色彩相对红色而言对用户的视觉冲击不是很强烈，但能够使得产品整体配色保持一致，更加美观。</p>
+
+<p><img src="https://img.zcool.cn/community/01990e5cd98c13a801214168f62397.png" alt="" /></p>
+
+<p><strong>角标大小：</strong>经过对十余个 APP 角标大小的“实地测量”，在 3 倍的倍率下，小红点大小区间在17-25 px之间，红色圆形（圆角矩形、类圆角矩形的高度）大小区间在34-50 px 之间。</p>
+
+<p>从以上数据可以获得的信息除两种形式角标本身的大小范围外，我们可以观察到二者的大小关系比例接近 2：1，针对两种角标形式都存在的产品，我们可以使用 2:1 的比例去增强设计的秩序性，从而提升美感。</p>
+
+<p><strong>字体：</strong>如下图 QQ 和网易严选的标签栏角标所示，字体都是无衬线体，除了与系统字体保持一致性的考虑外，无衬线体更少的细节也是为了在相对有限的空间内增强文字的辨识性，毕竟在如此狭小的空间内，衬线体的细节相对较多容易产生视觉噪音。</p>
+
+<p><img src="https://img.zcool.cn/community/01da045cd98d10a801208f8b5aebd4.png" alt="" /></p>
+
+<p><strong>占比关系</strong>：主要通过底层圆形、圆角矩形两种形式区分进行统计分析。</p>
+
+<ul>
+  <li>底层为<strong>圆形</strong>：字体与底层的比例关系接近1：2，使用1:2的比例在于避免过于拥挤的空间给用户造成阅读困难；</li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/017ae05cd98e46a801208f8b94226d.png" alt="" /></p>
+
+<ul>
+  <li>底层为<strong>圆角矩形</strong>：字体与圆角矩形的高度比例同样接近1:2；字体距上下侧距离：字体距左右侧距离=1:1.2，横向更长的目的在于能够引导用户从左到右进行阅读。</li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/01534f5cd98f18a801214168e5f5a8.png" alt="" /></p>
+
+<p><strong>层级关系：</strong>角标的优先级高于图标。</p>
+
+<ul>
+  <li>第一种：图标在未选中态几乎都是无彩色系，在这种情况下，红色(暖色系)面性角标肯定会首先被发现。</li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/01f4be5cd98f8ea801208f8b889090.png" alt="" /></p>
+
+<ul>
+  <li>第二种：角标出现在选中态图标上。用户会首先注意到不属于图标本体的那部分角标。</li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/01c5135cd98feca801214168024dd8.png" alt="" /></p>
+
+<p><strong>小红点的放置位置：</strong></p>
+
+<p>所有 APP 中的角标都位于图标的右上角，可能是出于避免对用户产生过强干扰的考虑，毕竟几乎所有角标都是红色等暖色系色彩，加之从用户视角，左上角是用户最先看到的位置，红色+左上角的组合会对用户产生过强的干扰，将角标置于右上角的位置会相对缓和这种强干扰。</p>
+
+<ul>
+  <li>知乎：小红点位于图标之上，在小红点上加入白色描边。</li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/01d2545cd9905da801208f8b5a22e6.png" alt="" /></p>
+
+<ul>
+  <li>网易严选：小红点位于图标之上，不加白色描边。</li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/0140e65cd990cea801208f8bca2b5b.png" alt="" /></p>
+
+<ul>
+  <li>爱奇艺：小红点位于图标外。</li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/01fb7c5cd9911da801208f8b8bef85.png" alt="" /></p>
+
+<p><strong>圆形（圆角矩形、类圆角矩形）：</strong>这种形式的角标视觉重量较大，接近于图标本身，若使用小红点的放置方式，会有两点问题，第一，占用空间；第二，具体的数字提醒相比小红点属于更具体的强提醒，通过放置在图标之上的方式，能够提升角标的重要性。</p>
+
+<ul>
+  <li><strong>京东商城标签栏购物车图标角标尺寸。</strong>京东商城角标与图标框线的关系是以1:3为主。保留在图标框线以内的角标纵向宽度（21px）：图标框线（63px）的宽度=1:3；超出图标框线以外的角标横向高度（11px）：图标框线（33px）的高度=1:3。</li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/0143925cd991cea8012141686aa117.png" alt="" /></p>
+
+<ul>
+  <li><strong>网易严选标签栏购物车图标角标尺寸。</strong> 网易严选角标与图标框线的关系是以1:2为主。保留在图标框线以内的角标纵向宽度（29px）：图标框线（58px）的宽度=1:2，角标上边缘与图标框线上边缘平齐。</li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/016e5e5cdd97d5a801214168d2e28c.png" alt="" /></p>
+
+<h5 id="4图文排版">4、图文排版</h5>
+
+<ul>
+  <li><strong>上下间距等宽。</strong>中间间距宽度是上下宽度的 1/2，如下图微信标签栏所示。</li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/01839e5cd99260a801208f8b3092e1.png" alt="" /></p>
+
+<ul>
+  <li><strong>下方两部分空间高度一致。</strong>均为顶部宽度的1/2，如下图微博标签栏所示。</li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/01d6605cd992c4a80121416871e7ab.png" alt="" /></p>
+
+<ul>
+  <li><strong>三部分宽度等宽。</strong>如下图淘宝标签栏所示。</li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/014d0a5cd99319a801208f8b60ac87.png" alt="" /></p>
+
+<h2 id="交互建议">交互建议</h2>
+
+<h5 id="1android和ios系统的标签栏显示不同可以在需要时覆盖默认平台导航以改善用户体验">1、Android和IOS系统的标签栏显示不同，可以在需要时覆盖默认平台导航以改善用户体验</h5>
+<p><img src="https://img.zcool.cn/community/01b38b5cc4fb13a801208f8b134315.gif" alt="" />
+在Android上，重新访问某个部分会重置该应用，将用户返回到其顶级视图。</p>
+
+<p><img src="https://img.zcool.cn/community/01436f5cc4fb69a801214168dfffa1.gif" alt="" />
+在IOS上，当用户重新访问某个界面时，会返回到该界面停止的位置，例如详细信息视图界面。</p>
+
+<p><strong>可以在需要时覆盖默认平台导航以改善用户体验</strong>。例如，需要在各部分之间频繁切换的Android应用程序可以保留每个部分的状态。或者，IOS应用程序可以将用户返回到顶级视图（或重置其滚动位置），如果它更适合用例。</p>
+
+<p>当在应用程序的层次结构中向下移动时（从父屏幕到子屏幕），可以持久显示底部导航栏，以便在应用程序的各个部分之间快速导航。
+<img src="https://img.zcool.cn/community/014b705cc4fb9fa80121416820de59.gif" alt="" /></p>
+
+<h5 id="2滚动时底部导航栏可以显示或隐藏">2、滚动时，底部导航栏可以显示或隐藏：</h5>
+
+<ul>
+  <li>向下滚动加载内容时，隐藏底部导航栏；</li>
+  <li>向上滚动回顶部时，重新显示底部导航栏。</li>
+</ul>
+
+<p><img src="https://img.zcool.cn/community/0147cb5cc4fc5da801214168f98626.gif" alt="" /></p>
+
+<h5 id="3临时覆盖">3、临时覆盖</h5>
+
+<p>底部导航可以被对话框、底部表单、抽屉导航、屏幕键盘或完成流程所需的其他元素临时覆盖。它们不应在任何屏幕上永久显示。</p>
+
+<p><img src="https://img.zcool.cn/community/018aad5cc505d3a8012141681d3cb1.gif" alt="" />
+“Radio”屏幕的搜索功能触发屏幕键盘，暂时覆盖底部导航栏，直到搜索流程完成。</p>
+
+<h5 id="4当选项卡的功能不可用时不要删除它">4、当选项卡的功能不可用时，不要删除它</h5>
+
+<p>最好的解决方案是确保所有选项卡都已启用，但要说明为什么选项卡的内容不可用。</p>
+
+<p>例如，如果用户没有本地文件，则Dropbox应用中的“本地”选项卡将显示一个页面，说明如何获取文件。</p>
+
+<p><img src="https://img.zcool.cn/community/01f2515dbf991ea8012163badb7324.png" alt="" /></p>
+
+<h5 id="5视觉优化">5、视觉优化</h5>
+<p>在移动设备（横屏）或平板电脑上，底部导航目标可以保留纵向模式中使用的相同间距，而不是均匀分布在底部导航栏上。</p>
+
+<p><img src="https://img.zcool.cn/community/0182be5cc5066ca801214168c65c7e.png" alt="" /></p>
+
+<p>在移动设备（横屏）或平板电脑上，底部导航目标可以保留纵向模式中使用的相同间距，而不是均匀分布在底部导航栏上。</p>
+
+<p><img src="https://img.zcool.cn/community/0150685cc50687a801208f8b99f668.png" alt="" /></p>
+
+<h2 id="底部导航动效的作用">底部导航动效的作用</h2>
+
+<h4 id="1视觉引导明确操作反馈">1、视觉引导，明确操作反馈</h4>
+
+<p>相比于静态物体，动态的物体更容易吸引人们的注意力，为从A前往B提供视觉线索引导。同时也是为点击操作提供的更加清晰明确的反馈。</p>
+
+<p><img src="https://img.zcool.cn/community/01d5985d3ed5aba80120695ce83276.gif" alt="" /></p>
+
+<h4 id="2自然切换提升使用体验">2.自然切换，提升使用体验</h4>
+
+<p>直接切换虽然没有什么问题，但深究起来却是有些生硬，相当于只有现状——切换完成两步，也就是只有开始和结束，没有切换中的状态。而动效的加入，补全了“切换中”的状态，让整个流程完整起来，“现状——切换中——切换完成”让切换过程更加自然柔和，提升使用体验。</p>
+
+<p><img src="https://img.zcool.cn/community/0109125d3ed5d2a80120695c7ff7d5.gif" alt="" /></p>
+
+<h4 id="3增加趣味性品牌文化输出的窗口">3.增加趣味性，品牌文化输出的窗口</h4>
+
+<p>动效的加入相当于为设计师又提供了一个发挥的维度，使原本静止的元素能以更加立体的方式展示，设计过程中可以传达出更多的信息，是增加趣味性的有效手段。所使用的动效不仅需要符合整个产品的调性更能与品牌结合，也成为了品牌文化的输出窗口。</p>
+
+<p>如下图波洞的例子就是与其品牌文化内涵相对应的，除了静态的图文，动效过程也承担起品牌输出的责任，让产品的特点更加生动鲜明。</p>
+
+<p><img src="https://img.zcool.cn/community/0180d15d3ed5efa80120695cb67992.gif" alt="" /></p>
+
+<h2 id="如何选择适合的动效">如何选择适合的动效</h2>
+
+<h4 id="1图标的选中与未选中样式">1、图标的选中与未选中样式</h4>
+
+<p>首先可以从图标的选中与未选中的样式来考虑，从结果倒推思考如何用适合的动效类型切换过去。常见的图标样式有以下4种，同的样式有与它契合的动效类型，比如从线到切换到线适合做生长动画的效果。</p>
+
+<p><img src="https://img.zcool.cn/community/01c05c5d3ed618a80120695c51a516.png" alt="" /></p>
+
+<h4 id="2产品的风格定位">2、产品的风格定位</h4>
+
+<p>再精美的设计也需要与产品本身的风格定位想匹配才能发挥其作用，动效也不例外。加入动效绝不是炫技的堆叠效果，而是应该让它与产品匹配，让我们可以有多一个的维度去更立体的诠释产品。</p>
+
+<p>如果产品本身用户跨度大人数多，风格沉稳，那么我们在选择动效的时候，也应该选择简单优雅的效果不能太跳脱，比如下图美团选择的是一个简单的缓动缩放效果。</p>
+
+<p><img src="https://img.zcool.cn/community/01248b5d3ed648a80120695cd560dc.gif" alt="" /></p>
+
+<p>而叭哒因为产品面向的是喜欢动漫二次元的年轻人群，普遍喜欢萌和可爱的东西，对于他们来说颜值既正义，好的视觉效果和趣味性更能吸引他们，所以叭哒的整个动效会更加复杂一下，添加了可爱元素，动式上则是弹性效果，显得活泼俏皮。</p>
+
+<p><img src="https://img.zcool.cn/community/01513d5d3ed661a80120695c37ebf8.gif" alt="" /></p>
+
+<h2 id="标签栏动效的主要类型">标签栏动效的主要类型</h2>
+
+<h5 id="缩放">缩放：</h5>
+<p>缩放是简单稳重、包容性好的一种动效形式，不管是哪种样式的图标都可以选择使用缩放动效，同时也是一种较为通用的效果，不需要针对图标元素进行精巧地定制化设计。说白点就是可以套用，且出来的效果还不错，既有动式又不会太复杂夸张，对于视觉引导和明确反馈完全够用，所以它的应用比较广泛，适合大多数产品，是比较保守不易出错的一种选择。</p>
+
+<p><img src="https://img.zcool.cn/community/0174305d3ed732a80120695ccd3246.gif" alt="" /></p>
+
+<p><img src="https://img.zcool.cn/community/01c2495d3ed732a8012187f47ae727.gif" alt="" /></p>
+
+<p>除了整体图标的缩放，还可以调节图标元素的局部缩放，带来更加丰富多变的效果。</p>
+
+<p><img src="https://img.zcool.cn/community/015c805d3ed74ea80120695c79276b.gif" alt="" /></p>
+
+<h5 id="填充">填充：</h5>
+<p>填充动效顾名思义就是颜色的填充，适用于选中后过渡到面性的图标样式，可以是局部色块的填充，也可是填充图标整体，如从线性→线面或是从面性→面性，这几种样式选择填充效果，切换过程都可以做到自然流畅。若单纯只有线性图标的样式，图标面积单薄，不易出效果一般不建议使用。</p>
+
+<p><img src="https://img.zcool.cn/community/01cb575d3ed76ea80120695c896e3d.gif" alt="" /></p>
+
+<h5 id="生长">生长：</h5>
+<p>它适合的刚好是图标的线性部分，是线条从无到有的过程。经常与缩放动效搭配使用，为整个动效加入局部细节亮点，使其更加活泼灵动。</p>
+
+<p><img src="https://img.zcool.cn/community/0127a75d3ed79aa8012187f432a227.gif" alt="" /></p>
+
+<p><img src="https://img.zcool.cn/community/01c8295d3ed79aa80120695cb926df.gif" alt="" /></p>
+
+<h5 id="位移">位移：</h5>
+<p>位移是图标或其中元素的移动效果，比如爱范儿的快讯图标两侧弧形向外移动和收回，在其它禁止的图标中可以有效吸引用户的注意，同时也是模拟信号塔发射的过程，与“快讯”呼应。</p>
+
+<p><img src="https://img.zcool.cn/community/011dbb5d3ed7c5a8012187f4c741d7.gif" alt="" /></p>
+
+<p>再如轻芒的底色移动，轻芒的底部导航是纯文字的样式，加入底色的位移动画对于视觉是较强的引导，变化的色彩也减少纯文字的单调感。</p>
+
+<p><img src="https://img.zcool.cn/community/01ccd45d3ed7e4a8012187f420832e.gif" alt="" /></p>
+
+<h5 id="旋转">旋转：</h5>
+<p>旋转动效是切换过程中图标或其中元素的角度旋转，与位移相同，旋转更多的也是针对具体图标做出的巧妙设计。比如搜狗浏览器的指南针发现图标，和百度贴吧消息铃铛图标，都使用了旋转的效果以模拟实物的晃动感觉，符合实物的运动规律让人觉得亲切自然。</p>
+
+<p><img src="https://img.zcool.cn/community/017bdd5d3ed806a8012187f4957a6e.gif" alt="" /></p>
+
+<p><img src="https://img.zcool.cn/community/017f915d3ed807a80120695c221ed6.gif" alt="" /></p>
+
+<p>除了二维的旋转，还可以考虑三维的旋转效果，比如转转舵式导航中间图标的动效，融入了品牌IP形象的元素，向左向右的转头效果也与品牌“转转”的概念贴合，给人留下深刻印象。</p>
+
+<p><img src="https://img.zcool.cn/community/0169155d3ed824a8012187f40cc2e4.gif" alt="" /></p>
+
+<h5 id="点击">点击：</h5>
+<p>点击动效是在点击切换的过程中，在图标下层为点击区域添加色块，以加强点按的效果，让操作的反馈更加明确。</p>
+
+<p><img src="https://img.zcool.cn/community/01caf25d3ed845a80120695c9dac63.gif" alt="" /></p>
+
+<p><img src="https://img.zcool.cn/community/01f1765d3ed845a8012187f4d90ef0.gif" alt="" /></p>
+
+<h5 id="形状变化">形状变化：</h5>
+<p>形状变化也是需要针对图标形状元素定制化设计的一种，自由度高供设计师发挥的空间大，能产生许多生动有趣的效果。比如猫耳FM的舵式导航中间猫咪打瞌睡的鼻涕泡动效，QQ的消息图标，每次双击都切换不同的表情，成为了给人留下深刻印象的记忆点，为产品增加趣味性。</p>
+
+<p><img src="https://img.zcool.cn/community/01422f5d3ed867a80120695cb5c869.gif" alt="" /></p>
+
+<p><img src="https://img.zcool.cn/community/01a85b5d3ed868a8012187f488c287.gif" alt="" /></p>
+
+<h5 id="组合">组合</h5>
+<p>组合的话是融合多种类型的动效，比如美团外卖，是整体缩放与局部生长动效的结合。</p>
+
+<p><img src="https://img.zcool.cn/community/0111495d3ed891a80120695cea56c1.gif" alt="" /></p>
+
+<p>还有一种是同组图标采用不同的动效，比如喜马拉雅的底部导航图标是从面性→面性的切换，图标整体没有统一的动效，但在每个图标的局部，都针对其特征设计了不同的动态效果。首页图标是房子小窗户从上垂落的位移动效，我听星型中线条的生长动效，发现指针的旋转等都是与元素结合的设计，让原本面→面之间平淡的切换变得各有特色。</p>
+
+<p><img src="https://img.zcool.cn/community/016ce75d3ed8aca80120695c7c8887.gif" alt="" /></p>
+
+<h3 id="参考资料">参考资料</h3>
+
+<p><a href="https://www.zcool.com.cn/article/ZMTA1NjE0MA==.html">底部导航BottomBar的设计的黄金法则</a></p>
+
+<p><a href="https://www.zcool.com.cn/article/ZMTAwNzU0NA==.html">细节篇：底部导航这么做才有趣</a></p>
+
+<p><a href="https://www.zcool.com.cn/article/ZOTM1MTk2.html">译文-底部导航栏设计你忽略了哪些？ </a></p>
+
+<p><a href="https://m.zcool.com.cn/article/ZOTQ4NDI0.html">关于标签栏，这里一定有你没掌握的——细节系列第 02 篇</a></p>
+
+<p><a href="https://m.zcool.com.cn/article/ZNzg2NDI4.html">你真的了解标签栏设计吗</a></p>
+
+<p><a href="https://m.zcool.com.cn/article/ZNTU2OTA4.html">标签栏icon的设计与应用</a></p>
+
+
+    </article>
+
+    
+    <div class="social-share-wrapper">
+      <div class="social-share"></div>
+    </div>
+    
+  </div>
+<div class="tabBar">
+    <div class="tabBar_icon">
+        <li><a href="/index.html"><span class="iconfont tabicon iconfavico"></span></a></li>
+        <li><a  href="/tags.html"><span class="iconfont tabicon iconnote"></span></a></li>
+       <li><a href="https://github.com/alexdesign001" target="_blank"><span class="iconfont tabicon iconuser"></span></a></li>
+    </div>
+</div>
+  <section class="author-detail">
+    <section class="post-footer-item author-card">
+      <div class="avatar">
+        <img src="/assets/img/profile.png" alt="">
+      </div>
+      <div class="author-name" rel="author">Alex Hu</div>
+      <div class="bio">
+        <p>UI设计师，热爱生活&设计，简单乐观爱创造</p>
+      </div>
+      
+      <ul class="sns-links">
+        
+        <li>
+          <a href="//github.com/alexdesign001" target="_blank">
+                    <i class="iconfont icon-github"></i>
+                </a>
+        </li>
+        
+      </ul>
+      
+    </section>
+    <section class="post-footer-item read-next">
+      
+      <div class="read-next-item">
+        <a href="/2020/04/17/%E7%99%BB%E5%BD%95%E6%B3%A8%E5%86%8C%E9%A1%B5.html" class="read-next-link"></a>
+        <section>
+          <span> 登录注册页设计要点</span>
+          <p>  登录注册页设计经验总结。</p>
+        </section>
+        
+        <div class="filter"></div>
+        <img src="https://img.zcool.cn/community/0196ac5c0d3fd5a80121ab5daff76b.png" alt="">
+        
+     </div>
+      
+
+      
+      <div class="read-next-item">
+        <a href="/2020/04/17/%E5%AF%BC%E8%88%AA%E6%A0%8F.html" class="read-next-link"></a>
+          <section>
+            <span>移动端导航设计要点</span>
+            <p>  设计好导航栏不仅仅是视觉上的工作，表现的方式、承载的按钮与组件、滚屏时的组合操作还能给用户带来极大的体验增益。</p>
+          </section>
+          
+          <div class="filter"></div>
+          <img src="https://img.zcool.cn/community/0120645e147d73a801216518f62baa.png" alt="">
+          
+      </div>
+      
+    </section>
+    
+  </section>
+
+  <footer class="g-footer">
+  <section>Alex Design - Creativity Never Sleeps ©
+  
+  
+  2020
+  </section>
+  
+</footer>
+
+
+  <script src="/assets/js/social-share.min.js"></script>
+  <script>
+    socialShare('.social-share', {
+      sites: [
+        
+          'wechat'
+          ,
+          
+        
+          'weibo'
+          ,
+          
+        
+          'douban'
+          ,
+          
+        
+          'twitter'
+          
+        
+      ],
+      wechatQrcodeTitle: "分享到微信朋友圈",
+      wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+    });
+  </script>
+
+  
+
+  <script src="/assets/js/prism.js"></script>
+  <script src="/assets/js/index.min.js"></script>
+</body>
+
+</html>

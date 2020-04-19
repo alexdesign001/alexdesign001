@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Android设计规范 - Alex Design - Creativity Never Sleeps</title>
+    <title>空状态设计 - Alex Design - Creativity Never Sleeps</title>
     <meta name="author"  content="Alex Hu">
-    <meta name="description" content="Android设计规范">
-    <meta name="keywords"  content="移动端, 设计规范">
+    <meta name="description" content="空状态设计">
+    <meta name="keywords"  content="移动端">
     <!-- Open Graph -->
-    <meta property="og:title" content="Android设计规范 - Alex Design - Creativity Never Sleeps">
+    <meta property="og:title" content="空状态设计 - Alex Design - Creativity Never Sleeps">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://localhost:4000/2020/04/01/Android%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83%E6%80%BB%E7%BB%93.html">
+    <meta property="og:url" content="http://localhost:4000/2020/04/16/%E7%A9%BA%E7%8A%B6%E6%80%81%E8%AE%BE%E8%AE%A1.html">
     <meta property="og:description" content="Alex Hu，90后，UI设计师，热爱技术&设计。很高兴能在这里与你分享我对设计和生活的思考。">
     <meta property="og:site_name" content="Alex Design - Creativity Never Sleeps">
     <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
@@ -121,19 +121,17 @@ Author: Ray-Eldath
           
             <a href="/tags.html#%E7%A7%BB%E5%8A%A8%E7%AB%AF" class="post-tag">移动端</a>
           
-            <a href="/tags.html#%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83" class="post-tag">设计规范</a>
-          
         
       </div>
-      <h1>Android设计规范</h1>
+      <h1>空状态设计</h1>
       <div class="post-meta">
         <span class="post-meta-item"><i class="iconfont icon-author"></i>Alex Hu</span>
-        <time class="post-meta-item" datetime="20-04-01"><i class="iconfont icon-date"></i>01 Apr 2020</time>
+        <time class="post-meta-item" datetime="20-04-16"><i class="iconfont icon-date"></i>16 Apr 2020</time>
       </div>
     </div>
     
     <div class="filter"></div>
-      <div class="post-cover" style="background: url('https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2586133197,590351406&fm=26&gp=0.jpg') center no-repeat; background-size: cover;"></div>
+      <div class="post-cover" style="background: url('https://pic4.zhimg.com/80/v2-ffa7955b25e62e1b9f68223d8e3fcf2b_1440w.jpg') center no-repeat; background-size: cover;"></div>
     
   </header>
 
@@ -142,140 +140,62 @@ Author: Ray-Eldath
 
     <article class="markdown-body">
       <blockquote>
-  <p>Android设计规范解读。</p>
+  <p>空状态是指在用户体验产品流程中出现的除主流程状态反馈外没有其他数据展示的情况，而缺少数据或内容的原因有很多种，例如搜索无结果、无网络、默认初始无数据状态等。</p>
 </blockquote>
 
-<h3 id="一安卓开发单位是dpsp">一、安卓开发单位是DP、SP</h3>
+<p>空状态是指在用户体验产品流程中出现的除主流程状态反馈外没有其他数据展示的情况，而缺少数据或内容的原因有很多种，例如搜索无结果、无网络、默认初始无数据状态等。</p>
 
-<p><strong>DP：安卓专用长度单位。</strong>
-以160 DPI屏幕为标注，则1DP=1PX
-计算公式：dp x dpi/160=px
-例：以720x1280px （320dpi）为例， 1dp x 320 dpi/160=2px</p>
+<p>对应不同原因分场景展示对应的内容有助于提升用户体验，同时提升业务转化。</p>
 
-<p><strong>SP：安卓专用字体单位。</strong>
-以160 DPI屏幕为标注，则1SP=1PX
-计算公式：sp x dpi/160=px
-例：以720x1280px （320dpi）为例， 1sp x 320 dpi/160=2px</p>
+<h3 id="行动指令引导用户进入体验流程">行动指令引导用户进入体验流程</h3>
 
-<h3 id="二安卓设计尺寸以1080x1920px作为设计稿标准尺寸">二、安卓设计尺寸：以1080x1920px作为设计稿标准尺寸</h3>
+<p>行动性指令是指给用户明确行为操作的指令，如“去使用”、“去逛逛”、“赞一个”等等，这些明确的行动指令会比其他文案更引导用户点击。</p>
 
-<ul>
-  <li>
-    <p>从中间尺寸向上、下适配，界面调整幅度最小，最方便适配。</p>
-  </li>
-  <li>
-    <p>大屏幕时代依然以小尺寸作为设计尺寸，会限制设计师的设计视角。</p>
-  </li>
-  <li>
-    <p>用主流尺寸来做设计稿尺寸，极大的提高了视觉还原和其他机型适配。</p>
-  </li>
-</ul>
+<p><img src="https://img.zcool.cn/community/0160335e7d69f0a8012165180769a1.jpg" alt="" /></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>分辨率</th>
-      <th>DPI</th>
-      <th>状态栏高度</th>
-      <th>导航栏高度</th>
-      <th>标签栏高度</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>720x1280px</td>
-      <td>XHDPI</td>
-      <td>50px</td>
-      <td>96px</td>
-      <td>96px</td>
-    </tr>
-    <tr>
-      <td>1080x1920px</td>
-      <td>XXHDPI</td>
-      <td>60px</td>
-      <td>144px</td>
-      <td>150px</td>
-    </tr>
-  </tbody>
-</table>
+<p>除了常规的操作按钮以外，我们也可以尝试摒弃显而易见的空状态文案提示，尝试带有“行动性指令“的轻交互动效来进行用户引导。</p>
 
-<h3 id="三安卓图标尺寸">三、安卓图标尺寸</h3>
+<p><img src="https://img.zcool.cn/community/0182cf5e7d6a11a80120a895fa293b.jpg" alt="" /></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>屏幕大小</th>
-      <th>启动图标</th>
-      <th>操作栏图标</th>
-      <th>上下文图标</th>
-      <th>系统通知图标</th>
-      <th>最细画笔</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>320x480</td>
-      <td>48x48px</td>
-      <td>32x32px</td>
-      <td>16x16px</td>
-      <td>24x24px</td>
-      <td>不小于2px</td>
-    </tr>
-    <tr>
-      <td>480x800</td>
-      <td>72x72px</td>
-      <td>48x48px</td>
-      <td>24x24px</td>
-      <td>36x36px</td>
-      <td>不小于3px</td>
-    </tr>
-    <tr>
-      <td>480x854</td>
-      <td>720x1280</td>
-      <td>96x96px</td>
-      <td>64x64px</td>
-      <td>48x48px</td>
-      <td>不小于4px</td>
-    </tr>
-    <tr>
-      <td>1080x1920</td>
-      <td>144x144px</td>
-      <td>96x96px</td>
-      <td>48x48px</td>
-      <td>72x72px</td>
-      <td>不小于6px</td>
-    </tr>
-  </tbody>
-</table>
+<h3 id="预显示吸引用户注意力">预显示吸引用户注意力</h3>
 
-<h2 id="四安卓字体">四、安卓字体</h2>
+<p>在很多特定产品中，某些功能的使用与否直接影响整体业务运转，例如社交产品的关注功能、社区论坛类产品的发帖功能等。如果用户对于这些功能不了解或者不敢兴趣就会造成很大问题。</p>
 
-<p>中文：思源黑体 / Noto Sans Han
-英文：Roboto
-大小：主题文字 36-34px    正文 28-26px     提示文字 24-22px
-链接: https://pan.baidu.com/s/17cKM9co53TEN85gj4vy5dw 提取码: hd35</p>
+<p>我们可以试试把有趣的内容或者功能部分直观的外放在空状态页面，增强对用户的吸引度。</p>
 
-<h2 id="五切图规范">五、切图规范</h2>
+<p><img src="https://img.zcool.cn/community/019a585e7d6a70a8012165188b3797.jpg" alt="" /></p>
 
-<ul>
-  <li>
-    <p>切图尺寸必须为双数</p>
-  </li>
-  <li>
-    <p>单像素的图会出现边缘模糊的情况</p>
-  </li>
-  <li>
-    <p>一般情况下，我们只需要提供3套切图资源就可以满足安卓工程师的适配，分别是HDPI、XHDPI、 XXHDPI 3套切图资源。</p>
-  </li>
-</ul>
+<p><img src="https://img.zcool.cn/community/01a5295e7d6a90a801216518f11f83.png" alt="" /></p>
 
-<h2 id="六如何用ios的设计稿适配安卓">六、如何用iOS的设计稿适配安卓</h2>
+<h3 id="猜你喜欢提升业务转化">“猜你喜欢”提升业务转化</h3>
 
-<p>现在绝大多数公司限于人力物力的限制，不能把iOS和安卓的设计稿全部执行出来，因此就存在一稿两用的情况；设计师以iOS版本的设计稿来适配安卓，下面我们来看一组有趣的数学换算题：</p>
+<p>商业设计考虑的核心在于业务转化，而不同产品都有自己对应业务指标，比如电商类产品有商品浏览率、下单率等指标；招聘类产品有简历投递率、面试撮合率等指标。</p>
 
-<p>1080/1.5=720，720/1.5=480，1242x2208/1.15=1080c1920，也就是说，<strong>1242x2208（iOS@3倍尺寸）</strong>与1080x1920（安卓尺寸）是可以等比缩放的，所以，<strong>iOS与Android的尺寸是可共用1242x2208px</strong>。因此，以iOS设计尺寸进行设计是可以适配Android的。</p>
+<p>如果要让设计真正赋能业务，在空状态的设计中我们也可以考虑加入对业务转化有影响的体验模块。这些通过算法精确匹配的推荐模块可以有效激活用户操作，使整体用户路径不会轻易终止，从而提升业务指标。</p>
 
-<p>另一种方式，就是把750×1334px等比例调整尺寸到安卓1080×1920px，对各个控件进行微调，重新提供标注（用dp标注）。也就是需要提供两套标注，一套给iOS，一套给Android。</p>
+<p><img src="https://img.zcool.cn/community/01927e5e7d6ad8a80121651850984c.jpg" alt="" /></p>
+
+<p><img src="https://img.zcool.cn/community/01d75c5e7d6b14a80120a8953f916b.jpg" alt="" /></p>
+
+<h3 id="ip故事线打造品牌">IP故事线打造品牌</h3>
+
+<p>比起好看的插画样式，一个可以推动产品建立用户品牌心智的插画显然更有商业价值，因为它让用户更容易记住一款产品，并对之产生一定情绪记忆。</p>
+
+<p>那么我们要如何利用缺省页插画来营造品牌感呢？可以试试用IP来讲故事，而故事的表演主会场就是空状态页面，让每个独立的空状态页插画都是一个连续故事中一个画面，激发用户使用产品的好奇心，同时让IP品牌的形象深入人心。</p>
+
+<p><img src="https://img.zcool.cn/community/01389c5e7d6ba1a80120a895f9a1c8.jpg" alt="" /></p>
+
+<h3 id="全屏化创意带给用户惊喜">全屏化创意带给用户惊喜</h3>
+
+<p>与普通的空状态设计相比，全屏场景化不拘泥与小框的限制，把整个空状态页都当做一个场景画布布局内容，配备细节创新有趣的文案，可以为用户带来足量惊喜与视觉冲击。</p>
+
+<p><img src="https://img.zcool.cn/community/01de9e5e7d6befa80120a89503772c.png" alt="" /></p>
+
+<p><img src="https://img.zcool.cn/community/01480f5e7d6c09a80120a895068862.png" alt="" /></p>
+
+<h3 id="参考资料">参考资料</h3>
+
+<p><a href="https://m.zcool.com.cn/article/ZMTEyMDQwMA==.html">5种方式提升你的空状态设计价值</a></p>
 
     </article>
 
@@ -316,18 +236,30 @@ Author: Ray-Eldath
     <section class="post-footer-item read-next">
       
       <div class="read-next-item">
-        <a href="/2020/04/01/iOS%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83%E6%80%BB%E7%BB%93.html" class="read-next-link"></a>
+        <a href="/2020/04/17/%E4%BA%A4%E4%BA%92.html" class="read-next-link"></a>
         <section>
-          <span>iOS设计规范总结</span>
-          <p>  iOS设计规范总结。</p>
+          <span>手势交互设计背后的原理</span>
+          <p>  手势操作对我们来说如此自然和直观的主要原因是因为它们类似于与真实对象进行直接交互。</p>
         </section>
         
         <div class="filter"></div>
-        <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1999076324,2994244836&fm=26&gp=0.jpg" alt="">
+        <img src="https://img.zcool.cn/community/0150a35a5877d1a8012113c770b8df.png" alt="">
         
      </div>
       
 
+      
+      <div class="read-next-item">
+        <a href="/2020/04/02/%E5%AE%89%E5%8D%93%E7%82%B9%E4%B9%9D%E5%9B%BE.html" class="read-next-link"></a>
+          <section>
+            <span>Android点九图</span>
+            <p>  在android平台下使用点九PNG技术，可以将图片横向和纵向同时进行拉伸，以实现在多分辨率下的完美显示效果。</p>
+          </section>
+          
+          <div class="filter"></div>
+          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586708927503&di=6de8ef62fa18247f9a4d59b52da8c274&imgtype=0&src=http%3A%2F%2Fgss2.bdstatic.com%2F9fo3dSag_xI4khGkpoWK1HF6hhy%2Fbaike%2Fpic%2Fitem%2F9f510fb30f2442a733723c29db43ad4bd113023a.jpg" alt="">
+          
+      </div>
       
     </section>
     

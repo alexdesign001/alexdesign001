@@ -19,13 +19,8 @@ header-img: assets/img/hero.jpg
 <main class="g-container home-content">
     <div class="article-list">
         {% for post in paginator.posts %}
-            <article class="article-item">
-                {% if post.cover %}
-                <div class="post-cover">
-                    <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title }}"></a>
-                    <img src="{{ post.cover | relative_url }}" href="{{ post.url | relative_url }}" alt="">
-                </div>
-                {% endif %}
+            <article class="article-item" style="display: flex;">
+                <div style="width:80%;">
                 <section class="post-preview">
                     <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title }}"></a>
                     <h2 class="post-title">{{ post.title }}</h2>
@@ -46,6 +41,15 @@ header-img: assets/img/hero.jpg
                     </div>
                     <time class="post-date" datetime="{{ post.date | date:"%y-%m-%d" }}">{{ post.date | date_to_string }}</time>
                 </footer>
+            </div>
+                    {% if post.cover %}
+                    <div style="width: 20%">
+                <div class="post-cover">
+                    <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title }}"></a>
+                    <div style="background:url({{ post.cover | relative_url }});background-size: cover;width: 100px;height: 100px;background-position: center;" href="{{ post.url | relative_url }}" alt="">
+                </div>
+            </div>
+                {% endif %}
             </article>
         {% endfor %}
 
@@ -102,12 +106,33 @@ header-img: assets/img/hero.jpg
 
 </main>
 
-<div class="tabBar">
-    <div class="tabBar_icon">
-        <li><a href="index.html"><span class="iconfont tabicon active iconfavico"></span></a></li>
-        <li><a href="tags.html"><span class="iconfont tabicon iconnote"></span></a></li>
-       <li><a href="https://github.com/alexdesign001"  target="_blank"><span class="iconfont tabicon iconuser"></span></a></li>
+<!-- toolbar bottom -->
+    <div class="toolbar">
+        <div class="container">
+            <ul class="toolbar-bottom toolbar-wrap">
+                <li class="toolbar-item">
+                    <a href="index.html" class="toolbar-link toolbar-link-active">
+                        <i class="icon ion-ios-home"></i>
+                    </a>
+                </li>
+                <li class="toolbar-item">
+                    <a href="features.html" class="toolbar-link">
+                        <i class="icon ion-ios-star"></i>
+                    </a>
+                </li>
+                <li class="toolbar-item">
+                    <a href="pages.html" class="toolbar-link">
+                        <i class="icon ion-ios-browsers"></i>
+                    </a>
+                </li>
+                <li class="toolbar-item">
+                    <a href="apps.html" class="toolbar-link">
+                        <i class="icon ion-ios-apps"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
-</div>
+    <!-- end toolbar bottom -->
 
 {% include footer.html %}
