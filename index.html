@@ -21,8 +21,8 @@ header-img: assets/img/hero.jpg
     <h3 style="margin: 20px">最新文章</h3>
     <div class="article-list">
         {% for post in paginator.posts %}
-            <article class="article-item" style="display: flex;">
-                <div style="width:70%;">
+            <article class="article-item" style="display: flex">
+                <div style="width: 90%">
                 <section class="post-preview">
                     <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title }}"></a>
                     <h2 class="post-title">{{ post.title }}</h2>
@@ -44,14 +44,14 @@ header-img: assets/img/hero.jpg
                     <time class="post-date" datetime="{{ post.date | date:"%y-%m-%d" }}">{{ post.date | date_to_string }}</time>
                 </footer>
             </div>
-                    {% if post.cover %}
-                    <div style="width: 30%">
+                   <!--  {% if post.cover %}
+                    <div style="width: 100px;">
                 <div class="post-cover">
                     <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title }}"></a>
                     <div style="background:url({{ post.cover | relative_url }});background-size: cover;width: 80px;height: 80px;background-position: center;" href="{{ post.url | relative_url }}" alt="">
                 </div>
             </div>
-                {% endif %}
+                {% endif %} -->
             </article>
         {% endfor %}
 

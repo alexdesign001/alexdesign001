@@ -249,6 +249,7 @@ a {
 .article-list .article-item .post-cover {
 	position: relative;
 	padding-left: 20px;
+	padding-right: 20px;
 	max-height: 200px;
 	overflow: hidden
 }
@@ -1566,12 +1567,10 @@ margin-left: 30px;
     height: 28px;
     line-height: 28px;
 }
-font-weight: 500;
-}
-
 
 @media screen and (min-width: 1080px){
 .toolbar-wrap{
     display: none;
+}
 }
 
