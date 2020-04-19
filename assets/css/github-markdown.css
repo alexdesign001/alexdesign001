@@ -576,6 +576,7 @@ li p:nth-child(2) {
 .markdown-body table td {
   padding: 6px 13px;
   border: 1px solid #dfe2e5;
+  font-family: -apple-system, "Helvetica Neue", "Helvetica", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", SimSun, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 .markdown-body table tr {

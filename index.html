@@ -16,7 +16,9 @@ header-img: assets/img/hero.jpg
     <h3>{{ page.description }}</h3>
 </div>
 
+
 <main class="g-container home-content">
+    <h3 style="margin: 20px">最新文章</h3>
     <div class="article-list">
         {% for post in paginator.posts %}
             <article class="article-item" style="display: flex;">
@@ -116,8 +118,8 @@ header-img: assets/img/hero.jpg
                     </a>
                 </li>
                 <li class="toolbar-item">
-                    <a href="features.html" class="toolbar-link">
-                        <i class="icon ion-ios-star"></i>
+                    <a href="tags.html" class="toolbar-link">
+                        <i class="icon ion-ios-albums"></i>
                     </a>
                 </li>
                 <li class="toolbar-item">

@@ -6,7 +6,7 @@ layout: default
 {% include header.html %}
 
 <div class="g-banner tags-banner {{ site.postPatterns | prepend: 'post-pattern-' }} {{ site.theme-color | prepend: 'bgcolor-' }}" data-theme="{{ site.theme-color }}">
-    <h2>文章</h2>
+    <h2>全部文章</h2>
 </div>
 
 <main class="tags-content">
@@ -31,12 +31,33 @@ layout: default
     </ul>
 </main>
 
-<div class="tabBar">
-    <div class="tabBar_icon">
-        <li><a href="index.html"><span class="iconfont tabicon iconfavico"></span></a></li>
-        <li><a href="tags.html"><span class="iconfont tabicon active iconnote"></span></a></li>
-       <li><a href="https://github.com/alexdesign001"  target="_blank"><span class="iconfont tabicon iconuser"></span></a></li>
+<!-- toolbar bottom -->
+    <div class="toolbar">
+        <div class="container">
+            <ul class="toolbar-bottom toolbar-wrap">
+                <li class="toolbar-item">
+                    <a href="index.html" class="toolbar-link">
+                        <i class="icon ion-ios-home"></i>
+                    </a>
+                </li>
+                <li class="toolbar-item">
+                    <a href="tags.html" class="toolbar-link toolbar-link-active">
+                        <i class="icon ion-ios-albums"></i>
+                    </a>
+                </li>
+                <li class="toolbar-item">
+                    <a href="pages.html" class="toolbar-link">
+                        <i class="icon ion-ios-browsers"></i>
+                    </a>
+                </li>
+                <li class="toolbar-item">
+                    <a href="apps.html" class="toolbar-link">
+                        <i class="icon ion-ios-apps"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
-</div>
+    <!-- end toolbar bottom -->
     
 {% include footer.html %}
