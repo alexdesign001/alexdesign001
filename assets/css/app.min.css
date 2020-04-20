@@ -153,7 +153,7 @@ a {
 	color: #fff;
 	padding: 0 60px
 }
-
+3
 .home-banner {
 	position: relative;
 	text-align: center;
@@ -673,7 +673,7 @@ margin-left: 30px;
 	margin: 0;
 	color: #fff;
 	overflow: hidden;
-	background-color: #212020;
+	background-color: #6485af;
 	z-index: 0
 }
 
@@ -1389,7 +1389,8 @@ margin-left: 30px;
 
 	.home-banner h2 {
 		padding-top: 60px;
-		font-size: 18px;
+		font-size: 14px;
+		font-weight:400;
 		line-height: 40px
 	}
 
